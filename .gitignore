@@ -1,22 +1,33 @@
 # =============================================
-# .gitignore per progetto FHIR FSH / SUSHI
+# .gitignore per progetto FHIR FSH / SUSHI / Simplifier
 # =============================================
+#
+# NON mettere in gitignore (romperebbe Simplifier / CI):
+#   - input/fsh/          → sorgenti FSH
+#   - guides/             → guida Simplifier
+#   - fsh-generated/      → JSON per Simplifier (committati anche dal bot CI)
+#   - sushi-config.yaml, ig.ini, .github/
+#
+# Se decommentate fsh-generated/ sotto, Simplifier non vedrà più i profili
+# su GitHub finché non li rigenerate e committate a mano.
 
-# Output SUSHI - rigenerati automaticamente, NON versionare
-# (il GitHub Action li committa solo su main)
-# Decommentare la riga sotto se volete ignorarli completamente:
+# Output SUSHI — TENERE VERSIONATO (riga sotto DEVE restare commentata)
 # fsh-generated/
 
-# Cache locale del publisher e pacchetti FHIR
+# Cache locale IG Publisher e pacchetti FHIR scaricati
 input-cache/
 .fhir/
 
-# Output dell'IG Publisher (sito HTML generato)
+# Output IG Publisher (sito HTML, rigenerabile in locale)
 output/
 temp/
 template/
 
-# File temporanei dell'IG Publisher
+# JAR Publisher se lo scaricate nella root del progetto
+publisher.jar
+publisher-cli.jar
+
+# Script temporanei IG Publisher
 _updatePublisher.sh
 _updatePublisher.bat
 _genonce.sh
@@ -31,5 +42,5 @@ Thumbs.db
 *.swp
 *~
 
-# Node (se usate npm localmente)
+# Node (se usate npm / SUSHI in locale)
 node_modules/

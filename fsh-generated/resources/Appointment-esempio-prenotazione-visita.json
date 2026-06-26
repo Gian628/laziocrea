@@ -3,20 +3,20 @@
   "id": "esempio-prenotazione-visita",
   "meta": {
     "profile": [
-      "https://www.fhir.laziocrea.it/StructureDefinition/it-cup-appointment"
+      "https://www.fhir.laziocrea.it/StructureDefinition/lccup-appointment"
     ]
   },
   "extension": [
     {
-      "url": "https://www.fhir.laziocrea.it/StructureDefinition/ext-codice-prenotazione",
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-codice-prenotazione",
       "valueString": "CUP-2025-00123456"
     },
     {
-      "url": "https://www.fhir.laziocrea.it/StructureDefinition/ext-canale-prenotazione",
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-canale-prenotazione",
       "valueCodeableConcept": {
         "coding": [
           {
-            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-canale-prenotazione-cup",
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-canale-prenotazione",
             "code": "TELEFONO",
             "display": "Telefono"
           }
@@ -24,20 +24,23 @@
       }
     },
     {
-      "url": "https://www.fhir.laziocrea.it/StructureDefinition/ext-modalita-erogazione",
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-modalita-erogazione",
       "valueCodeableConcept": {
         "coding": [
           {
-            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-modalita-erogazione"
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-modalita-erogazione",
+            "code": "IN_PRESENZA",
+            "display": "In presenza"
           }
         ]
       }
     },
     {
-      "url": "https://www.fhir.laziocrea.it/StructureDefinition/ext-classe-priorita-cup",
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-classe-priorita",
       "valueCodeableConcept": {
         "coding": [
           {
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-classe-priorita",
             "code": "B",
             "display": "Breve"
           }
@@ -47,7 +50,7 @@
   ],
   "identifier": [
     {
-      "system": "https://cup.regione.lombardia.it/prenotazioni",
+      "system": "https://cup.regione.lazio.it/prenotazioni",
       "value": "PRN-2025-00123456"
     }
   ],
@@ -105,7 +108,7 @@
     },
     {
       "actor": {
-        "reference": "Location/ambulatorio-cardio-niguarda"
+        "reference": "Location/ambulatorio-cardio-sandrini"
       },
       "status": "accepted"
     }

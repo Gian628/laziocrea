@@ -1,71 +1,47 @@
 // ============================================================
-// ESTENSIONI - Informazioni specifiche del contesto CUP italiano
+// ESTENSIONI LcCup - CUP Lazio (Lazio Crea) → Telemedicina IRT
 // ============================================================
 
-// ------------------------------------------------------------
-// Estensione: Tipo Agenda
-// Applicata a Schedule - distingue SSN / ALPI / Privato
-// ------------------------------------------------------------
 Extension: ExtTipoAgenda
-Id: ext-tipo-agenda
-Title: "Tipo Agenda CUP"
+Id: lccup-tipo-agenda
+Title: "LcCup - Tipo Agenda"
 Description: """
-  Indica il regime di erogazione dell'agenda: istituzionale SSN,
-  Attività Libero-Professionale Intramuraria (ALPI) o privato.
-  Corrisponde al campo 'tipo agenda' dei sistemi CUP regionali.
+  Regime di erogazione dell'agenda CUP Lazio: SSN, ALPI, privato o convenzionato.
 """
 * ^context[+].type = #element
 * ^context[=].expression = "Schedule"
 * ^status = #draft
 * value[x] only CodeableConcept
-* valueCodeableConcept from VsTipoAgendaCup (required)
+* valueCodeableConcept from VsLcCupTipoAgenda (required)
 
-// ------------------------------------------------------------
-// Estensione: Codice Prenotazione CUP
-// Applicata a Appointment - il numero univoco di prenotazione
-// ------------------------------------------------------------
 Extension: ExtCodicePrenotazione
-Id: ext-codice-prenotazione
-Title: "Codice Prenotazione CUP"
+Id: lccup-codice-prenotazione
+Title: "LcCup - Codice Prenotazione"
 Description: """
-  Codice univoco assegnato dal sistema CUP alla prenotazione.
-  È il codice che viene consegnato al paziente e usato per
-  disdire o modificare l'appuntamento.
+  Codice univoco CUP Lazio consegnato al paziente per disdetta o modifica.
 """
 * ^context[+].type = #element
 * ^context[=].expression = "Appointment"
 * ^status = #draft
 * value[x] only string
 
-// ------------------------------------------------------------
-// Estensione: Canale di Prenotazione
-// Applicata a Appointment - come è stata fatta la prenotazione
-// ------------------------------------------------------------
 Extension: ExtCanalePrenotazione
-Id: ext-canale-prenotazione
-Title: "Canale di Prenotazione"
+Id: lccup-canale-prenotazione
+Title: "LcCup - Canale di Prenotazione"
 Description: """
-  Indica attraverso quale canale è stata effettuata la prenotazione
-  (sportello, telefono, web, app, farmacia, MMG diretto).
+  Canale usato per la prenotazione nel CUP Lazio (sportello, web, telemedicina IRT...).
 """
 * ^context[+].type = #element
 * ^context[=].expression = "Appointment"
 * ^status = #draft
 * value[x] only CodeableConcept
-* valueCodeableConcept from VsCanalePrenotazioneCup (required)
+* valueCodeableConcept from VsLcCupCanalePrenotazione (required)
 
-// ------------------------------------------------------------
-// Estensione: Classe di Priorità CUP
-// Applicata a Appointment e ServiceRequest
-// Mappa le classi U/B/D/P della normativa italiana
-// ------------------------------------------------------------
 Extension: ExtClassePrioritaCup
-Id: ext-classe-priorita-cup
-Title: "Classe di Priorità CUP"
+Id: lccup-classe-priorita
+Title: "LcCup - Classe di Priorità"
 Description: """
-  Classe di priorità della prestazione secondo la normativa italiana
-  sulle liste d'attesa: U (Urgente), B (Breve), D (Differibile),
-  P (Programmabile). Determina i tempi massimi di attesa garantiti.
+  Classe di priorità U/B/D/P secondo normativa liste d'attesa italiana.
 """
 * ^context[+].type = #element
 * ^context[=].expression = "Appointment"
@@ -73,20 +49,14 @@ Description: """
 * ^context[=].expression = "ServiceRequest"
 * ^status = #draft
 * value[x] only CodeableConcept
-* valueCodeableConcept from VsClassePrioritaCup (required)
+* valueCodeableConcept from VsLcCupClassePriorita (required)
 
-// ------------------------------------------------------------
-// Estensione: Modalità di Erogazione
-// Applicata a Schedule e Appointment
-// Distingue in presenza, teleconsulto, telemonitoraggio
-// ------------------------------------------------------------
 Extension: ExtModalitaErogazione
-Id: ext-modalita-erogazione
-Title: "Modalità di Erogazione"
+Id: lccup-modalita-erogazione
+Title: "LcCup - Modalità di Erogazione"
 Description: """
-  Indica come viene erogata la prestazione: in presenza presso la struttura,
-  tramite teleconsulto (videochiamata) o telemonitoraggio.
-  Usata per instradare le prenotazioni CUP Lazio Crea verso la Telemedicina nazionale IRT.
+  In presenza, teleconsulto o telemonitoraggio.
+  Usata da Lazio Crea per instradare le prenotazioni verso IRT.
 """
 * ^context[+].type = #element
 * ^context[=].expression = "Schedule"
@@ -94,19 +64,13 @@ Description: """
 * ^context[=].expression = "Appointment"
 * ^status = #draft
 * value[x] only CodeableConcept
-* valueCodeableConcept from VsModalitaErogazione (required)
+* valueCodeableConcept from VsLcCupModalitaErogazione (required)
 
-// ------------------------------------------------------------
-// Estensione: Link Teleconsulto
-// Applicata a Appointment - URL della sessione video
-// ------------------------------------------------------------
 Extension: ExtLinkTeleconsulto
-Id: ext-link-teleconsulto
-Title: "Link Teleconsulto"
+Id: lccup-link-teleconsulto
+Title: "LcCup - Link Teleconsulto IRT"
 Description: """
-  URL della sessione di teleconsulto restituito dalla Telemedicina nazionale IRT.
-  Viene popolato da Lazio Crea dopo l'invio della prenotazione CUP a IRT
-  quando la modalità di erogazione è TELECONSULTO.
+  URL sessione video restituito da IRT dopo invio prenotazione CUP Lazio.
 """
 * ^context[+].type = #element
 * ^context[=].expression = "Appointment"

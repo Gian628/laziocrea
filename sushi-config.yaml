@@ -1,15 +1,15 @@
-id: it.laziocrea.cup
+id: it.laziocrea.lccup
 canonical: https://www.fhir.laziocrea.it
-name: LazioCreaCUPIRTImplementationGuide
-title: "Gestione Agende CUP Regione Lazio (Lazio Crea) → Telemedicina nazionale IRT"
+name: LcCupImplementationGuide
+title: "LcCup — Agende CUP Lazio (Lazio Crea) → Telemedicina IRT"
 description: >-
-  Implementation Guide FHIR R4 per la gestione delle agende del Centro Unico
-  di Prenotazione (CUP) della Regione Lazio, gestite da Lazio Crea, e per
-  l'invio delle prenotazioni alla piattaforma di Telemedicina nazionale IRT.
-  Modella Schedule, Slot, Appointment e ServiceRequest per l'interoperabilità
-  con la PNLA (Piattaforma Nazionale Liste di Attesa).
+  Implementation Guide FHIR R4 dei profili LcCup per il CUP della Regione Lazio,
+  sviluppata da Lazio Crea (Azienda dei Servizi Regionali in Sanità del Lazio).
+  I profili sono pensati per gestire agende e prenotazioni del CUP Lazio e per
+  integrarsi con la Telemedicina nazionale IRT, inviando agende e appuntamenti
+  a distanza. Modella Schedule, Slot, Appointment e ServiceRequest.
 status: draft
-version: 0.2.0
+version: 0.3.0
 fhirVersion: 4.0.1
 copyrightYear: 2025+
 releaseLabel: ci-build
@@ -19,49 +19,41 @@ publisher:
   name: Lazio Crea
   url: https://www.laziocrea.it
 
-# Dipendenze
-# Nota: hl7.fhir.it.base non è ancora sul registry pubblico.
-# Decommentare quando disponibile:
-# dependencies:
-#   hl7.fhir.it.base:
-#     uri: https://build.fhir.org/ig/hl7-it/base
-#     version: 0.1.1
-
 # Gruppi di risorse per la navigazione nell'IG
 groups:
   Profili:
-    name: Profili CUP
-    description: Profili FHIR per la gestione delle agende CUP
+    name: Profili LcCup
+    description: Profili FHIR LcCup per il CUP Lazio e l'integrazione con IRT
     resources:
-      - StructureDefinition/it-cup-schedule
-      - StructureDefinition/it-cup-slot
-      - StructureDefinition/it-cup-appointment
-      - StructureDefinition/it-cup-service-request
+      - StructureDefinition/lccup-schedule
+      - StructureDefinition/lccup-slot
+      - StructureDefinition/lccup-appointment
+      - StructureDefinition/lccup-service-request
 
   Estensioni:
-    name: Estensioni
-    description: Estensioni per il CUP Regione Lazio e l'invio verso IRT
+    name: Estensioni LcCup
+    description: Estensioni per il CUP Lazio e l'invio verso IRT
     resources:
-      - StructureDefinition/ext-tipo-agenda
-      - StructureDefinition/ext-codice-prenotazione
-      - StructureDefinition/ext-canale-prenotazione
-      - StructureDefinition/ext-classe-priorita-cup
-      - StructureDefinition/ext-modalita-erogazione
-      - StructureDefinition/ext-link-teleconsulto
+      - StructureDefinition/lccup-tipo-agenda
+      - StructureDefinition/lccup-codice-prenotazione
+      - StructureDefinition/lccup-canale-prenotazione
+      - StructureDefinition/lccup-classe-priorita
+      - StructureDefinition/lccup-modalita-erogazione
+      - StructureDefinition/lccup-link-teleconsulto
 
   ValueSets:
-    name: Value Sets
-    description: Terminologie per il CUP Lazio e l'integrazione con IRT
+    name: Terminologia LcCup
+    description: Value set e code system per il CUP Lazio
     resources:
-      - ValueSet/vs-tipo-agenda-cup
-      - ValueSet/vs-canale-prenotazione-cup
-      - ValueSet/vs-classe-priorita-cup
-      - ValueSet/vs-stato-slot-cup
-      - ValueSet/vs-modalita-erogazione
+      - ValueSet/lccup-vs-tipo-agenda
+      - ValueSet/lccup-vs-canale-prenotazione
+      - ValueSet/lccup-vs-classe-priorita
+      - ValueSet/lccup-vs-stato-slot
+      - ValueSet/lccup-vs-modalita-erogazione
 
   Esempi:
     name: Esempi
-    description: Esempi per prenotazione CUP e invio a Telemedicina nazionale IRT
+    description: Esempi CUP Lazio — prenotazione in presenza e teleconsulto IRT
     resources:
       - Schedule/esempio-agenda-cardiologia
       - Slot/esempio-slot-libero
@@ -72,12 +64,6 @@ groups:
       - Slot/esempio-slot-teleconsulto
       - Appointment/esempio-prenotazione-teleconsulto
 
-pages:
-  index.md:
-    title: Home
-  relazioni.md:
-    title: Modello e Relazioni tra Risorse
-  scenari.md:
-    title: Scenari d'uso CUP
-  downloads.md:
-    title: Download
+# Menu minimo per SUSHI / ImplementationGuide.json (non è la guida Simplifier in guides/)
+menu:
+  Artifacts: artifacts.html

@@ -3,7 +3,7 @@
   "id": "esempio-slot-libero",
   "meta": {
     "profile": [
-      "https://www.fhir.laziocrea.it/StructureDefinition/it-cup-slot"
+      "https://www.fhir.laziocrea.it/StructureDefinition/lccup-slot"
     ]
   },
   "schedule": {

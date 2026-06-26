@@ -3,7 +3,7 @@
   "id": "sede-virtuale-teleconsulto",
   "status": "active",
   "name": "Telemedicina nazionale IRT",
-  "description": "Sede virtuale per erogazione teleconsulti via IRT",
+  "description": "Sede virtuale per teleconsulti CUP Lazio",
   "mode": "instance",
   "type": [
     {

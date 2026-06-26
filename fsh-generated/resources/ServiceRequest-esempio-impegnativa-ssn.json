@@ -3,17 +3,17 @@
   "id": "esempio-impegnativa-ssn",
   "meta": {
     "profile": [
-      "https://www.fhir.laziocrea.it/StructureDefinition/it-cup-service-request"
+      "https://www.fhir.laziocrea.it/StructureDefinition/lccup-service-request"
     ]
   },
   "intent": "order",
   "extension": [
     {
-      "url": "https://www.fhir.laziocrea.it/StructureDefinition/ext-classe-priorita-cup",
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-classe-priorita",
       "valueCodeableConcept": {
         "coding": [
           {
-            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-classe-priorita-cup",
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-classe-priorita",
             "code": "B",
             "display": "Breve"
           }

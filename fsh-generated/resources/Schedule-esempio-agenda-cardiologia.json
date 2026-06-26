@@ -3,16 +3,16 @@
   "id": "esempio-agenda-cardiologia",
   "meta": {
     "profile": [
-      "https://www.fhir.laziocrea.it/StructureDefinition/it-cup-schedule"
+      "https://www.fhir.laziocrea.it/StructureDefinition/lccup-schedule"
     ]
   },
   "extension": [
     {
-      "url": "https://www.fhir.laziocrea.it/StructureDefinition/ext-tipo-agenda",
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-tipo-agenda",
       "valueCodeableConcept": {
         "coding": [
           {
-            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-tipo-agenda-cup",
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-tipo-agenda",
             "code": "SSN",
             "display": "SSN Istituzionale"
           }
@@ -20,11 +20,11 @@
       }
     },
     {
-      "url": "https://www.fhir.laziocrea.it/StructureDefinition/ext-modalita-erogazione",
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-modalita-erogazione",
       "valueCodeableConcept": {
         "coding": [
           {
-            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-modalita-erogazione",
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-modalita-erogazione",
             "code": "IN_PRESENZA",
             "display": "In presenza"
           }
@@ -34,8 +34,8 @@
   ],
   "identifier": [
     {
-      "system": "https://cup.regione.lombardia.it/agende",
-      "value": "AGN-NIGUARDA-CARDIO-001"
+      "system": "https://cup.regione.lazio.it/agende",
+      "value": "AGN-LAZIO-CARDIO-001"
     }
   ],
   "active": true,
@@ -63,7 +63,7 @@
   ],
   "actor": [
     {
-      "reference": "Location/ambulatorio-cardio-niguarda"
+      "reference": "Location/ambulatorio-cardio-sandrini"
     }
   ],
   "planningHorizon": {

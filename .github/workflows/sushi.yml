@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ main, release ]
 
+# Necessario per il push del commit automatico su fsh-generated/ (evita errore 403)
+permissions:
+  contents: write
+
 jobs:
   sushi:
     runs-on: ubuntu-latest
