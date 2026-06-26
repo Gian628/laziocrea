@@ -3,7 +3,7 @@
     "outputFile": "Appointment-esempio-prenotazione-teleconsulto.json",
     "fshName": "esempio-prenotazione-teleconsulto",
     "fshType": "Instance",
-    "fshFile": "examples\\Examples.fsh",
+    "fshFile": "examples/Examples.fsh",
     "startLine": 175,
     "endLine": 212
   },
@@ -11,7 +11,7 @@
     "outputFile": "Appointment-esempio-prenotazione-visita.json",
     "fshName": "esempio-prenotazione-visita",
     "fshType": "Instance",
-    "fshFile": "examples\\Examples.fsh",
+    "fshFile": "examples/Examples.fsh",
     "startLine": 74,
     "endLine": 110
   },
@@ -19,7 +19,7 @@
     "outputFile": "CodeSystem-lccup-cs-canale-prenotazione.json",
     "fshName": "CsLcCupCanalePrenotazione",
     "fshType": "CodeSystem",
-    "fshFile": "valuesets\\ValueSets.fsh",
+    "fshFile": "valuesets/ValueSets.fsh",
     "startLine": 31,
     "endLine": 42
   },
@@ -27,7 +27,7 @@
     "outputFile": "CodeSystem-lccup-cs-classe-priorita.json",
     "fshName": "CsLcCupClassePriorita",
     "fshType": "CodeSystem",
-    "fshFile": "valuesets\\ValueSets.fsh",
+    "fshFile": "valuesets/ValueSets.fsh",
     "startLine": 69,
     "endLine": 77
   },
@@ -35,7 +35,7 @@
     "outputFile": "CodeSystem-lccup-cs-modalita-erogazione.json",
     "fshName": "CsLcCupModalitaErogazione",
     "fshType": "CodeSystem",
-    "fshFile": "valuesets\\ValueSets.fsh",
+    "fshFile": "valuesets/ValueSets.fsh",
     "startLine": 52,
     "endLine": 59
   },
@@ -43,7 +43,7 @@
     "outputFile": "CodeSystem-lccup-cs-tipo-agenda.json",
     "fshName": "CsLcCupTipoAgenda",
     "fshType": "CodeSystem",
-    "fshFile": "valuesets\\ValueSets.fsh",
+    "fshFile": "valuesets/ValueSets.fsh",
     "startLine": 13,
     "endLine": 21
   },
@@ -51,7 +51,7 @@
     "outputFile": "Location-sede-virtuale-teleconsulto.json",
     "fshName": "sede-virtuale-teleconsulto",
     "fshType": "Instance",
-    "fshFile": "examples\\Examples.fsh",
+    "fshFile": "examples/Examples.fsh",
     "startLine": 115,
     "endLine": 127
   },
@@ -59,7 +59,7 @@
     "outputFile": "Schedule-esempio-agenda-cardiologia.json",
     "fshName": "esempio-agenda-cardiologia",
     "fshType": "Instance",
-    "fshFile": "examples\\Examples.fsh",
+    "fshFile": "examples/Examples.fsh",
     "startLine": 8,
     "endLine": 30
   },
@@ -67,7 +67,7 @@
     "outputFile": "Schedule-esempio-agenda-teleconsulto.json",
     "fshName": "esempio-agenda-teleconsulto",
     "fshType": "Instance",
-    "fshFile": "examples\\Examples.fsh",
+    "fshFile": "examples/Examples.fsh",
     "startLine": 132,
     "endLine": 154
   },
@@ -75,7 +75,7 @@
     "outputFile": "ServiceRequest-esempio-impegnativa-ssn.json",
     "fshName": "esempio-impegnativa-ssn",
     "fshType": "Instance",
-    "fshFile": "examples\\Examples.fsh",
+    "fshFile": "examples/Examples.fsh",
     "startLine": 51,
     "endLine": 69
   },
@@ -83,7 +83,7 @@
     "outputFile": "Slot-esempio-slot-libero.json",
     "fshName": "esempio-slot-libero",
     "fshType": "Instance",
-    "fshFile": "examples\\Examples.fsh",
+    "fshFile": "examples/Examples.fsh",
     "startLine": 35,
     "endLine": 46
   },
@@ -91,7 +91,7 @@
     "outputFile": "Slot-esempio-slot-teleconsulto.json",
     "fshName": "esempio-slot-teleconsulto",
     "fshType": "Instance",
-    "fshFile": "examples\\Examples.fsh",
+    "fshFile": "examples/Examples.fsh",
     "startLine": 159,
     "endLine": 170
   },
@@ -99,7 +99,7 @@
     "outputFile": "StructureDefinition-lccup-appointment.json",
     "fshName": "LcCupAppointment",
     "fshType": "Profile",
-    "fshFile": "profiles\\LcCupAppointment.fsh",
+    "fshFile": "profiles/LcCupAppointment.fsh",
     "startLine": 5,
     "endLine": 101
   },
@@ -107,7 +107,7 @@
     "outputFile": "StructureDefinition-lccup-canale-prenotazione.json",
     "fshName": "ExtCanalePrenotazione",
     "fshType": "Extension",
-    "fshFile": "extensions\\Extensions.fsh",
+    "fshFile": "extensions/Extensions.fsh",
     "startLine": 28,
     "endLine": 38
   },
@@ -115,7 +115,7 @@
     "outputFile": "StructureDefinition-lccup-classe-priorita.json",
     "fshName": "ExtClassePrioritaCup",
     "fshType": "Extension",
-    "fshFile": "extensions\\Extensions.fsh",
+    "fshFile": "extensions/Extensions.fsh",
     "startLine": 40,
     "endLine": 52
   },
@@ -123,7 +123,7 @@
     "outputFile": "StructureDefinition-lccup-codice-prenotazione.json",
     "fshName": "ExtCodicePrenotazione",
     "fshType": "Extension",
-    "fshFile": "extensions\\Extensions.fsh",
+    "fshFile": "extensions/Extensions.fsh",
     "startLine": 17,
     "endLine": 26
   },
@@ -131,7 +131,7 @@
     "outputFile": "StructureDefinition-lccup-link-teleconsulto.json",
     "fshName": "ExtLinkTeleconsulto",
     "fshType": "Extension",
-    "fshFile": "extensions\\Extensions.fsh",
+    "fshFile": "extensions/Extensions.fsh",
     "startLine": 69,
     "endLine": 78
   },
@@ -139,7 +139,7 @@
     "outputFile": "StructureDefinition-lccup-modalita-erogazione.json",
     "fshName": "ExtModalitaErogazione",
     "fshType": "Extension",
-    "fshFile": "extensions\\Extensions.fsh",
+    "fshFile": "extensions/Extensions.fsh",
     "startLine": 54,
     "endLine": 67
   },
@@ -147,7 +147,7 @@
     "outputFile": "StructureDefinition-lccup-schedule.json",
     "fshName": "LcCupSchedule",
     "fshType": "Profile",
-    "fshFile": "profiles\\LcCupSchedule.fsh",
+    "fshFile": "profiles/LcCupSchedule.fsh",
     "startLine": 8,
     "endLine": 57
   },
@@ -155,7 +155,7 @@
     "outputFile": "StructureDefinition-lccup-service-request.json",
     "fshName": "LcCupServiceRequest",
     "fshType": "Profile",
-    "fshFile": "profiles\\LcCupServiceRequest.fsh",
+    "fshFile": "profiles/LcCupServiceRequest.fsh",
     "startLine": 5,
     "endLine": 49
   },
@@ -163,7 +163,7 @@
     "outputFile": "StructureDefinition-lccup-slot.json",
     "fshName": "LcCupSlot",
     "fshType": "Profile",
-    "fshFile": "profiles\\LcCupSlot.fsh",
+    "fshFile": "profiles/LcCupSlot.fsh",
     "startLine": 5,
     "endLine": 41
   },
@@ -171,7 +171,7 @@
     "outputFile": "StructureDefinition-lccup-tipo-agenda.json",
     "fshName": "ExtTipoAgenda",
     "fshType": "Extension",
-    "fshFile": "extensions\\Extensions.fsh",
+    "fshFile": "extensions/Extensions.fsh",
     "startLine": 5,
     "endLine": 15
   },
@@ -179,7 +179,7 @@
     "outputFile": "ValueSet-lccup-vs-canale-prenotazione.json",
     "fshName": "VsLcCupCanalePrenotazione",
     "fshType": "ValueSet",
-    "fshFile": "valuesets\\ValueSets.fsh",
+    "fshFile": "valuesets/ValueSets.fsh",
     "startLine": 23,
     "endLine": 29
   },
@@ -187,7 +187,7 @@
     "outputFile": "ValueSet-lccup-vs-classe-priorita.json",
     "fshName": "VsLcCupClassePriorita",
     "fshType": "ValueSet",
-    "fshFile": "valuesets\\ValueSets.fsh",
+    "fshFile": "valuesets/ValueSets.fsh",
     "startLine": 61,
     "endLine": 67
   },
@@ -195,7 +195,7 @@
     "outputFile": "ValueSet-lccup-vs-modalita-erogazione.json",
     "fshName": "VsLcCupModalitaErogazione",
     "fshType": "ValueSet",
-    "fshFile": "valuesets\\ValueSets.fsh",
+    "fshFile": "valuesets/ValueSets.fsh",
     "startLine": 44,
     "endLine": 50
   },
@@ -203,7 +203,7 @@
     "outputFile": "ValueSet-lccup-vs-stato-slot.json",
     "fshName": "VsLcCupStatoSlot",
     "fshType": "ValueSet",
-    "fshFile": "valuesets\\ValueSets.fsh",
+    "fshFile": "valuesets/ValueSets.fsh",
     "startLine": 79,
     "endLine": 88
   },
@@ -211,7 +211,7 @@
     "outputFile": "ValueSet-lccup-vs-tipo-agenda.json",
     "fshName": "VsLcCupTipoAgenda",
     "fshType": "ValueSet",
-    "fshFile": "valuesets\\ValueSets.fsh",
+    "fshFile": "valuesets/ValueSets.fsh",
     "startLine": 5,
     "endLine": 11
   }
