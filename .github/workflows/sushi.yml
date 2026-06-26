@@ -1,10 +1,12 @@
 name: Build FHIR IG with SUSHI
 
+# DISATTIVATO temporaneamente — per riattivare, decommentare push/pull_request sotto
 on:
-  push:
-    branches: [ main, develop, release ]
-  pull_request:
-    branches: [ main, release ]
+  workflow_dispatch:   # avvio manuale da GitHub → Actions → Run workflow
+#  push:
+#    branches: [ main, develop, release ]
+#  pull_request:
+#    branches: [ main, release ]
 
 # Necessario per il push del commit automatico su fsh-generated/ (evita errore 403)
 permissions:
