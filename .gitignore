@@ -1,0 +1,35 @@
+# =============================================
+# .gitignore per progetto FHIR FSH / SUSHI
+# =============================================
+
+# Output SUSHI - rigenerati automaticamente, NON versionare
+# (il GitHub Action li committa solo su main)
+# Decommentare la riga sotto se volete ignorarli completamente:
+# fsh-generated/
+
+# Cache locale del publisher e pacchetti FHIR
+input-cache/
+.fhir/
+
+# Output dell'IG Publisher (sito HTML generato)
+output/
+temp/
+template/
+
+# File temporanei dell'IG Publisher
+_updatePublisher.sh
+_updatePublisher.bat
+_genonce.sh
+_genonce.bat
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/settings.json
+*.swp
+*~
+
+# Node (se usate npm localmente)
+node_modules/

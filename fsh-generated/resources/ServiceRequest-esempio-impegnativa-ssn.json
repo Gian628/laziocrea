@@ -1,0 +1,53 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "esempio-impegnativa-ssn",
+  "meta": {
+    "profile": [
+      "https://www.fhir.laziocrea.it/StructureDefinition/it-cup-service-request"
+    ]
+  },
+  "intent": "order",
+  "extension": [
+    {
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/ext-classe-priorita-cup",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-classe-priorita-cup",
+            "code": "B",
+            "display": "Breve"
+          }
+        ]
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://sistemats.sanita.finanze.it/NRE",
+      "value": "1200A1234567890"
+    }
+  ],
+  "status": "active",
+  "code": {
+    "coding": [
+      {
+        "system": "https://www.salute.gov.it/NomenclatoreTariffario",
+        "code": "89.7",
+        "display": "Visita medica generale / cardiologica"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/paziente-mario-rossi"
+  },
+  "requester": {
+    "reference": "Practitioner/mmg-dr-bianchi"
+  },
+  "authoredOn": "2025-04-08",
+  "priority": "urgent",
+  "reasonCode": [
+    {
+      "text": "Ipertensione arteriosa in scompenso - dolore toracico recidivante"
+    }
+  ]
+}

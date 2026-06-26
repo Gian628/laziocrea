@@ -1,0 +1,33 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CsClassePrioritaCup",
+  "id": "cs-classe-priorita-cup",
+  "title": "Codici Classe Priorità CUP",
+  "url": "https://www.fhir.laziocrea.it/CodeSystem/cs-classe-priorita-cup",
+  "concept": [
+    {
+      "code": "U",
+      "display": "Urgente",
+      "definition": "Da eseguire entro 72 ore"
+    },
+    {
+      "code": "B",
+      "display": "Breve",
+      "definition": "Da eseguire entro 10 giorni"
+    },
+    {
+      "code": "D",
+      "display": "Differibile",
+      "definition": "Da eseguire entro 30 gg (visita) o 60 gg (accertamento)"
+    },
+    {
+      "code": "P",
+      "display": "Programmabile",
+      "definition": "Da eseguire entro 120 giorni"
+    }
+  ],
+  "experimental": true,
+  "count": 4
+}

@@ -1,0 +1,17 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "VsClassePrioritaCup",
+  "id": "vs-classe-priorita-cup",
+  "title": "Classe di Priorità CUP",
+  "description": "Classi di priorità per le prestazioni ambulatoriali, secondo la normativa\nitaliana sulle liste d'attesa (DPCM 2017 e L.107/2024):\n- U: entro 72 ore\n- B: entro 10 giorni\n- D: entro 30 giorni (visite) / 60 giorni (accertamenti)\n- P: entro 120 giorni",
+  "url": "https://www.fhir.laziocrea.it/ValueSet/vs-classe-priorita-cup",
+  "experimental": true,
+  "compose": {
+    "include": [
+      {
+        "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-classe-priorita-cup"
+      }
+    ]
+  }
+}

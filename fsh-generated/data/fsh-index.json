@@ -1,0 +1,218 @@
+[
+  {
+    "outputFile": "Appointment-esempio-prenotazione-teleconsulto.json",
+    "fshName": "esempio-prenotazione-teleconsulto",
+    "fshType": "Instance",
+    "fshFile": "examples\\Examples.fsh",
+    "startLine": 186,
+    "endLine": 223
+  },
+  {
+    "outputFile": "Appointment-esempio-prenotazione-visita.json",
+    "fshName": "esempio-prenotazione-visita",
+    "fshType": "Instance",
+    "fshFile": "examples\\Examples.fsh",
+    "startLine": 81,
+    "endLine": 118
+  },
+  {
+    "outputFile": "CodeSystem-cs-canale-prenotazione-cup.json",
+    "fshName": "CsCanalePrenotazioneCup",
+    "fshType": "CodeSystem",
+    "fshFile": "valuesets\\ValueSets.fsh",
+    "startLine": 39,
+    "endLine": 50
+  },
+  {
+    "outputFile": "CodeSystem-cs-classe-priorita-cup.json",
+    "fshName": "CsClassePrioritaCup",
+    "fshType": "CodeSystem",
+    "fshFile": "valuesets\\ValueSets.fsh",
+    "startLine": 91,
+    "endLine": 99
+  },
+  {
+    "outputFile": "CodeSystem-cs-modalita-erogazione.json",
+    "fshName": "CsModalitaErogazione",
+    "fshType": "CodeSystem",
+    "fshFile": "valuesets\\ValueSets.fsh",
+    "startLine": 63,
+    "endLine": 70
+  },
+  {
+    "outputFile": "CodeSystem-cs-tipo-agenda-cup.json",
+    "fshName": "CsTipoAgendaCup",
+    "fshType": "CodeSystem",
+    "fshFile": "valuesets\\ValueSets.fsh",
+    "startLine": 17,
+    "endLine": 25
+  },
+  {
+    "outputFile": "Location-sede-virtuale-teleconsulto.json",
+    "fshName": "sede-virtuale-teleconsulto",
+    "fshType": "Instance",
+    "fshFile": "examples\\Examples.fsh",
+    "startLine": 123,
+    "endLine": 135
+  },
+  {
+    "outputFile": "Schedule-esempio-agenda-cardiologia.json",
+    "fshName": "esempio-agenda-cardiologia",
+    "fshType": "Instance",
+    "fshFile": "examples\\Examples.fsh",
+    "startLine": 9,
+    "endLine": 31
+  },
+  {
+    "outputFile": "Schedule-esempio-agenda-teleconsulto.json",
+    "fshName": "esempio-agenda-teleconsulto",
+    "fshType": "Instance",
+    "fshFile": "examples\\Examples.fsh",
+    "startLine": 140,
+    "endLine": 162
+  },
+  {
+    "outputFile": "ServiceRequest-esempio-impegnativa-ssn.json",
+    "fshName": "esempio-impegnativa-ssn",
+    "fshType": "Instance",
+    "fshFile": "examples\\Examples.fsh",
+    "startLine": 55,
+    "endLine": 73
+  },
+  {
+    "outputFile": "Slot-esempio-slot-libero.json",
+    "fshName": "esempio-slot-libero",
+    "fshType": "Instance",
+    "fshFile": "examples\\Examples.fsh",
+    "startLine": 37,
+    "endLine": 48
+  },
+  {
+    "outputFile": "Slot-esempio-slot-teleconsulto.json",
+    "fshName": "esempio-slot-teleconsulto",
+    "fshType": "Instance",
+    "fshFile": "examples\\Examples.fsh",
+    "startLine": 168,
+    "endLine": 179
+  },
+  {
+    "outputFile": "StructureDefinition-ext-canale-prenotazione.json",
+    "fshName": "ExtCanalePrenotazione",
+    "fshType": "Extension",
+    "fshFile": "extensions\\Extensions.fsh",
+    "startLine": 44,
+    "endLine": 55
+  },
+  {
+    "outputFile": "StructureDefinition-ext-classe-priorita-cup.json",
+    "fshName": "ExtClassePrioritaCup",
+    "fshType": "Extension",
+    "fshFile": "extensions\\Extensions.fsh",
+    "startLine": 62,
+    "endLine": 76
+  },
+  {
+    "outputFile": "StructureDefinition-ext-codice-prenotazione.json",
+    "fshName": "ExtCodicePrenotazione",
+    "fshType": "Extension",
+    "fshFile": "extensions\\Extensions.fsh",
+    "startLine": 27,
+    "endLine": 38
+  },
+  {
+    "outputFile": "StructureDefinition-ext-link-teleconsulto.json",
+    "fshName": "ExtLinkTeleconsulto",
+    "fshType": "Extension",
+    "fshFile": "extensions\\Extensions.fsh",
+    "startLine": 103,
+    "endLine": 114
+  },
+  {
+    "outputFile": "StructureDefinition-ext-modalita-erogazione.json",
+    "fshName": "ExtModalitaErogazione",
+    "fshType": "Extension",
+    "fshFile": "extensions\\Extensions.fsh",
+    "startLine": 83,
+    "endLine": 97
+  },
+  {
+    "outputFile": "StructureDefinition-ext-tipo-agenda.json",
+    "fshName": "ExtTipoAgenda",
+    "fshType": "Extension",
+    "fshFile": "extensions\\Extensions.fsh",
+    "startLine": 9,
+    "endLine": 21
+  },
+  {
+    "outputFile": "StructureDefinition-it-cup-appointment.json",
+    "fshName": "ITCUPAppointment",
+    "fshType": "Profile",
+    "fshFile": "profiles\\ITCUPAppointment.fsh",
+    "startLine": 18,
+    "endLine": 155
+  },
+  {
+    "outputFile": "StructureDefinition-it-cup-schedule.json",
+    "fshName": "ITCUPSchedule",
+    "fshType": "Profile",
+    "fshFile": "profiles\\ITCUPSchedule.fsh",
+    "startLine": 9,
+    "endLine": 77
+  },
+  {
+    "outputFile": "StructureDefinition-it-cup-service-request.json",
+    "fshName": "ITCUPServiceRequest",
+    "fshType": "Profile",
+    "fshFile": "profiles\\ITCUPServiceRequest.fsh",
+    "startLine": 13,
+    "endLine": 92
+  },
+  {
+    "outputFile": "StructureDefinition-it-cup-slot.json",
+    "fshName": "ITCUPSlot",
+    "fshType": "Profile",
+    "fshFile": "profiles\\ITCUPSlot.fsh",
+    "startLine": 13,
+    "endLine": 64
+  },
+  {
+    "outputFile": "ValueSet-vs-canale-prenotazione-cup.json",
+    "fshName": "VsCanalePrenotazioneCup",
+    "fshType": "ValueSet",
+    "fshFile": "valuesets\\ValueSets.fsh",
+    "startLine": 31,
+    "endLine": 37
+  },
+  {
+    "outputFile": "ValueSet-vs-classe-priorita-cup.json",
+    "fshName": "VsClassePrioritaCup",
+    "fshType": "ValueSet",
+    "fshFile": "valuesets\\ValueSets.fsh",
+    "startLine": 76,
+    "endLine": 89
+  },
+  {
+    "outputFile": "ValueSet-vs-modalita-erogazione.json",
+    "fshName": "VsModalitaErogazione",
+    "fshType": "ValueSet",
+    "fshFile": "valuesets\\ValueSets.fsh",
+    "startLine": 55,
+    "endLine": 61
+  },
+  {
+    "outputFile": "ValueSet-vs-stato-slot-cup.json",
+    "fshName": "VsStatoSlotCup",
+    "fshType": "ValueSet",
+    "fshFile": "valuesets\\ValueSets.fsh",
+    "startLine": 104,
+    "endLine": 113
+  },
+  {
+    "outputFile": "ValueSet-vs-tipo-agenda-cup.json",
+    "fshName": "VsTipoAgendaCup",
+    "fshType": "ValueSet",
+    "fshFile": "valuesets\\ValueSets.fsh",
+    "startLine": 9,
+    "endLine": 15
+  }
+]

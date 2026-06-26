@@ -1,0 +1,113 @@
+{
+  "resourceType": "Appointment",
+  "id": "esempio-prenotazione-visita",
+  "meta": {
+    "profile": [
+      "https://www.fhir.laziocrea.it/StructureDefinition/it-cup-appointment"
+    ]
+  },
+  "extension": [
+    {
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/ext-codice-prenotazione",
+      "valueString": "CUP-2025-00123456"
+    },
+    {
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/ext-canale-prenotazione",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-canale-prenotazione-cup",
+            "code": "TELEFONO",
+            "display": "Telefono"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/ext-modalita-erogazione",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-modalita-erogazione"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/ext-classe-priorita-cup",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "B",
+            "display": "Breve"
+          }
+        ]
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://cup.regione.lombardia.it/prenotazioni",
+      "value": "PRN-2025-00123456"
+    }
+  ],
+  "status": "booked",
+  "serviceType": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "408471009",
+          "display": "Visita cardiologica"
+        }
+      ]
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394579002",
+          "display": "Cardiologia"
+        }
+      ]
+    }
+  ],
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/esempio-impegnativa-ssn"
+    }
+  ],
+  "slot": [
+    {
+      "reference": "Slot/esempio-slot-libero"
+    }
+  ],
+  "start": "2025-04-15T09:00:00+01:00",
+  "end": "2025-04-15T09:20:00+01:00",
+  "minutesDuration": 20,
+  "created": "2025-04-09T11:32:00+01:00",
+  "comment": "Prima visita cardiologica",
+  "patientInstruction": "Portare esami del sangue recenti ed ECG. Presentarsi 10 minuti prima.",
+  "participant": [
+    {
+      "actor": {
+        "reference": "Patient/paziente-mario-rossi"
+      },
+      "status": "accepted"
+    },
+    {
+      "actor": {
+        "reference": "Practitioner/dr-verdi-cardiologo"
+      },
+      "status": "accepted"
+    },
+    {
+      "actor": {
+        "reference": "Location/ambulatorio-cardio-niguarda"
+      },
+      "status": "accepted"
+    }
+  ]
+}

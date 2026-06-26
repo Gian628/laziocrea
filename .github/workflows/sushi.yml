@@ -1,0 +1,43 @@
+name: Build FHIR IG with SUSHI
+
+on:
+  push:
+    branches: [ main, develop, release ]
+  pull_request:
+    branches: [ main, release ]
+
+jobs:
+  sushi:
+    runs-on: ubuntu-latest
+    name: Compile FSH → FHIR JSON
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install SUSHI
+        run: npm install -g fsh-sushi
+
+      - name: Run SUSHI
+        run: sushi .
+
+      - name: Show SUSHI results
+        run: |
+          echo "=== Generated files ==="
+          find fsh-generated/ -name "*.json" | sort
+
+      # Commit i JSON generati su main e release (branch collegabili a Simplifier)
+      # Simplifier si aggiorna via webhook sul branch configurato nel progetto
+      - name: Commit generated FHIR JSON
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/release')
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add fsh-generated/
+          git diff --staged --quiet || git commit -m "chore: rigenera FHIR JSON da FSH [skip ci]"
+          git push

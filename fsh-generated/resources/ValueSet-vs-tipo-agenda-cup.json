@@ -1,0 +1,17 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "VsTipoAgendaCup",
+  "id": "vs-tipo-agenda-cup",
+  "title": "Tipo Agenda CUP",
+  "description": "Classificazione del tipo di agenda gestita dal CUP",
+  "url": "https://www.fhir.laziocrea.it/ValueSet/vs-tipo-agenda-cup",
+  "experimental": true,
+  "compose": {
+    "include": [
+      {
+        "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-tipo-agenda-cup"
+      }
+    ]
+  }
+}

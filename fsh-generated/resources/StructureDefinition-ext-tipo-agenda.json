@@ -1,0 +1,54 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ext-tipo-agenda",
+  "url": "https://www.fhir.laziocrea.it/StructureDefinition/ext-tipo-agenda",
+  "name": "ExtTipoAgenda",
+  "title": "Tipo Agenda CUP",
+  "status": "draft",
+  "description": "Indica il regime di erogazione dell'agenda: istituzionale SSN,\nAttività Libero-Professionale Intramuraria (ALPI) o privato.\nCorrisponde al campo 'tipo agenda' dei sistemi CUP regionali.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Schedule"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Tipo Agenda CUP",
+        "definition": "Indica il regime di erogazione dell'agenda: istituzionale SSN,\nAttività Libero-Professionale Intramuraria (ALPI) o privato.\nCorrisponde al campo 'tipo agenda' dei sistemi CUP regionali."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://www.fhir.laziocrea.it/StructureDefinition/ext-tipo-agenda"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.fhir.laziocrea.it/ValueSet/vs-tipo-agenda-cup"
+        }
+      }
+    ]
+  }
+}

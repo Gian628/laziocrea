@@ -1,0 +1,336 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "it.laziocrea.cup",
+  "url": "https://www.fhir.laziocrea.it/ImplementationGuide/it.laziocrea.cup",
+  "version": "0.2.0",
+  "name": "LazioCreaCUPIRTImplementationGuide",
+  "title": "Gestione Agende CUP Regione Lazio (Lazio Crea) → Telemedicina nazionale IRT",
+  "status": "draft",
+  "publisher": "Lazio Crea",
+  "contact": [
+    {
+      "name": "Lazio Crea",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.laziocrea.it"
+        }
+      ]
+    }
+  ],
+  "description": "Implementation Guide FHIR R4 per la gestione delle agende del Centro Unico di Prenotazione (CUP) della Regione Lazio, gestite da Lazio Crea, e per l'invio delle prenotazioni alla piattaforma di Telemedicina nazionale IRT. Modella Schedule, Slot, Appointment e ServiceRequest per l'interoperabilità con la PNLA (Piattaforma Nazionale Liste di Attesa).",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "IT",
+          "system": "urn:iso:std:iso:3166",
+          "display": "Italy"
+        }
+      ]
+    }
+  ],
+  "packageId": "it.laziocrea.cup",
+  "license": "CC0-1.0",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "definition": {
+    "grouping": [
+      {
+        "id": "Profili",
+        "name": "Profili CUP",
+        "description": "Profili FHIR per la gestione delle agende CUP"
+      },
+      {
+        "id": "Estensioni",
+        "name": "Estensioni",
+        "description": "Estensioni per il CUP Regione Lazio e l'invio verso IRT"
+      },
+      {
+        "id": "ValueSets",
+        "name": "Value Sets",
+        "description": "Terminologie per il CUP Lazio e l'integrazione con IRT"
+      },
+      {
+        "id": "Esempi",
+        "name": "Esempi",
+        "description": "Esempi per prenotazione CUP e invio a Telemedicina nazionale IRT"
+      }
+    ],
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/ext-canale-prenotazione"
+        },
+        "name": "Canale di Prenotazione",
+        "description": "Indica attraverso quale canale è stata effettuata la prenotazione\n(sportello, telefono, web, app, farmacia, MMG diretto).",
+        "exampleBoolean": false,
+        "groupingId": "Estensioni"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/vs-canale-prenotazione-cup"
+        },
+        "name": "Canale Prenotazione CUP",
+        "description": "Modalità attraverso cui è stata effettuata la prenotazione",
+        "exampleBoolean": false,
+        "groupingId": "ValueSets"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ext-classe-priorita-cup"
+        },
+        "name": "Classe di Priorità CUP",
+        "description": "Classe di priorità della prestazione secondo la normativa italiana\nsulle liste d'attesa: U (Urgente), B (Breve), D (Differibile),\nP (Programmabile). Determina i tempi massimi di attesa garantiti.",
+        "exampleBoolean": false,
+        "groupingId": "Estensioni"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/vs-classe-priorita-cup"
+        },
+        "name": "Classe di Priorità CUP",
+        "description": "Classi di priorità per le prestazioni ambulatoriali, secondo la normativa\nitaliana sulle liste d'attesa (DPCM 2017 e L.107/2024):\n- U: entro 72 ore\n- B: entro 10 giorni\n- D: entro 30 giorni (visite) / 60 giorni (accertamenti)\n- P: entro 120 giorni",
+        "exampleBoolean": false,
+        "groupingId": "ValueSets"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ext-codice-prenotazione"
+        },
+        "name": "Codice Prenotazione CUP",
+        "description": "Codice univoco assegnato dal sistema CUP alla prenotazione.\nÈ il codice che viene consegnato al paziente e usato per\ndisdire o modificare l'appuntamento.",
+        "exampleBoolean": false,
+        "groupingId": "Estensioni"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/cs-canale-prenotazione-cup"
+        },
+        "name": "Codici Canale Prenotazione CUP",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/cs-classe-priorita-cup"
+        },
+        "name": "Codici Classe Priorità CUP",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/cs-modalita-erogazione"
+        },
+        "name": "Codici Modalità di Erogazione",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/cs-tipo-agenda-cup"
+        },
+        "name": "Codici Tipo Agenda CUP",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Schedule/esempio-agenda-cardiologia"
+        },
+        "name": "Esempio Agenda Cardiologia SSN",
+        "description": "Agenda dell'ambulatorio di Cardiologia - regime SSN",
+        "exampleCanonical": "https://www.fhir.laziocrea.it/StructureDefinition/it-cup-schedule",
+        "groupingId": "Esempi"
+      },
+      {
+        "reference": {
+          "reference": "Schedule/esempio-agenda-teleconsulto"
+        },
+        "name": "Esempio Agenda Teleconsulto Cardiologia",
+        "description": "Agenda CUP Lazio dedicata ai teleconsulti cardiologici inviati a IRT",
+        "exampleCanonical": "https://www.fhir.laziocrea.it/StructureDefinition/it-cup-schedule",
+        "groupingId": "Esempi"
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/esempio-impegnativa-ssn"
+        },
+        "name": "Esempio Impegnativa SSN - Visita Cardiologica",
+        "description": "Impegnativa dematerializzata del MMG per visita cardiologica",
+        "exampleCanonical": "https://www.fhir.laziocrea.it/StructureDefinition/it-cup-service-request",
+        "groupingId": "Esempi"
+      },
+      {
+        "reference": {
+          "reference": "Appointment/esempio-prenotazione-visita"
+        },
+        "name": "Esempio Prenotazione - Visita Cardiologica",
+        "description": "Prenotazione CUP per visita cardiologica, classe B, canale telefonico",
+        "exampleCanonical": "https://www.fhir.laziocrea.it/StructureDefinition/it-cup-appointment",
+        "groupingId": "Esempi"
+      },
+      {
+        "reference": {
+          "reference": "Appointment/esempio-prenotazione-teleconsulto"
+        },
+        "name": "Esempio Prenotazione Teleconsulto Cardiologia",
+        "description": "Prenotazione CUP Lazio inviata a Telemedicina nazionale IRT con link video",
+        "exampleCanonical": "https://www.fhir.laziocrea.it/StructureDefinition/it-cup-appointment",
+        "groupingId": "Esempi"
+      },
+      {
+        "reference": {
+          "reference": "Slot/esempio-slot-libero"
+        },
+        "name": "Esempio Slot Libero - Visita Cardiologica",
+        "description": "Fascia oraria disponibile nell'agenda di Cardiologia",
+        "exampleCanonical": "https://www.fhir.laziocrea.it/StructureDefinition/it-cup-slot",
+        "groupingId": "Esempi"
+      },
+      {
+        "reference": {
+          "reference": "Slot/esempio-slot-teleconsulto"
+        },
+        "name": "Esempio Slot Teleconsulto Cardiologia",
+        "description": "Fascia oraria disponibile per teleconsulto cardiologico",
+        "exampleCanonical": "https://www.fhir.laziocrea.it/StructureDefinition/it-cup-slot",
+        "groupingId": "Esempi"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/it-cup-appointment"
+        },
+        "name": "IT CUP Appointment - Prenotazione",
+        "description": "Profilo italiano per la risorsa Appointment nel contesto CUP.\nRappresenta la prenotazione di una prestazione ambulatoriale.\n\nRelazioni:\n- basedOn → ITCUPServiceRequest (impegnativa SSN)\n- slot    → ITCUPSlot (fascia oraria prenotata)\n- participant → Patient (assistito), Practitioner (professionista),\n                Location (sede di erogazione)\n\nEstensioni italiane:\n- Codice prenotazione CUP (numero consegnato all'utente)\n- Canale di prenotazione (sportello, telefono, web...)\n- Classe di priorità CUP (U/B/D/P)\n- Modalità di erogazione (in presenza / teleconsulto)\n- Link teleconsulto (URL sessione video, se applicabile)",
+        "exampleBoolean": false,
+        "groupingId": "Profili"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/it-cup-schedule"
+        },
+        "name": "IT CUP Schedule - Agenda",
+        "description": "Profilo italiano per la risorsa Schedule nel contesto CUP.\nRappresenta un'agenda ambulatoriale prenotabile tramite il\nCentro Unico di Prenotazione. Ogni agenda ha un tipo (SSN/ALPI/privato),\nun erogatore, una sede fisica e un orizzonte temporale di pianificazione.\n\nRelazioni:\n- contiene molti Slot (fasce orarie libere/occupate)\n- è associata a HealthcareService, Practitioner e/o Location",
+        "exampleBoolean": false,
+        "groupingId": "Profili"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/it-cup-service-request"
+        },
+        "name": "IT CUP ServiceRequest - Impegnativa SSN",
+        "description": "Profilo italiano per la risorsa ServiceRequest nel contesto CUP.\nRappresenta l'impegnativa dematerializzata o cartacea del medico\nprescrittore (MMG, PLS o specialista), necessaria per prenotare\nuna prestazione ambulatoriale in regime SSN.\n\nRelazioni:\n- referenziata da Appointment.basedOn\n- emessa da Practitioner (MMG/PLS/Specialista)\n- destinata a Patient (Assistito)\n- il codice prestazione fa riferimento al Nomenclatore Nazionale",
+        "exampleBoolean": false,
+        "groupingId": "Profili"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/it-cup-slot"
+        },
+        "name": "IT CUP Slot - Fascia Oraria",
+        "description": "Profilo italiano per la risorsa Slot nel contesto CUP.\nRappresenta una singola fascia oraria all'interno di un'agenda.\n\nStati possibili:\n- free: disponibile per la prenotazione\n- busy: occupato da un Appointment\n- busy-unavailable: non disponibile (es. ambulatorio chiuso, medico assente)\n- busy-tentative: prenotazione in corso di conferma\n\nRelazioni:\n- appartiene a uno Schedule (agenda)\n- può essere referenziato da zero o più Appointment",
+        "exampleBoolean": false,
+        "groupingId": "Profili"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ext-link-teleconsulto"
+        },
+        "name": "Link Teleconsulto",
+        "description": "URL della sessione di teleconsulto restituito dalla Telemedicina nazionale IRT.\nViene popolato da Lazio Crea dopo l'invio della prenotazione CUP a IRT\nquando la modalità di erogazione è TELECONSULTO.",
+        "exampleBoolean": false,
+        "groupingId": "Estensioni"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ext-modalita-erogazione"
+        },
+        "name": "Modalità di Erogazione",
+        "description": "Indica come viene erogata la prestazione: in presenza presso la struttura,\ntramite teleconsulto (videochiamata) o telemonitoraggio.\nUsata per instradare le prenotazioni CUP Lazio Crea verso la Telemedicina nazionale IRT.",
+        "exampleBoolean": false,
+        "groupingId": "Estensioni"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/vs-modalita-erogazione"
+        },
+        "name": "Modalità di Erogazione",
+        "description": "Come viene erogata la prestazione: in presenza o a distanza",
+        "exampleBoolean": false,
+        "groupingId": "ValueSets"
+      },
+      {
+        "reference": {
+          "reference": "Location/sede-virtuale-teleconsulto"
+        },
+        "name": "Sede Virtuale Teleconsulto",
+        "description": "Location virtuale sulla Telemedicina nazionale IRT",
+        "exampleBoolean": true,
+        "groupingId": "Esempi"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/vs-stato-slot-cup"
+        },
+        "name": "Stato Slot CUP",
+        "description": "Stati ammessi per uno slot nell'agenda CUP",
+        "exampleBoolean": false,
+        "groupingId": "ValueSets"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ext-tipo-agenda"
+        },
+        "name": "Tipo Agenda CUP",
+        "description": "Indica il regime di erogazione dell'agenda: istituzionale SSN,\nAttività Libero-Professionale Intramuraria (ALPI) o privato.\nCorrisponde al campo 'tipo agenda' dei sistemi CUP regionali.",
+        "exampleBoolean": false,
+        "groupingId": "Estensioni"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/vs-tipo-agenda-cup"
+        },
+        "name": "Tipo Agenda CUP",
+        "description": "Classificazione del tipo di agenda gestita dal CUP",
+        "exampleBoolean": false,
+        "groupingId": "ValueSets"
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "Home",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "relazioni.html",
+          "title": "Modello e Relazioni tra Risorse",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "scenari.html",
+          "title": "Scenari d'uso CUP",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "downloads.html",
+          "title": "Download",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2025+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "ci-build"
+      }
+    ]
+  }
+}

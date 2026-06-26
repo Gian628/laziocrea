@@ -1,0 +1,83 @@
+id: it.laziocrea.cup
+canonical: https://www.fhir.laziocrea.it
+name: LazioCreaCUPIRTImplementationGuide
+title: "Gestione Agende CUP Regione Lazio (Lazio Crea) → Telemedicina nazionale IRT"
+description: >-
+  Implementation Guide FHIR R4 per la gestione delle agende del Centro Unico
+  di Prenotazione (CUP) della Regione Lazio, gestite da Lazio Crea, e per
+  l'invio delle prenotazioni alla piattaforma di Telemedicina nazionale IRT.
+  Modella Schedule, Slot, Appointment e ServiceRequest per l'interoperabilità
+  con la PNLA (Piattaforma Nazionale Liste di Attesa).
+status: draft
+version: 0.2.0
+fhirVersion: 4.0.1
+copyrightYear: 2025+
+releaseLabel: ci-build
+license: CC0-1.0
+jurisdiction: urn:iso:std:iso:3166#IT "Italy"
+publisher:
+  name: Lazio Crea
+  url: https://www.laziocrea.it
+
+# Dipendenze
+# Nota: hl7.fhir.it.base non è ancora sul registry pubblico.
+# Decommentare quando disponibile:
+# dependencies:
+#   hl7.fhir.it.base:
+#     uri: https://build.fhir.org/ig/hl7-it/base
+#     version: 0.1.1
+
+# Gruppi di risorse per la navigazione nell'IG
+groups:
+  Profili:
+    name: Profili CUP
+    description: Profili FHIR per la gestione delle agende CUP
+    resources:
+      - StructureDefinition/it-cup-schedule
+      - StructureDefinition/it-cup-slot
+      - StructureDefinition/it-cup-appointment
+      - StructureDefinition/it-cup-service-request
+
+  Estensioni:
+    name: Estensioni
+    description: Estensioni per il CUP Regione Lazio e l'invio verso IRT
+    resources:
+      - StructureDefinition/ext-tipo-agenda
+      - StructureDefinition/ext-codice-prenotazione
+      - StructureDefinition/ext-canale-prenotazione
+      - StructureDefinition/ext-classe-priorita-cup
+      - StructureDefinition/ext-modalita-erogazione
+      - StructureDefinition/ext-link-teleconsulto
+
+  ValueSets:
+    name: Value Sets
+    description: Terminologie per il CUP Lazio e l'integrazione con IRT
+    resources:
+      - ValueSet/vs-tipo-agenda-cup
+      - ValueSet/vs-canale-prenotazione-cup
+      - ValueSet/vs-classe-priorita-cup
+      - ValueSet/vs-stato-slot-cup
+      - ValueSet/vs-modalita-erogazione
+
+  Esempi:
+    name: Esempi
+    description: Esempi per prenotazione CUP e invio a Telemedicina nazionale IRT
+    resources:
+      - Schedule/esempio-agenda-cardiologia
+      - Slot/esempio-slot-libero
+      - Appointment/esempio-prenotazione-visita
+      - ServiceRequest/esempio-impegnativa-ssn
+      - Location/sede-virtuale-teleconsulto
+      - Schedule/esempio-agenda-teleconsulto
+      - Slot/esempio-slot-teleconsulto
+      - Appointment/esempio-prenotazione-teleconsulto
+
+pages:
+  index.md:
+    title: Home
+  relazioni.md:
+    title: Modello e Relazioni tra Risorse
+  scenari.md:
+    title: Scenari d'uso CUP
+  downloads.md:
+    title: Download

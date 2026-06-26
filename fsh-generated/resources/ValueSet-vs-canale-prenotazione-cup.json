@@ -1,0 +1,17 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "VsCanalePrenotazioneCup",
+  "id": "vs-canale-prenotazione-cup",
+  "title": "Canale Prenotazione CUP",
+  "description": "Modalità attraverso cui è stata effettuata la prenotazione",
+  "url": "https://www.fhir.laziocrea.it/ValueSet/vs-canale-prenotazione-cup",
+  "experimental": true,
+  "compose": {
+    "include": [
+      {
+        "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-canale-prenotazione-cup"
+      }
+    ]
+  }
+}

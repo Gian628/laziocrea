@@ -1,0 +1,50 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ext-codice-prenotazione",
+  "url": "https://www.fhir.laziocrea.it/StructureDefinition/ext-codice-prenotazione",
+  "name": "ExtCodicePrenotazione",
+  "title": "Codice Prenotazione CUP",
+  "status": "draft",
+  "description": "Codice univoco assegnato dal sistema CUP alla prenotazione.\nÈ il codice che viene consegnato al paziente e usato per\ndisdire o modificare l'appuntamento.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Appointment"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Codice Prenotazione CUP",
+        "definition": "Codice univoco assegnato dal sistema CUP alla prenotazione.\nÈ il codice che viene consegnato al paziente e usato per\ndisdire o modificare l'appuntamento."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://www.fhir.laziocrea.it/StructureDefinition/ext-codice-prenotazione"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      }
+    ]
+  }
+}

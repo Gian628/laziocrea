@@ -1,0 +1,58 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ext-classe-priorita-cup",
+  "url": "https://www.fhir.laziocrea.it/StructureDefinition/ext-classe-priorita-cup",
+  "name": "ExtClassePrioritaCup",
+  "title": "Classe di Priorità CUP",
+  "status": "draft",
+  "description": "Classe di priorità della prestazione secondo la normativa italiana\nsulle liste d'attesa: U (Urgente), B (Breve), D (Differibile),\nP (Programmabile). Determina i tempi massimi di attesa garantiti.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Appointment"
+    },
+    {
+      "type": "element",
+      "expression": "ServiceRequest"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Classe di Priorità CUP",
+        "definition": "Classe di priorità della prestazione secondo la normativa italiana\nsulle liste d'attesa: U (Urgente), B (Breve), D (Differibile),\nP (Programmabile). Determina i tempi massimi di attesa garantiti."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://www.fhir.laziocrea.it/StructureDefinition/ext-classe-priorita-cup"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.fhir.laziocrea.it/ValueSet/vs-classe-priorita-cup"
+        }
+      }
+    ]
+  }
+}

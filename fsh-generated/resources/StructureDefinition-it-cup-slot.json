@@ -1,0 +1,70 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "it-cup-slot",
+  "url": "https://www.fhir.laziocrea.it/StructureDefinition/it-cup-slot",
+  "name": "ITCUPSlot",
+  "title": "IT CUP Slot - Fascia Oraria",
+  "status": "draft",
+  "experimental": true,
+  "description": "Profilo italiano per la risorsa Slot nel contesto CUP.\nRappresenta una singola fascia oraria all'interno di un'agenda.\n\nStati possibili:\n- free: disponibile per la prenotazione\n- busy: occupato da un Appointment\n- busy-unavailable: non disponibile (es. ambulatorio chiuso, medico assente)\n- busy-tentative: prenotazione in corso di conferma\n\nRelazioni:\n- appartiene a uno Schedule (agenda)\n- può essere referenziato da zero o più Appointment",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Slot",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Slot",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Slot.serviceType",
+        "path": "Slot.serviceType",
+        "short": "Tipo prestazione (sovrascrive quello dell'agenda se diverso)",
+        "mustSupport": true
+      },
+      {
+        "id": "Slot.schedule",
+        "path": "Slot.schedule",
+        "short": "Agenda CUP a cui appartiene questo slot",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/it-cup-schedule"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Slot.status",
+        "path": "Slot.status",
+        "short": "Stato dello slot: free | busy | busy-unavailable | busy-tentative",
+        "mustSupport": true
+      },
+      {
+        "id": "Slot.start",
+        "path": "Slot.start",
+        "short": "Inizio della fascia oraria (datetime)",
+        "mustSupport": true
+      },
+      {
+        "id": "Slot.end",
+        "path": "Slot.end",
+        "short": "Fine della fascia oraria (datetime)",
+        "mustSupport": true
+      },
+      {
+        "id": "Slot.overbooked",
+        "path": "Slot.overbooked",
+        "short": "true se lo slot è stato sovraprenotato oltre la capienza",
+        "mustSupport": true
+      },
+      {
+        "id": "Slot.comment",
+        "path": "Slot.comment",
+        "short": "Note sullo slot (es. motivo del blocco)",
+        "mustSupport": true
+      }
+    ]
+  }
+}

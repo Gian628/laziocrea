@@ -1,0 +1,74 @@
+{
+  "resourceType": "Schedule",
+  "id": "esempio-agenda-teleconsulto",
+  "meta": {
+    "profile": [
+      "https://www.fhir.laziocrea.it/StructureDefinition/it-cup-schedule"
+    ]
+  },
+  "extension": [
+    {
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/ext-tipo-agenda",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-tipo-agenda-cup",
+            "code": "SSN",
+            "display": "SSN Istituzionale"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/ext-modalita-erogazione",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-modalita-erogazione",
+            "code": "TELECONSULTO",
+            "display": "Teleconsulto"
+          }
+        ]
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://cup.regione.lazio.it/agende",
+      "value": "AGN-LAZIO-TELE-CARDIO-001"
+    }
+  ],
+  "active": true,
+  "serviceType": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "408471009",
+          "display": "Visita cardiologica"
+        }
+      ]
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394579002",
+          "display": "Cardiologia"
+        }
+      ]
+    }
+  ],
+  "actor": [
+    {
+      "reference": "Location/sede-virtuale-teleconsulto"
+    }
+  ],
+  "planningHorizon": {
+    "start": "2025-01-01T00:00:00+01:00",
+    "end": "2025-12-31T23:59:59+01:00"
+  },
+  "comment": "Agenda teleconsulto cardiologia - solo a distanza"
+}
