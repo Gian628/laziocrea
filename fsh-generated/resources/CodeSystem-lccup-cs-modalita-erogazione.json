@@ -1,0 +1,28 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CsLcCupModalitaErogazione",
+  "id": "lccup-cs-modalita-erogazione",
+  "title": "LcCup - Codici Modalità Erogazione",
+  "url": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-modalita-erogazione",
+  "concept": [
+    {
+      "code": "IN_PRESENZA",
+      "display": "In presenza",
+      "definition": "Presso la struttura sanitaria"
+    },
+    {
+      "code": "TELECONSULTO",
+      "display": "Teleconsulto",
+      "definition": "Videochiamata via IRT"
+    },
+    {
+      "code": "TELEMONITORAGGIO",
+      "display": "Telemonitoraggio",
+      "definition": "Monitoraggio clinico a distanza"
+    }
+  ],
+  "experimental": true,
+  "count": 3
+}

@@ -1,0 +1,17 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "VsLcCupTipoAgenda",
+  "id": "lccup-vs-tipo-agenda",
+  "title": "LcCup - Tipo Agenda",
+  "description": "Classificazione tipo agenda CUP Lazio",
+  "url": "https://www.fhir.laziocrea.it/ValueSet/lccup-vs-tipo-agenda",
+  "experimental": true,
+  "compose": {
+    "include": [
+      {
+        "system": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-tipo-agenda"
+      }
+    ]
+  }
+}

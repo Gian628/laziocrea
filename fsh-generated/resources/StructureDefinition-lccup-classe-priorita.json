@@ -1,0 +1,58 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "lccup-classe-priorita",
+  "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-classe-priorita",
+  "name": "ExtClassePrioritaCup",
+  "title": "LcCup - Classe di Priorità",
+  "status": "draft",
+  "description": "Classe di priorità U/B/D/P secondo normativa liste d'attesa italiana.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Appointment"
+    },
+    {
+      "type": "element",
+      "expression": "ServiceRequest"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "LcCup - Classe di Priorità",
+        "definition": "Classe di priorità U/B/D/P secondo normativa liste d'attesa italiana."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-classe-priorita"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.fhir.laziocrea.it/ValueSet/lccup-vs-classe-priorita"
+        }
+      }
+    ]
+  }
+}

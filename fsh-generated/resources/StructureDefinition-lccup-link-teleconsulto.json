@@ -1,0 +1,50 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "lccup-link-teleconsulto",
+  "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-link-teleconsulto",
+  "name": "ExtLinkTeleconsulto",
+  "title": "LcCup - Link Teleconsulto IRT",
+  "status": "draft",
+  "description": "URL sessione video restituito da IRT dopo invio prenotazione CUP Lazio.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Appointment"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "LcCup - Link Teleconsulto IRT",
+        "definition": "URL sessione video restituito da IRT dopo invio prenotazione CUP Lazio."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-link-teleconsulto"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "url"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "VsLcCupClassePriorita",
+  "id": "lccup-vs-classe-priorita",
+  "title": "LcCup - Classe di Priorità",
+  "description": "Classi U/B/D/P per liste d'attesa (PNLA)",
+  "url": "https://www.fhir.laziocrea.it/ValueSet/lccup-vs-classe-priorita",
+  "experimental": true,
+  "compose": {
+    "include": [
+      {
+        "system": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-classe-priorita"
+      }
+    ]
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "lccup-schedule",
+  "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-schedule",
+  "name": "LcCupSchedule",
+  "title": "LcCup Schedule - Agenda CUP Lazio",
+  "status": "draft",
+  "experimental": true,
+  "description": "Profilo Lazio Crea per la risorsa Schedule nel contesto del CUP regionale.\nRappresenta un'agenda ambulatoriale prenotabile, pensata per l'integrazione\ncon la Telemedicina nazionale IRT (invio agende e prenotazioni a distanza).\n\nRelazioni:\n- contiene molti Slot (fasce orarie libere/occupate)\n- è associata a HealthcareService, Practitioner e/o Location",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Schedule",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Schedule",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Schedule.extension",
+        "path": "Schedule.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Schedule.extension:tipoAgenda",
+        "path": "Schedule.extension",
+        "sliceName": "tipoAgenda",
+        "short": "Tipo agenda: SSN, ALPI, Privata o Convenzionata",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/lccup-tipo-agenda"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Schedule.extension:modalitaErogazione",
+        "path": "Schedule.extension",
+        "sliceName": "modalitaErogazione",
+        "short": "In presenza, teleconsulto o telemonitoraggio (integrazione IRT)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/lccup-modalita-erogazione"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Schedule.identifier",
+        "path": "Schedule.identifier",
+        "short": "Codice agenda nel CUP Lazio",
+        "definition": "Identificatore univoco dell'agenda nel sistema CUP gestito da Lazio Crea.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Schedule.active",
+        "path": "Schedule.active",
+        "short": "L'agenda è attiva e prenotabile",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Schedule.serviceType",
+        "path": "Schedule.serviceType",
+        "short": "Tipo di prestazione erogata (es. Cardiologia, Ecografia...)",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Schedule.specialty",
+        "path": "Schedule.specialty",
+        "short": "Specialità medica dell'agenda",
+        "mustSupport": true
+      },
+      {
+        "id": "Schedule.actor",
+        "path": "Schedule.actor",
+        "short": "Erogatore: professionista, servizio e/o sede",
+        "definition": "Risorsa a cui l'agenda appartiene nel contesto del CUP Lazio:\nHealthcareService (ambulatorio), Location (sede) e/o Practitioner.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Practitioner",
+              "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
+              "http://hl7.org/fhir/StructureDefinition/HealthcareService",
+              "http://hl7.org/fhir/StructureDefinition/Location"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Schedule.planningHorizon",
+        "path": "Schedule.planningHorizon",
+        "short": "Periodo di validità dell'agenda (da - a)",
+        "mustSupport": true
+      },
+      {
+        "id": "Schedule.comment",
+        "path": "Schedule.comment",
+        "short": "Note sull'agenda",
+        "mustSupport": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CsLcCupClassePriorita",
+  "id": "lccup-cs-classe-priorita",
+  "title": "LcCup - Codici Classe Priorità",
+  "url": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-classe-priorita",
+  "concept": [
+    {
+      "code": "U",
+      "display": "Urgente",
+      "definition": "Entro 72 ore"
+    },
+    {
+      "code": "B",
+      "display": "Breve",
+      "definition": "Entro 10 giorni"
+    },
+    {
+      "code": "D",
+      "display": "Differibile",
+      "definition": "Entro 30/60 giorni"
+    },
+    {
+      "code": "P",
+      "display": "Programmabile",
+      "definition": "Entro 120 giorni"
+    }
+  ],
+  "experimental": true,
+  "count": 4
+}

@@ -1,0 +1,54 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "lccup-tipo-agenda",
+  "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-tipo-agenda",
+  "name": "ExtTipoAgenda",
+  "title": "LcCup - Tipo Agenda",
+  "status": "draft",
+  "description": "Regime di erogazione dell'agenda CUP Lazio: SSN, ALPI, privato o convenzionato.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Schedule"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "LcCup - Tipo Agenda",
+        "definition": "Regime di erogazione dell'agenda CUP Lazio: SSN, ALPI, privato o convenzionato."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-tipo-agenda"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.fhir.laziocrea.it/ValueSet/lccup-vs-tipo-agenda"
+        }
+      }
+    ]
+  }
+}

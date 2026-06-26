@@ -1,0 +1,315 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "it.laziocrea.lccup",
+  "url": "https://www.fhir.laziocrea.it/ImplementationGuide/it.laziocrea.lccup",
+  "version": "0.3.0",
+  "name": "LcCupImplementationGuide",
+  "title": "LcCup — Agende CUP Lazio (Lazio Crea) → Telemedicina IRT",
+  "status": "draft",
+  "publisher": "Lazio Crea",
+  "contact": [
+    {
+      "name": "Lazio Crea",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.laziocrea.it"
+        }
+      ]
+    }
+  ],
+  "description": "Implementation Guide FHIR R4 dei profili LcCup per il CUP della Regione Lazio, sviluppata da Lazio Crea (Azienda dei Servizi Regionali in Sanità del Lazio). I profili sono pensati per gestire agende e prenotazioni del CUP Lazio e per integrarsi con la Telemedicina nazionale IRT, inviando agende e appuntamenti a distanza. Modella Schedule, Slot, Appointment e ServiceRequest.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "IT",
+          "system": "urn:iso:std:iso:3166",
+          "display": "Italy"
+        }
+      ]
+    }
+  ],
+  "packageId": "it.laziocrea.lccup",
+  "license": "CC0-1.0",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "definition": {
+    "grouping": [
+      {
+        "id": "Profili",
+        "name": "Profili LcCup",
+        "description": "Profili FHIR LcCup per il CUP Lazio e l'integrazione con IRT"
+      },
+      {
+        "id": "Estensioni",
+        "name": "Estensioni LcCup",
+        "description": "Estensioni per il CUP Lazio e l'invio verso IRT"
+      },
+      {
+        "id": "ValueSets",
+        "name": "Terminologia LcCup",
+        "description": "Value set e code system per il CUP Lazio"
+      },
+      {
+        "id": "Esempi",
+        "name": "Esempi",
+        "description": "Esempi CUP Lazio — prenotazione in presenza e teleconsulto IRT"
+      }
+    ],
+    "resource": [
+      {
+        "reference": {
+          "reference": "Schedule/esempio-agenda-cardiologia"
+        },
+        "name": "Esempio Agenda Cardiologia SSN - CUP Lazio",
+        "description": "Agenda ambulatorio Cardiologia gestita da Lazio Crea",
+        "exampleCanonical": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-schedule",
+        "groupingId": "Esempi"
+      },
+      {
+        "reference": {
+          "reference": "Schedule/esempio-agenda-teleconsulto"
+        },
+        "name": "Esempio Agenda Teleconsulto - CUP Lazio",
+        "description": "Agenda CUP Lazio per teleconsulti inviati a IRT",
+        "exampleCanonical": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-schedule",
+        "groupingId": "Esempi"
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/esempio-impegnativa-ssn"
+        },
+        "name": "Esempio Impegnativa SSN - Visita Cardiologica",
+        "description": "Impegnativa dematerializzata MMG per visita cardiologica",
+        "exampleCanonical": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-service-request",
+        "groupingId": "Esempi"
+      },
+      {
+        "reference": {
+          "reference": "Appointment/esempio-prenotazione-visita"
+        },
+        "name": "Esempio Prenotazione in Presenza - CUP Lazio",
+        "description": "Prenotazione CUP Lazio per visita cardiologica in presenza",
+        "exampleCanonical": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-appointment",
+        "groupingId": "Esempi"
+      },
+      {
+        "reference": {
+          "reference": "Appointment/esempio-prenotazione-teleconsulto"
+        },
+        "name": "Esempio Prenotazione Teleconsulto → IRT",
+        "description": "Prenotazione CUP Lazio inviata a IRT con link video",
+        "exampleCanonical": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-appointment",
+        "groupingId": "Esempi"
+      },
+      {
+        "reference": {
+          "reference": "Slot/esempio-slot-libero"
+        },
+        "name": "Esempio Slot Libero - Visita Cardiologica",
+        "description": "Fascia oraria disponibile nell'agenda Cardiologia CUP Lazio",
+        "exampleCanonical": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-slot",
+        "groupingId": "Esempi"
+      },
+      {
+        "reference": {
+          "reference": "Slot/esempio-slot-teleconsulto"
+        },
+        "name": "Esempio Slot Teleconsulto",
+        "description": "Fascia oraria per teleconsulto cardiologico CUP Lazio",
+        "exampleCanonical": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-slot",
+        "groupingId": "Esempi"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/lccup-canale-prenotazione"
+        },
+        "name": "LcCup - Canale di Prenotazione",
+        "description": "Canale usato per la prenotazione nel CUP Lazio (sportello, web, telemedicina IRT...).",
+        "exampleBoolean": false,
+        "groupingId": "Estensioni"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/lccup-vs-canale-prenotazione"
+        },
+        "name": "LcCup - Canale Prenotazione",
+        "description": "Canali di prenotazione CUP Lazio",
+        "exampleBoolean": false,
+        "groupingId": "ValueSets"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/lccup-classe-priorita"
+        },
+        "name": "LcCup - Classe di Priorità",
+        "description": "Classe di priorità U/B/D/P secondo normativa liste d'attesa italiana.",
+        "exampleBoolean": false,
+        "groupingId": "Estensioni"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/lccup-vs-classe-priorita"
+        },
+        "name": "LcCup - Classe di Priorità",
+        "description": "Classi U/B/D/P per liste d'attesa (PNLA)",
+        "exampleBoolean": false,
+        "groupingId": "ValueSets"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/lccup-codice-prenotazione"
+        },
+        "name": "LcCup - Codice Prenotazione",
+        "description": "Codice univoco CUP Lazio consegnato al paziente per disdetta o modifica.",
+        "exampleBoolean": false,
+        "groupingId": "Estensioni"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/lccup-cs-canale-prenotazione"
+        },
+        "name": "LcCup - Codici Canale Prenotazione",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/lccup-cs-classe-priorita"
+        },
+        "name": "LcCup - Codici Classe Priorità",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/lccup-cs-modalita-erogazione"
+        },
+        "name": "LcCup - Codici Modalità Erogazione",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/lccup-cs-tipo-agenda"
+        },
+        "name": "LcCup - Codici Tipo Agenda",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/lccup-link-teleconsulto"
+        },
+        "name": "LcCup - Link Teleconsulto IRT",
+        "description": "URL sessione video restituito da IRT dopo invio prenotazione CUP Lazio.",
+        "exampleBoolean": false,
+        "groupingId": "Estensioni"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/lccup-modalita-erogazione"
+        },
+        "name": "LcCup - Modalità di Erogazione",
+        "description": "In presenza, teleconsulto o telemonitoraggio.\nUsata da Lazio Crea per instradare le prenotazioni verso IRT.",
+        "exampleBoolean": false,
+        "groupingId": "Estensioni"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/lccup-vs-modalita-erogazione"
+        },
+        "name": "LcCup - Modalità di Erogazione",
+        "description": "Erogazione in presenza o a distanza (integrazione IRT)",
+        "exampleBoolean": false,
+        "groupingId": "ValueSets"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/lccup-vs-stato-slot"
+        },
+        "name": "LcCup - Stato Slot",
+        "description": "Stati ammessi per uno slot CUP Lazio",
+        "exampleBoolean": false,
+        "groupingId": "ValueSets"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/lccup-tipo-agenda"
+        },
+        "name": "LcCup - Tipo Agenda",
+        "description": "Regime di erogazione dell'agenda CUP Lazio: SSN, ALPI, privato o convenzionato.",
+        "exampleBoolean": false,
+        "groupingId": "Estensioni"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/lccup-vs-tipo-agenda"
+        },
+        "name": "LcCup - Tipo Agenda",
+        "description": "Classificazione tipo agenda CUP Lazio",
+        "exampleBoolean": false,
+        "groupingId": "ValueSets"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/lccup-appointment"
+        },
+        "name": "LcCup Appointment - Prenotazione CUP Lazio",
+        "description": "Profilo Lazio Crea per la prenotazione ambulatoriale nel CUP regionale.\nPensato per l'integrazione con la Telemedicina nazionale IRT: quando la\nmodalità è TELECONSULTO, la prenotazione viene inviata a IRT con il link\nalla sessione video.\n\nRelazioni:\n- basedOn → LcCupServiceRequest (impegnativa SSN)\n- slot    → LcCupSlot (fascia oraria prenotata)\n- participant → Patient, Practitioner, Location",
+        "exampleBoolean": false,
+        "groupingId": "Profili"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/lccup-schedule"
+        },
+        "name": "LcCup Schedule - Agenda CUP Lazio",
+        "description": "Profilo Lazio Crea per la risorsa Schedule nel contesto del CUP regionale.\nRappresenta un'agenda ambulatoriale prenotabile, pensata per l'integrazione\ncon la Telemedicina nazionale IRT (invio agende e prenotazioni a distanza).\n\nRelazioni:\n- contiene molti Slot (fasce orarie libere/occupate)\n- è associata a HealthcareService, Practitioner e/o Location",
+        "exampleBoolean": false,
+        "groupingId": "Profili"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/lccup-service-request"
+        },
+        "name": "LcCup ServiceRequest - Impegnativa SSN",
+        "description": "Profilo Lazio Crea per l'impegnativa dematerializzata nel CUP regionale.\nPrecede la prenotazione (LcCupAppointment) nel flusso CUP Lazio.",
+        "exampleBoolean": false,
+        "groupingId": "Profili"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/lccup-slot"
+        },
+        "name": "LcCup Slot - Fascia Oraria CUP Lazio",
+        "description": "Profilo Lazio Crea per la risorsa Slot nel CUP regionale.\nRappresenta una singola fascia oraria all'interno di un'agenda Lazio.\n\nStati: free | busy | busy-unavailable | busy-tentative\n\nRelazioni:\n- appartiene a LcCupSchedule (agenda)\n- referenziato da LcCupAppointment (prenotazione)",
+        "exampleBoolean": false,
+        "groupingId": "Profili"
+      },
+      {
+        "reference": {
+          "reference": "Location/sede-virtuale-teleconsulto"
+        },
+        "name": "Sede Virtuale Teleconsulto IRT",
+        "description": "Location virtuale sulla Telemedicina nazionale IRT",
+        "exampleBoolean": true,
+        "groupingId": "Esempi"
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": []
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2025+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "ci-build"
+      }
+    ]
+  }
+}

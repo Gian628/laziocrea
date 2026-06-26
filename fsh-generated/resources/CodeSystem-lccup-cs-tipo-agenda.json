@@ -1,0 +1,33 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CsLcCupTipoAgenda",
+  "id": "lccup-cs-tipo-agenda",
+  "title": "LcCup - Codici Tipo Agenda",
+  "url": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-tipo-agenda",
+  "concept": [
+    {
+      "code": "SSN",
+      "display": "SSN Istituzionale",
+      "definition": "Agenda in regime SSN"
+    },
+    {
+      "code": "ALPI",
+      "display": "ALPI",
+      "definition": "Attività Libero-Professionale Intramuraria"
+    },
+    {
+      "code": "PRIV",
+      "display": "Privata",
+      "definition": "Agenda in regime privato"
+    },
+    {
+      "code": "CONV",
+      "display": "Convenzionata",
+      "definition": "Agenda struttura privata accreditata SSN"
+    }
+  ],
+  "experimental": true,
+  "count": 4
+}

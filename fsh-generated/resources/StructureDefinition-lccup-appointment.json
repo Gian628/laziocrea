@@ -1,0 +1,317 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "lccup-appointment",
+  "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-appointment",
+  "name": "LcCupAppointment",
+  "title": "LcCup Appointment - Prenotazione CUP Lazio",
+  "status": "draft",
+  "experimental": true,
+  "description": "Profilo Lazio Crea per la prenotazione ambulatoriale nel CUP regionale.\nPensato per l'integrazione con la Telemedicina nazionale IRT: quando la\nmodalità è TELECONSULTO, la prenotazione viene inviata a IRT con il link\nalla sessione video.\n\nRelazioni:\n- basedOn → LcCupServiceRequest (impegnativa SSN)\n- slot    → LcCupSlot (fascia oraria prenotata)\n- participant → Patient, Practitioner, Location",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Appointment",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Appointment",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Appointment.extension",
+        "path": "Appointment.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 3
+      },
+      {
+        "id": "Appointment.extension:codicePrenotazione",
+        "path": "Appointment.extension",
+        "sliceName": "codicePrenotazione",
+        "short": "Codice prenotazione CUP consegnato all'utente",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/lccup-codice-prenotazione"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.extension:canalePrenotazione",
+        "path": "Appointment.extension",
+        "sliceName": "canalePrenotazione",
+        "short": "Canale di prenotazione",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/lccup-canale-prenotazione"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.extension:classePrioritaCup",
+        "path": "Appointment.extension",
+        "sliceName": "classePrioritaCup",
+        "short": "Classe priorità U/B/D/P",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/lccup-classe-priorita"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.extension:modalitaErogazione",
+        "path": "Appointment.extension",
+        "sliceName": "modalitaErogazione",
+        "short": "In presenza, teleconsulto o telemonitoraggio",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/lccup-modalita-erogazione"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.extension:linkTeleconsulto",
+        "path": "Appointment.extension",
+        "sliceName": "linkTeleconsulto",
+        "short": "URL sessione IRT (se teleconsulto)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/lccup-link-teleconsulto"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.identifier",
+        "path": "Appointment.identifier",
+        "short": "Identificatore interno CUP Lazio",
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.status",
+        "path": "Appointment.status",
+        "short": "Stato: proposed | booked | cancelled | fulfilled | noshow",
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.serviceType",
+        "path": "Appointment.serviceType",
+        "short": "Tipo di prestazione prenotata",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.specialty",
+        "path": "Appointment.specialty",
+        "short": "Specialità medica",
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.appointmentType",
+        "path": "Appointment.appointmentType",
+        "short": "Tipo di accesso",
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.start",
+        "path": "Appointment.start",
+        "short": "Data e ora inizio appuntamento",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.end",
+        "path": "Appointment.end",
+        "short": "Data e ora fine prevista",
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.minutesDuration",
+        "path": "Appointment.minutesDuration",
+        "short": "Durata prevista in minuti",
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.slot",
+        "path": "Appointment.slot",
+        "short": "Slot prenotato nell'agenda CUP Lazio",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/lccup-slot"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.created",
+        "path": "Appointment.created",
+        "short": "Data e ora della prenotazione",
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.comment",
+        "path": "Appointment.comment",
+        "short": "Note aggiuntive",
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.patientInstruction",
+        "path": "Appointment.patientInstruction",
+        "short": "Istruzioni per il paziente",
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.basedOn",
+        "path": "Appointment.basedOn",
+        "short": "Impegnativa SSN (obbligatoria in regime SSN)",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/lccup-service-request"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.participant",
+        "path": "Appointment.participant",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "actor"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Partecipanti all'appuntamento",
+        "min": 2
+      },
+      {
+        "id": "Appointment.participant:paziente",
+        "path": "Appointment.participant",
+        "sliceName": "paziente",
+        "short": "Assistito",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.participant:paziente.actor",
+        "path": "Appointment.participant.actor",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Patient"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.participant:paziente.status",
+        "path": "Appointment.participant.status",
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.participant:professionista",
+        "path": "Appointment.participant",
+        "sliceName": "professionista",
+        "short": "Professionista erogante",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.participant:professionista.actor",
+        "path": "Appointment.participant.actor",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Practitioner",
+              "http://hl7.org/fhir/StructureDefinition/PractitionerRole"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.participant:professionista.status",
+        "path": "Appointment.participant.status",
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.participant:sede",
+        "path": "Appointment.participant",
+        "sliceName": "sede",
+        "short": "Sede fisica o virtuale (IRT)",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.participant:sede.actor",
+        "path": "Appointment.participant.actor",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Location"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.participant:sede.status",
+        "path": "Appointment.participant.status",
+        "mustSupport": true
+      }
+    ]
+  }
+}

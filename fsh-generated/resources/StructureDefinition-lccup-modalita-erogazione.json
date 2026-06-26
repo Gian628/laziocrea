@@ -1,0 +1,58 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "lccup-modalita-erogazione",
+  "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-modalita-erogazione",
+  "name": "ExtModalitaErogazione",
+  "title": "LcCup - Modalità di Erogazione",
+  "status": "draft",
+  "description": "In presenza, teleconsulto o telemonitoraggio.\nUsata da Lazio Crea per instradare le prenotazioni verso IRT.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Schedule"
+    },
+    {
+      "type": "element",
+      "expression": "Appointment"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "LcCup - Modalità di Erogazione",
+        "definition": "In presenza, teleconsulto o telemonitoraggio.\nUsata da Lazio Crea per instradare le prenotazioni verso IRT."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-modalita-erogazione"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.fhir.laziocrea.it/ValueSet/lccup-vs-modalita-erogazione"
+        }
+      }
+    ]
+  }
+}

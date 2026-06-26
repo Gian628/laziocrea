@@ -1,0 +1,48 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CsLcCupCanalePrenotazione",
+  "id": "lccup-cs-canale-prenotazione",
+  "title": "LcCup - Codici Canale Prenotazione",
+  "url": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-canale-prenotazione",
+  "concept": [
+    {
+      "code": "SPORTELLO",
+      "display": "Sportello CUP",
+      "definition": "Prenotazione allo sportello"
+    },
+    {
+      "code": "TELEFONO",
+      "display": "Telefono",
+      "definition": "Call center CUP Lazio"
+    },
+    {
+      "code": "WEB",
+      "display": "Web/Portale",
+      "definition": "Portale regionale o FSE"
+    },
+    {
+      "code": "APP",
+      "display": "App Mobile",
+      "definition": "Applicazione mobile"
+    },
+    {
+      "code": "FARMACIA",
+      "display": "Farmacia",
+      "definition": "Farmacia abilitata"
+    },
+    {
+      "code": "MMG",
+      "display": "MMG/PLS",
+      "definition": "Prenotazione dal medico di base"
+    },
+    {
+      "code": "TELEMEDICINA",
+      "display": "Telemedicina",
+      "definition": "Piattaforma Telemedicina nazionale IRT"
+    }
+  ],
+  "experimental": true,
+  "count": 7
+}
