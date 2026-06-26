@@ -1,6 +1,9 @@
 title: Implementation Guide FHIR - Agende CUP Lazio
-description: Questa IG fa riferimento all'ambiente di sviluppo LcCup (Lazio Crea).
+description: >-
+  Guida di implementazione FHIR R4 LcCup per le agende del CUP Regione Lazio (Lazio Crea),
+  con integrazione Telemedicina nazionale IRT.
 id: ig-fhir-agende-cup-lazio
+url-key: ig-fhir-agende-cup-lazio
 version: current
 fhirVersion: R4
 style-root: project
