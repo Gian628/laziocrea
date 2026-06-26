@@ -1,8 +1,63 @@
+:root {
+    --lc-blue: #00263e;
+    --lc-red: #830d29;
+    --lc-blue-hover: #003d61;
+    --lc-red-hover: #9a1031;
+}
+
 html,
 body {
     padding: 0;
     margin: 0;
     font-size: 14px;
+    font-family: "Titillium Web", "Segoe UI", sans-serif;
+}
+
+/* Header istituzionale Lazio Crea */
+.lc-site-header {
+    width: 100%;
+}
+
+.lc-header-top {
+    background-color: var(--lc-red);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 6px 0;
+}
+
+.lc-header-main {
+    background-color: var(--lc-blue);
+    padding: 12px 0;
+}
+
+.lc-header-inner {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.lc-logo img {
+    max-height: 56px;
+    width: auto;
+    display: block;
+}
+
+.lc-guide-title .guide-title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.lc-guide-title .guide-version {
+    color: #d0dde6;
+    font-size: 13px;
+    margin: 4px 0 0;
 }
 
 #ig-viewer {
@@ -22,12 +77,12 @@ body {
 
 #ig-viewer .ig-view-content #ig-view-twolevelmenu .header {
     background: #fcfcfc;
-    border-bottom: 4px solid #297a38;
+    border-bottom: 3px solid var(--lc-red);
     color: white;
 }
 
 #ig-viewer .ig-view-content #ig-view-twolevelmenu .header .navbar {
-    background-color: #003b77 ;
+    background-color: #00263e ;
     /* #EDEDED #63C1D8 #FFDC36 !important;  */
     margin-bottom: 0px;
     color: white;
@@ -35,9 +90,9 @@ body {
 
 /* Change menu bar font color (title, menu & submenu) */
 #ig-viewer .ig-view-content #ig-view-twolevelmenu .header .navbar a {
-    background-color: #003b77 ;
+    background-color: #00263e ;
     color: white;
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-family: "Titillium Web", "Segoe UI", sans-serif !important;
     font-size: 1.2em;
 }
 
@@ -48,7 +103,7 @@ body {
 
 /* Change menu bar item background color and font color (only menu) */
 #ig-viewer .ig-view-content #ig-view-twolevelmenu .header .navbar-nav>li>a:hover {
-    background-color: #0059b3;
+    background-color: var(--lc-red);
     color: white;
 }
 
@@ -58,13 +113,13 @@ body {
 }
 
 #ig-viewer .ig-view-content #ig-view-twolevelmenu .header .navbar .dropdown-menu a:hover {
-    background-color: #0059b3;
+    background-color: var(--lc-red);
     color: white;
 }
 
 /* Change menu background color (only submenu) */
 #ig-viewer .ig-view-content #ig-view-twolevelmenu .header .navbar .dropdown-menu {
-    background-color: #003b77;
+    background-color: #00263e;
     color: white;
     font-size: 14;
 }
@@ -91,11 +146,11 @@ body {
 }
 
 #ig-viewer .ig-view-content #ig-view-twolevelmenu .content .nav-pills>li>a:hover {
-    color: #297a38;
+    color: var(--lc-red);
 }
 
 #ig-viewer .ig-view-footer {
-    background-color: #003b77;
+    background-color: var(--lc-blue);
     color: #eee;
     height: 115px;
     margin-top: 40px;
@@ -197,7 +252,11 @@ li ol>li:before {
 }
 
 a {
-    color: #297a38;
+    color: var(--lc-blue);
+}
+
+a:hover {
+    color: var(--lc-red);
 }
 
 p {
@@ -210,38 +269,39 @@ p {
 }
 
 h1 {
-    color: #297a38;
-    font-family: Fira Sans Medium, sans-serif;
+    color: var(--lc-blue);
+    font-family: "Titillium Web", "Segoe UI", sans-serif;
     background-color: #ededed;
+    border-left: 4px solid var(--lc-red);
     font-weight: bold;
     padding: 0.5em;
     font-size: 22px;
 }
 
 h2 {
-    color: #297a38;
-    font-family: Fira Sans Medium, sans-serif;
+    color: var(--lc-blue);
+    font-family: "Titillium Web", "Segoe UI", sans-serif;
     font-weight: bolder;
     font-size: 20px;
 }
 
 h3 {
-    color: #0059b3;
-    font-family: Fira Sans Medium, sans-serif;
+    color: var(--lc-blue);
+    font-family: "Titillium Web", "Segoe UI", sans-serif;
     font-weight: bolder;
     font-size: 18px;
 }
 
 h4 {
-    color: #0059b3;
-    font-family: Fira Sans Medium, sans-serif;
+    color: var(--lc-blue);
+    font-family: "Titillium Web", "Segoe UI", sans-serif;
     font-weight: bold;
     font-size: 16px;
 }
 
 h5 {
     color: black;
-    font-family: Fira Sans Medium, sans-serif;
+    font-family: "Titillium Web", "Segoe UI", sans-serif;
     font-size: 16;
     font-weight: bold;
 }
@@ -345,7 +405,7 @@ pre {
 
 /* Create an active/current tablink class */
 .tab button.active {
-    background-color: #297a38;
+    background-color: var(--lc-blue);
     color: #fff;
 }
 
@@ -373,7 +433,12 @@ pre {
 
 /* bootstrap overrides */
 .btn-fhir {
-    background: #297a38;
+    background: var(--lc-blue);
+    color: #fff;
+}
+
+.btn-fhir:hover {
+    background: var(--lc-red);
     color: #fff;
 }
 
@@ -385,17 +450,9 @@ body {
     margin: 0px;
 }
 
-body header .guide-title {
-    color: #297a38;
-    font-family: Fira Sans Medium, sans-serif;
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 20px;
+.ig-view-footer a {
+    color: #fff;
 }
-
-/* --------------------------------------------------------
- Contenuti aggiunti custom per progetto RL FHIR - by Reply
--------------------------------------------------------- */
 
 /* Tabelle scorrevoli orizzontalmente */
 table{
@@ -422,7 +479,7 @@ th, td {
 /* Intestazione tabelle */
 th{
     min-width: fit-content;
-    background-color: #297a38;
+    background-color: var(--lc-blue);
     color: white;
     font-weight: bold;
 }

@@ -7,6 +7,9 @@
         <title>{{ guide-title }} v{{ guide-version }}</title>
 
         <link rel="icon" href="{{content}}/styles/common/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
 
         <script src="{{content}}/styles/common/jquery/jquery.min.js"></script>
         <script src="{{content}}/styles/common/bootstrap/bootstrap.min.js"></script>
@@ -33,23 +36,22 @@
     </head>
 
     <body>
-        <header>
-            <div class="container">
-                <table class="intestazione no-border" width="100%">
-                    <col style="width:20%">
-	                <col style="width:60%">
-                    <tr class="no-border">    
-                        <td class="no-border">
-                         <div class="col-md-4">
-                             <a href="https://www.laziocrea.it">
-                             <img src="https://www.laziocrea.it/wp-content/uploads/2020/01/logo-laziocrea.png" alt="Lazio Crea" width="170">
-                        </div>
-                        </td>
-                        <td class="no-border">
-                             <p class="guide-title">{{ guide-title }} v{{ guide-version }}</p>
-                        </td>
-                    </tr>
-                </table>
+        <header class="lc-site-header">
+            <div class="lc-header-top">
+                <div class="container">
+                    <span>Regione Lazio</span>
+                </div>
+            </div>
+            <div class="lc-header-main">
+                <div class="container lc-header-inner">
+                    <a class="lc-logo" href="https://www.laziocrea.it" title="Lazio Crea">
+                        <img src="{{content}}/{{style-folder}}/logo-laziocrea-rl.png" alt="Lazio Crea - Regione Lazio" />
+                    </a>
+                    <div class="lc-guide-title">
+                        <p class="guide-title">{{ guide-title }}</p>
+                        <p class="guide-version">v{{ guide-version }}</p>
+                    </div>
+                </div>
             </div>
         </header>
         
