@@ -21,27 +21,33 @@ body {
 .lc-header-top {
     background-color: var(--lc-red);
     color: #fff;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 600;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    padding: 6px 0;
+    padding: 12px 0;
 }
 
 .lc-header-main {
     background-color: var(--lc-blue);
-    padding: 12px 0;
+    padding: 20px 0;
 }
 
 .lc-header-inner {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 28px;
     flex-wrap: wrap;
 }
 
+.lc-logo {
+    display: inline-block;
+    line-height: 0;
+    background-color: var(--lc-blue);
+}
+
 .lc-logo img {
-    max-height: 56px;
+    max-height: 72px;
     width: auto;
     display: block;
 }
@@ -76,21 +82,57 @@ body {
 }
 
 #ig-viewer .ig-view-content #ig-view-twolevelmenu .header {
-    background: #fcfcfc;
+    background: var(--lc-blue);
     border-bottom: 3px solid var(--lc-red);
     color: white;
+    padding: 0;
+    margin: 0;
 }
 
 #ig-viewer .ig-view-content #ig-view-twolevelmenu .header .navbar {
-    background-color: #00263e ;
-    /* #EDEDED #63C1D8 #FFDC36 !important;  */
-    margin-bottom: 0px;
+    background-color: var(--lc-blue) !important;
+    border: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    min-height: 52px;
     color: white;
+}
+
+#ig-viewer .ig-view-content #ig-view-twolevelmenu .header .navbar .container,
+#ig-viewer .ig-view-content #ig-view-twolevelmenu .header .navbar .container-fluid {
+    background-color: var(--lc-blue) !important;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#ig-viewer .ig-view-content #ig-view-twolevelmenu .header .navbar-header {
+    margin-bottom: 0;
+    color: white;
+    background-color: var(--lc-blue);
+}
+
+#ig-viewer .ig-view-content #ig-view-twolevelmenu .header .navbar-collapse {
+    padding-right: 0;
+    padding-left: 0;
+    color: white;
+    background-color: var(--lc-blue);
+    border: none;
+    box-shadow: none;
+}
+
+#ig-viewer .ig-view-content #ig-view-twolevelmenu .header .navbar-toggle {
+    border-color: rgba(255, 255, 255, 0.5);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#ig-viewer .ig-view-content #ig-view-twolevelmenu .header .navbar-toggle .icon-bar {
+    background-color: #fff;
 }
 
 /* Change menu bar font color (title, menu & submenu) */
 #ig-viewer .ig-view-content #ig-view-twolevelmenu .header .navbar a {
-    background-color: #00263e ;
+    background-color: var(--lc-blue) !important;
     color: white;
     font-family: "Titillium Web", "Segoe UI", sans-serif !important;
     font-size: 1.2em;
@@ -119,25 +161,17 @@ body {
 
 /* Change menu background color (only submenu) */
 #ig-viewer .ig-view-content #ig-view-twolevelmenu .header .navbar .dropdown-menu {
-    background-color: #00263e;
+    background-color: var(--lc-blue);
     color: white;
-    font-size: 14;
-}
-
-#ig-viewer .ig-view-content #ig-view-twolevelmenu .header .navbar .navbar-header {
-    margin-bottom: 0;
-    color: white;
+    font-size: 14px;
+    border: 1px solid var(--lc-blue-hover);
 }
 
 #ig-viewer .ig-view-content #ig-view-twolevelmenu .header .navbar .navbar-nav>li>a {
-    padding-top: 15px;
+    padding-top: 16px;
+    padding-bottom: 16px;
     color: white;
-}
-
-#ig-viewer .ig-view-content #ig-view-twolevelmenu .header .navbar-collapse {
-    padding-right: 0px;
-    padding-left: 0px;
-    color: white;
+    border-radius: 0;
 }
 
 #ig-viewer .ig-view-content #ig-view-twolevelmenu .content .nav-pills>li>a {
