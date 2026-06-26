@@ -1,0 +1,10 @@
+- name: Index
+  filename: Index.page.md
+- name: Contesto
+  filename: Contesto
+- name: Profili ed Estensioni
+  filename: Profili-ed-Estensioni
+- name: Terminologia
+  filename: Terminologia
+- name: Esempi
+  filename: Esempi
