@@ -1,0 +1,8 @@
+title: Implementation Guide FHIR - Censimento Operatori Sanitari Regione Lazio
+description: Guida di implementazione FHIR R4 LcCup per i censimenti operatori sanitari della Regione Lazio (Lazio Crea).
+id: ig-fhir-censimento-operatori-sanitari-lazio
+version: current
+fhirVersion: R4
+style-root: project
+style-name: LcCup-css
+numbered-headings: false
