@@ -11,13 +11,10 @@ Profili FHIR R4 per agende, slot e prenotazioni del CUP Regione Lazio (Lazio Cre
 
 ```
 input/fsh/          sorgenti FSH
-fsh-generated/      JSON generati da SUSHI (vanno committati)
-guides/             guida pubblicata su Simplifier
+fsh-generated/      JSON generati da SUSHI (committare)
+guides/             guida Simplifier (guide.yaml, *.page.md, toc.yaml)
 sushi-config.yaml   configurazione SUSHI
-ig.ini              solo per IG Publisher in locale (opzionale)
 ```
-
-La documentazione online è in `guides/`, non in `input/pagecontent/`. Quella cartella (e `menu.xml`) servirebbero solo se si volesse generare un sito HTML con IG Publisher (`publisher.jar` → cartella `output/`). Al momento non la usiamo.
 
 ## Compilazione locale
 
@@ -30,19 +27,15 @@ Output in `fsh-generated/resources/`.
 
 ## GitHub Actions
 
-Workflow: `.github/workflows/sushi.yml`
+Workflow: `.github/workflows/sushi.yml` — al momento solo avvio manuale (`workflow_dispatch`).
 
-Al momento è configurato solo con `workflow_dispatch` (avvio manuale da tab Actions). Se si riattivano i trigger su `push`, il job esegue `sushi .` e, su `main`/`release`, può committare i JSON aggiornati con `github-actions[bot]`. Un commit automatico viene creato solo se `fsh-generated/` cambia davvero.
-
-Per la scrittura sul repo servono i permessi *Read and write* in Settings → Actions → Workflow permissions.
+Su `push` (se riattivato): esegue `sushi .` e può committare `fsh-generated/` su `main`/`release` quando i JSON cambiano. Permessi richiesti: *Read and write* in Settings → Actions.
 
 ## Simplifier
 
-Dopo il push: Reimport dal webhook (o manuale). La prima volta aprire `guides/ImplementationGuideFHIRAgendeCUPLazio/guide.yaml` e usare *Update → Edit: Create IG and start updating in IG Editor*.
+Push → Reimport. Prima attivazione: `guides/ImplementationGuideFHIRAgendeCUPLazio/guide.yaml` → *Update → Edit: Create IG and start updating in IG Editor*.
 
-URL guida (indicativo): `https://simplifier.net/guide/ig-fhir-agende-cup-lazio/home?version=current`
-
-Nei file `.page.md` i widget usano lo slug progetto `LazioCrea`, ad es. `{{tree:LazioCrea/lccup-schedule}}`.
+Widget nelle pagine: slug progetto `LazioCrea`, es. `{{tree:LazioCrea/lccup-schedule}}`.
 
 ## Profili
 
@@ -53,10 +46,10 @@ Nei file `.page.md` i widget usano lo slug progetto `LazioCrea`, ad es. `{{tree:
 | LcCup-Appointment | Appointment |
 | LcCup-ServiceRequest | ServiceRequest |
 
-## Estensioni principali
+## Estensioni
 
 `lccup-tipo-agenda`, `lccup-modalita-erogazione`, `lccup-codice-prenotazione`, `lccup-canale-prenotazione`, `lccup-classe-priorita`, `lccup-link-teleconsulto`
 
-## .gitignore
+## Git
 
-Non ignorare `fsh-generated/`, `guides/` o `input/fsh/`. Sono ignorati output e cache del Publisher (`output/`, `input-cache/`, ecc.).
+Versionare: `input/fsh/`, `fsh-generated/`, `guides/`.
