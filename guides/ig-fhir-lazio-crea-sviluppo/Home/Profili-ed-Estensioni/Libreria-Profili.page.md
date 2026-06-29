@@ -16,7 +16,7 @@
     <h1>Raccolta profili LcCup</h1>
     <div>
       <p>
-        Nella tabella sottostante sono raccolti i profili LcCup per il CUP Lazio.
+        Nella tabella sottostante sono raccolti i profili LcCup per il CUP Regionale Lazio.
         <br />
         Usare la casella di ricerca sottostante per filtrare le informazioni desiderate.
       </p>

@@ -1,6 +1,6 @@
 # Libreria Estensioni LcCup
 
-Estensioni definite per il CUP Lazio e l'integrazione con la Telemedicina nazionale IRT.
+Estensioni definite per il **CUP Regionale Lazio** e l'integrazione con **IRT** (telemedicina regionale).
 
 ## Tutte le estensioni
 

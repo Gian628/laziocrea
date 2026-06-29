@@ -1,15 +1,14 @@
-id: it.laziocrea.lccup
+id: lazio.crea.cup.irt
 canonical: https://www.fhir.laziocrea.it
 name: LcCupImplementationGuide
-title: "LcCup — Agende CUP Lazio (Lazio Crea) → Telemedicina IRT"
+title: "LcCup — Agende CUP Regione Lazio → IRT"
 description: >-
-  Implementation Guide FHIR R4 dei profili LcCup per il CUP della Regione Lazio,
-  sviluppata da Lazio Crea (Azienda dei Servizi Regionali in Sanità del Lazio).
-  I profili sono pensati per gestire agende e prenotazioni del CUP Lazio e per
-  integrarsi con la Telemedicina nazionale IRT, inviando agende e appuntamenti
-  a distanza. Modella Schedule, Slot, Appointment e ServiceRequest.
+  Implementation Guide FHIR R4 dei profili LcCup per il CUP Regionale Lazio,
+  curata da Lazio Crea (ASR). I profili modellano agende, slot, impegnative
+  e prenotazioni, con estensioni per l'integrazione verso IRT (telemedicina
+  regionale). Modella Schedule, Slot, Appointment e ServiceRequest.
 status: draft
-version: 0.3.0
+version: 0.0.2
 fhirVersion: 4.0.1
 copyrightYear: 2025+
 releaseLabel: ci-build

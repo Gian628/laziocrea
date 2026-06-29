@@ -6,6 +6,8 @@
   filename: Profili-ed-Estensioni
 - name: Terminologia
   filename: Terminologia
+- name: API
+  filename: API
 - name: Scenari
   filename: Scenari
 - name: Esempi

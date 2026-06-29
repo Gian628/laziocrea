@@ -3,7 +3,7 @@
 <div class="alert alert-warning">
 Questa pagina è da considerare <b>IN LAVORAZIONE</b>.
 
-Il contenuto del sito rappresenterà a regime la Guida di Implementazione FHIR LcCup per il CUP della Regione Lazio (Lazio Crea).
+Il contenuto del sito rappresenterà a regime la Guida di Implementazione FHIR LcCup per il **CUP Regionale Lazio**.
 
 Attualmente viene descritta una panoramica del progetto \[si veda {{pagelink:Home/Contesto/Panoramica-di-progetto.page.md}}\],
 ed è possibile consultare le risorse FHIR rilasciate e attualmente in uso.
@@ -16,7 +16,7 @@ Questa guida di implementazione fa riferimento all'ambiente di <b>sviluppo</b>, 
 ## Novità
 
 - Profili **LcCup** per Schedule, Slot, Appointment, ServiceRequest
-- Estensioni per teleconsulto IRT (`lccup-modalita-erogazione`, `lccup-link-teleconsulto`)
+- Estensioni per teleconsulto con **IRT** (`lccup-modalita-erogazione`, `lccup-link-teleconsulto`)
 - Esempi prenotazione in presenza e teleconsulto
 
 ## Come leggere questa guida
@@ -26,8 +26,9 @@ Questa guida presenta diverse sezioni elencate nella barra dei menù in alto.
 - **Home**: la presente pagina, pagina iniziale della Implementation Guide.
 - **Contesto**: panoramica del progetto e modello delle relazioni tra risorse.
 - **Profili ed Estensioni**: libreria profili LcCup ed estensioni.
-- **Terminologia**: ValueSet e CodeSystem del CUP Lazio.
-- **Scenari**: flussi operativi CUP e integrazione IRT.
+- **Terminologia**: ValueSet e CodeSystem del CUP Regionale Lazio.
+- **API**: esempi di ricerca FHIR (agende, slot, prenotazioni).
+- **Scenari**: flussi operativi del CUP e integrazione con IRT.
 - **Esempi**: libreria completa degli esempi FHIR.
 
 ## Risorse modellate

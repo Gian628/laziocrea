@@ -1,6 +1,6 @@
 title: Implementation Guide FHIR - Agende CUP Lazio
-description: Guida di implementazione FHIR R4 LcCup per le agende CUP Regione Lazio (Lazio Crea).
-version: 0.3.0
+description: Guida di implementazione FHIR R4 LcCup per il CUP Regionale Lazio. Pubblicata da Lazio Crea (ASR).
+version: 0.0.2
 fhirVersion: R4
 style-root: project
 style-name: LcCup-css

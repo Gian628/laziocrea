@@ -1,55 +1,41 @@
 # LcCup — Agende CUP Lazio
 
-Profili FHIR R4 per agende, slot e prenotazioni del CUP Regione Lazio (Lazio Crea), con estensioni per l’integrazione verso la telemedicina IRT.
+Profili FHIR R4 per agende, slot e prenotazioni del CUP Regionale Lazio, con estensioni per l’integrazione verso **IRT**.
 
-- Package: `it.laziocrea.lccup`
-- Canonical: `https://www.fhir.laziocrea.it`
-- Progetto Simplifier: [LazioCrea](https://simplifier.net/LazioCrea)
-- Guida: `guides/ImplementationGuideFHIRAgendeCUPLazio/` (id `ig-fhir-agende-cup-lazio`)
+- **Canonical:** `https://www.fhir.laziocrea.it`
+- **Package:** `lazio.crea.cup.irt` — [0.0.1 su Simplifier](https://simplifier.net/packages/lazio.crea.cup.irt/0.0.1)
+- **Progetto:** [LazioCrea](https://simplifier.net/LazioCrea)
+- **Guida:** `guides/ig-fhir-lazio-crea-sviluppo/`
+
+## Come lavoriamo
+
+Sorgenti in **FSH**, compilazione con **SUSHI** (`sushi .`), pubblicazione su **Simplifier** (package e guida web).
 
 ## Struttura
 
 ```
 input/fsh/          sorgenti FSH
-fsh-generated/      JSON generati da SUSHI (committare)
-guides/             guida Simplifier (guide.yaml, *.page.md, toc.yaml)
-sushi-config.yaml   configurazione SUSHI
+fsh-generated/      output SUSHI (committare)
+guides/             guida Simplifier
+sushi-config.yaml
+package.json
 ```
 
-## Compilazione locale
+## Compilazione
 
 ```bash
 npm install -g fsh-sushi
 sushi .
 ```
 
-Output in `fsh-generated/resources/`.
+## Versioni
 
-## GitHub Actions
-
-Workflow: `.github/workflows/sushi.yml` — al momento solo avvio manuale (`workflow_dispatch`).
-
-Su `push` (se riattivato): esegue `sushi .` e può committare `fsh-generated/` su `main`/`release` quando i JSON cambiano. Permessi richiesti: *Read and write* in Settings → Actions.
-
-## Simplifier
-
-Push → Reimport. Prima attivazione: `guides/ImplementationGuideFHIRAgendeCUPLazio/guide.yaml` → *Update → Edit: Create IG and start updating in IG Editor*.
-
-Widget nelle pagine: slug progetto `LazioCrea`, es. `{{tree:LazioCrea/lccup-schedule}}`.
+Prima di una release su Simplifier: aggiornare `version` in `sushi-config.yaml`, `package.json` e `guide.yaml`, poi `sushi .`, push e Reimport.
 
 ## Profili
 
-| Nome | Risorsa |
-|------|---------|
-| LcCup-Schedule | Schedule |
-| LcCup-Slot | Slot |
-| LcCup-Appointment | Appointment |
-| LcCup-ServiceRequest | ServiceRequest |
+LcCup-Schedule, LcCup-Slot, LcCup-Appointment, LcCup-ServiceRequest
 
 ## Estensioni
 
 `lccup-tipo-agenda`, `lccup-modalita-erogazione`, `lccup-codice-prenotazione`, `lccup-canale-prenotazione`, `lccup-classe-priorita`, `lccup-link-teleconsulto`
-
-## Git
-
-Versionare: `input/fsh/`, `fsh-generated/`, `guides/`.

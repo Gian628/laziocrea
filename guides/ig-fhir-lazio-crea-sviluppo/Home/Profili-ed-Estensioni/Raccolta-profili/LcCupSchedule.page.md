@@ -7,7 +7,7 @@
 
 ## Descrizione
 
-Il profilo **LcCup-Schedule** rappresenta un'agenda del CUP Lazio. Ogni agenda appartiene a un servizio/ambulatorio ed è il contenitore delle fasce orarie (Slot).
+Il profilo **LcCup-Schedule** rappresenta un'agenda del **CUP Regionale Lazio**. Ogni agenda appartiene a un servizio/ambulatorio ed è il contenitore delle fasce orarie (Slot).
 
 Di seguito il contenuto del profilo in diversi formati. Definizione: {{link:https://www.fhir.laziocrea.it/StructureDefinition/lccup-schedule}}.
 

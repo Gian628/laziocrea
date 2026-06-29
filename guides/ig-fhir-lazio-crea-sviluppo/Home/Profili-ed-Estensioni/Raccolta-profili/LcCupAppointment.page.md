@@ -7,7 +7,7 @@
 
 ## Descrizione
 
-Il profilo **LcCup-Appointment** rappresenta una prenotazione CUP Lazio, con estensioni per canale, codice prenotazione e teleconsulto IRT.
+Il profilo **LcCup-Appointment** rappresenta una prenotazione del **CUP Regionale Lazio**, con estensioni per canale, codice prenotazione e teleconsulto con **IRT**.
 
 Definizione: {{link:https://www.fhir.laziocrea.it/StructureDefinition/lccup-appointment}}.
 

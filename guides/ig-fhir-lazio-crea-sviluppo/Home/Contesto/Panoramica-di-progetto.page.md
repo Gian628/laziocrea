@@ -1,26 +1,31 @@
 # {{page-title}}
 
-## Chi è Lazio Crea
+## Contesto
 
-**Lazio Crea** è l'Azienda dei Servizi Regionali in Sanità del Lazio (ASR).
-Gestisce, tra gli altri servizi, il **Centro Unico di Prenotazione (CUP)** regionale.
+Questa Implementation Guide si configura nel **contesto sanitario regionale del Lazio**.
 
-## Perché i profili LcCup
+I profili **LcCup** descrivono agende, disponibilità e prenotazioni del **CUP Regionale Lazio**, con estensioni per l’integrazione verso **IRT** (telemedicina regionale) nelle prestazioni erogabili a distanza.
 
-I profili **LcCup** sono stati definiti per il contesto specifico del **CUP Lazio**, con l'obiettivo di:
+La guida è curata da **Lazio Crea**, Azienda dei Servizi Regionali in Sanità del Lazio (ASR).
 
-1. **Gestire le agende** degli ambulatori e servizi prenotabili nel Lazio
-2. **Integrarsi con la Telemedicina nazionale IRT**, inviando prenotazioni e agende per prestazioni erogabili a distanza
-3. **Garantire interoperabilità** con la PNLA e gli standard FHIR R4
+## Cosa modellano i profili LcCup
+
+1. **Agende e fasce orarie** prenotabili (`LcCup-Schedule`, `LcCup-Slot`)
+2. **Impegnative e prenotazioni** (`LcCup-ServiceRequest`, `LcCup-Appointment`)
+3. **Modalità di erogazione** e **link alla sessione** per il teleconsulto (`lccup-modalita-erogazione`, `lccup-link-teleconsulto`)
+
+## Integrazione con IRT
+
+Per il teleconsulto, CUP e IRT si scambiano almeno l’offerta (`Schedule` / `Slot`) e la prenotazione (`Appointment`). La modalità tecnica dello scambio (invio o richiesta delle agende) è ancora in definizione.
 
 ## Ambito tecnico
 
 | Fase | Risorsa LcCup | Descrizione |
 |---|---|---|
 | Prescrizione | LcCup-ServiceRequest | Impegnativa SSN (NRE, priorità U/B/D/P) |
-| Offerta | LcCup-Schedule + LcCup-Slot | Agenda e fasce orarie CUP Lazio |
-| Prenotazione | LcCup-Appointment | Prenotazione con codice CUP e canale |
-| Teleconsulto | estensioni LcCup | `lccup-modalita-erogazione`, `lccup-link-teleconsulto` |
+| Offerta | LcCup-Schedule + LcCup-Slot | Agenda e fasce orarie |
+| Prenotazione | LcCup-Appointment | Prenotazione con codice CUP, canale e modalità |
+| Teleconsulto | estensioni LcCup | Modalità erogazione e link sessione IRT |
 
 ## Standard di riferimento
 
@@ -28,14 +33,8 @@ I profili **LcCup** sono stati definiti per il contesto specifico del **CUP Lazi
 - PNLA — Piattaforma Nazionale Liste di Attesa (L.107/2024)
 - Normativa classi di priorità **U / B / D / P**
 
-## Pubblico di riferimento
-
-- Sviluppatori sistemi CUP Lazio Crea
-- Integratori piattaforma IRT
-- Referenti clinico-organizzativi Regione Lazio
-
 ## Stato
 
-Guida in stato **draft** (versione `0.3.0`). Risorse soggette a revisione.
+Guida in **draft**, versione `0.0.2`.
 
 **URL canonica:** `https://www.fhir.laziocrea.it`

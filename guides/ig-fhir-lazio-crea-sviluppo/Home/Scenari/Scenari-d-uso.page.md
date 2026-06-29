@@ -1,6 +1,6 @@
-# Scenari d'uso CUP
+# Scenari d'uso
 
-Esempi concreti dei principali flussi di prenotazione CUP Lazio e integrazione IRT.
+Flussi principali del **CUP Regionale Lazio** e integrazione con **IRT**.
 
 ## Scenario 1 — Prenotazione SSN con impegnativa
 
@@ -9,7 +9,7 @@ Flusso tipico: il MMG emette l'impegnativa, l'assistito prenota al CUP.
 ```
 MMG emette impegnativa (ServiceRequest)
         ↓
-Assistito contatta CUP (sportello / telefono / web)
+Assistito contatta il CUP Regionale Lazio (sportello / telefono / web)
         ↓
 CUP cerca slot liberi → Schedule → Slot[status=free]
         ↓
@@ -17,7 +17,7 @@ CUP crea Appointment collegato a Slot e ServiceRequest
         ↓
 Slot.status diventa busy
         ↓
-Assistito riceve codice prenotazione CUP
+Assistito riceve codice prenotazione
 ```
 
 ### Istanze di esempio
@@ -30,21 +30,22 @@ Assistito riceve codice prenotazione CUP
 
 ---
 
-## Scenario 2 — Teleconsulto → invio a IRT
+## Scenario 2 — Teleconsulto con IRT
 
 1. Prenotazione su agenda con `lccup-modalita-erogazione = TELECONSULTO`.
-2. Lazio Crea invia `LcCup-Appointment` a IRT.
-3. IRT restituisce URL sessione → `lccup-link-teleconsulto`.
-4. Notifica al paziente con link video.
+2. Il CUP Regionale Lazio scambia l'`LcCup-Appointment` con **IRT**.
+3. IRT restituisce l'URL della sessione → `lccup-link-teleconsulto`.
+4. Notifica all'assistito con il link video.
 
 {{json:LazioCrea/esempio-prenotazione-teleconsulto}}
 
 ---
 
-## Scenario 3 — Pubblicazione agende verso IRT
+## Scenario 3 — Agende teleconsulto verso IRT
 
-Lazio Crea espone le agende teleconsulto (`LcCup-Schedule` + `LcCup-Slot`)
-per consentire a IRT di conoscere la disponibilità e ricevere le prenotazioni.
+Il CUP Regionale Lazio espone le agende teleconsulto (`LcCup-Schedule` + `LcCup-Slot`) affinché IRT conosca la disponibilità.
+
+La direzione dello scambio (invio dal CUP o richiesta da IRT) è in fase di definizione; le risorse FHIR restano le stesse.
 
 {{json:LazioCrea/esempio-agenda-teleconsulto}}
 

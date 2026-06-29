@@ -6,7 +6,7 @@
 #   - input/fsh/          → sorgenti FSH
 #   - guides/             → guida Simplifier
 #   - fsh-generated/      → JSON per Simplifier (committati anche dal bot CI)
-#   - sushi-config.yaml, ig.ini, .github/
+#   - sushi-config.yaml, package.json, .github/
 #
 # Se decommentate fsh-generated/ sotto, Simplifier non vedrà più i profili
 # su GitHub finché non li rigenerate e committate a mano.
