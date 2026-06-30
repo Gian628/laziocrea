@@ -1,0 +1,28 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CsRuoloEquipe",
+  "id": "cs-ruolo-equipe",
+  "title": "Codici ruolo equipe",
+  "url": "https://www.fhir.laziocrea.it/CodeSystem/cs-ruolo-equipe",
+  "concept": [
+    {
+      "code": "MEDICO",
+      "display": "Medico",
+      "definition": "Medico clinico"
+    },
+    {
+      "code": "INFERMIERE",
+      "display": "Infermiere",
+      "definition": "Infermiere"
+    },
+    {
+      "code": "AMMINISTRATIVO",
+      "display": "Amministrativo",
+      "definition": "Personale amministrativo"
+    }
+  ],
+  "experimental": true,
+  "count": 3
+}

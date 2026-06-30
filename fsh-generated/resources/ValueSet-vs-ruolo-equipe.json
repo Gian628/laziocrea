@@ -1,0 +1,17 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "VsRuoloEquipe",
+  "id": "vs-ruolo-equipe",
+  "title": "Ruolo in equipe",
+  "description": "Ruolo del membro in un CareTeam teleconsulto CUP/IRT",
+  "url": "https://www.fhir.laziocrea.it/ValueSet/vs-ruolo-equipe",
+  "experimental": true,
+  "compose": {
+    "include": [
+      {
+        "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-ruolo-equipe"
+      }
+    ]
+  }
+}

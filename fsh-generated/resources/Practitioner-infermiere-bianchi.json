@@ -1,0 +1,12 @@
+{
+  "resourceType": "Practitioner",
+  "id": "infermiere-bianchi",
+  "name": [
+    {
+      "family": "Bianchi",
+      "given": [
+        "Sara"
+      ]
+    }
+  ]
+}
