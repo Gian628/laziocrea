@@ -26,6 +26,11 @@ InstanceOf: Practitioner
 * name[0].family = "Rossi"
 * name[0].given[0] = "Laura"
 
+Instance: infermiere-bianchi
+InstanceOf: Practitioner
+* name[0].family = "Bianchi"
+* name[0].given[0] = "Sara"
+
 Instance: ambulatorio-cardio-sandrini
 InstanceOf: Location
 * status = #active
@@ -133,7 +138,11 @@ Title: "Esempio Equipe Teleconsulto"
 * name = "Equipe Teleconsulto Cardiologia"
 * status = #active
 * participant[0].member = Reference(Practitioner/dr-verdi-cardiologo)
-* participant[1].member = Reference(Practitioner/dr-rossi-equipe)
+* participant[0].role.coding[0].system = "https://www.fhir.laziocrea.it/CodeSystem/cs-ruolo-equipe"
+* participant[0].role.coding[0].code = #MEDICO
+* participant[1].member = Reference(Practitioner/infermiere-bianchi)
+* participant[1].role.coding[0].system = "https://www.fhir.laziocrea.it/CodeSystem/cs-ruolo-equipe"
+* participant[1].role.coding[0].code = #INFERMIERE
 * managingOrganization[0] = Reference(Organization/esempio-irt-organization)
 
 Instance: esempio-irt-hs-televisit

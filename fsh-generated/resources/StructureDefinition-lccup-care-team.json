@@ -6,7 +6,7 @@
   "title": "LcCup CareTeam - Equipe teleconsulto",
   "status": "draft",
   "experimental": true,
-  "description": "Equipe di professionisti associata ad agende e appuntamenti teleconsulto IRT.",
+  "description": "Equipe associata ad agende e appuntamenti teleconsulto IRT.\nOgni membro è un Practitioner con ruolo in equipe (medico, infermiere, amministrativo).",
   "fhirVersion": "5.0.0",
   "kind": "resource",
   "abstract": false,
@@ -30,9 +30,19 @@
       {
         "id": "CareTeam.participant",
         "path": "CareTeam.participant",
-        "short": "Membri dell'equipe",
+        "short": "Membri dell'equipe (solo Practitioner)",
         "min": 1,
         "mustSupport": true
+      },
+      {
+        "id": "CareTeam.participant.role",
+        "path": "CareTeam.participant.role",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.fhir.laziocrea.it/ValueSet/vs-ruolo-equipe"
+        }
       },
       {
         "id": "CareTeam.participant.member",

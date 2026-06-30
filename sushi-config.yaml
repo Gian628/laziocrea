@@ -65,6 +65,7 @@ groups:
       - ValueSet/vs-tipo-servizio
       - ValueSet/vs-canale-virtuale
       - ValueSet/vs-event-status
+      - ValueSet/vs-ruolo-equipe
 
   Esempi:
     name: Esempi

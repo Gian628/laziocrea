@@ -156,6 +156,13 @@
       },
       {
         "reference": {
+          "reference": "CodeSystem/cs-ruolo-equipe"
+        },
+        "name": "Codici ruolo equipe",
+        "isExample": false
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/cs-event-status"
         },
         "name": "Codici Stato Evento",
@@ -366,6 +373,13 @@
       },
       {
         "reference": {
+          "reference": "Practitioner/infermiere-bianchi"
+        },
+        "name": "infermiere-bianchi",
+        "isExample": true
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/lccup-appointment"
         },
         "name": "LcCup Appointment - Prenotazione CUP Lazio",
@@ -378,7 +392,7 @@
           "reference": "StructureDefinition/lccup-care-team"
         },
         "name": "LcCup CareTeam - Equipe teleconsulto",
-        "description": "Equipe di professionisti associata ad agende e appuntamenti teleconsulto IRT.",
+        "description": "Equipe associata ad agende e appuntamenti teleconsulto IRT.\nOgni membro è un Practitioner con ruolo in equipe (medico, infermiere, amministrativo).",
         "groupingId": "Profili",
         "isExample": false
       },
@@ -484,6 +498,15 @@
         },
         "name": "paziente-mario-rossi",
         "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/vs-ruolo-equipe"
+        },
+        "name": "Ruolo in equipe",
+        "description": "Ruolo del membro in un CareTeam teleconsulto CUP/IRT",
+        "groupingId": "ValueSets",
+        "isExample": false
       },
       {
         "reference": {

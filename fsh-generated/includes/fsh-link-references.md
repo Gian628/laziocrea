@@ -10,6 +10,7 @@
 [CsCanaleVirtuale]: CodeSystem-cs-canale-virtuale.html
 [CsClassePriorita]: CodeSystem-cs-classe-priorita.html
 [CsModalitaErogazione]: CodeSystem-cs-modalita-erogazione.html
+[CsRuoloEquipe]: CodeSystem-cs-ruolo-equipe.html
 [CsEventStatus]: CodeSystem-cs-event-status.html
 [CsTipoAgenda]: CodeSystem-cs-tipo-agenda.html
 [CsTipoIdentificatore]: CodeSystem-cs-tipo-identificatore.html
@@ -32,6 +33,7 @@
 [esempio-slot-libero]: Slot-esempio-slot-libero.html
 [esempio-slot-teleconsulto]: Slot-esempio-slot-teleconsulto.html
 [esempio-irt-organization]: Organization-esempio-irt-organization.html
+[infermiere-bianchi]: Practitioner-infermiere-bianchi.html
 [LcCupAppointment]: StructureDefinition-lccup-appointment.html
 [LcCupCareTeam]: StructureDefinition-lccup-care-team.html
 [LcCupHealthcareService]: StructureDefinition-lccup-healthcare-service.html
@@ -46,6 +48,7 @@
 [ExtManagingOrganization]: StructureDefinition-managing-organization.html
 [ExtPathology]: StructureDefinition-pathology.html
 [paziente-mario-rossi]: Patient-paziente-mario-rossi.html
+[VsRuoloEquipe]: ValueSet-vs-ruolo-equipe.html
 [ExtSelectable]: StructureDefinition-selectable.html
 [ExtSlotInitialized]: StructureDefinition-slot-initialized.html
 [ExtEventStatus]: StructureDefinition-event-status.html

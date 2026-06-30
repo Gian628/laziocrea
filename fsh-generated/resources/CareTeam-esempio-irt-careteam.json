@@ -12,11 +12,27 @@
     {
       "member": {
         "reference": "Practitioner/dr-verdi-cardiologo"
+      },
+      "role": {
+        "coding": [
+          {
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-ruolo-equipe",
+            "code": "MEDICO"
+          }
+        ]
       }
     },
     {
       "member": {
-        "reference": "Practitioner/dr-rossi-equipe"
+        "reference": "Practitioner/infermiere-bianchi"
+      },
+      "role": {
+        "coding": [
+          {
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-ruolo-equipe",
+            "code": "INFERMIERE"
+          }
+        ]
       }
     }
   ],

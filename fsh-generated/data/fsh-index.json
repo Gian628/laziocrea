@@ -4,24 +4,24 @@
     "fshName": "esempio-prenotazione-teleconsulto",
     "fshType": "Instance",
     "fshFile": "examples\\Examples.fsh",
-    "startLine": 200,
-    "endLine": 232
+    "startLine": 209,
+    "endLine": 241
   },
   {
     "outputFile": "Appointment-esempio-prenotazione-visita.json",
     "fshName": "esempio-prenotazione-visita",
     "fshType": "Instance",
     "fshFile": "examples\\Examples.fsh",
-    "startLine": 88,
-    "endLine": 116
+    "startLine": 93,
+    "endLine": 121
   },
   {
     "outputFile": "CareTeam-esempio-irt-careteam.json",
     "fshName": "esempio-irt-careteam",
     "fshType": "Instance",
     "fshFile": "examples\\Examples.fsh",
-    "startLine": 130,
-    "endLine": 137
+    "startLine": 135,
+    "endLine": 146
   },
   {
     "outputFile": "CodeSystem-cs-canale-prenotazione.json",
@@ -64,6 +64,14 @@
     "endLine": 56
   },
   {
+    "outputFile": "CodeSystem-cs-ruolo-equipe.json",
+    "fshName": "CsRuoloEquipe",
+    "fshType": "CodeSystem",
+    "fshFile": "valuesets\\ValueSets.fsh",
+    "startLine": 152,
+    "endLine": 159
+  },
+  {
     "outputFile": "CodeSystem-cs-tipo-agenda.json",
     "fshName": "CsTipoAgenda",
     "fshType": "CodeSystem",
@@ -92,32 +100,32 @@
     "fshName": "esempio-irt-hs-prestazione",
     "fshType": "Instance",
     "fshFile": "examples\\Examples.fsh",
-    "startLine": 147,
-    "endLine": 153
+    "startLine": 156,
+    "endLine": 162
   },
   {
     "outputFile": "HealthcareService-esempio-irt-hs-televisit.json",
     "fshName": "esempio-irt-hs-televisit",
     "fshType": "Instance",
     "fshFile": "examples\\Examples.fsh",
-    "startLine": 139,
-    "endLine": 145
+    "startLine": 148,
+    "endLine": 154
   },
   {
     "outputFile": "Location-ambulatorio-cardio-sandrini.json",
     "fshName": "ambulatorio-cardio-sandrini",
     "fshType": "Instance",
     "fshFile": "examples\\Examples.fsh",
-    "startLine": 29,
-    "endLine": 32
+    "startLine": 34,
+    "endLine": 37
   },
   {
     "outputFile": "Organization-esempio-irt-organization.json",
     "fshName": "esempio-irt-organization",
     "fshType": "Instance",
     "fshFile": "examples\\Examples.fsh",
-    "startLine": 120,
-    "endLine": 128
+    "startLine": 125,
+    "endLine": 133
   },
   {
     "outputFile": "Patient-paziente-mario-rossi.json",
@@ -144,6 +152,14 @@
     "endLine": 22
   },
   {
+    "outputFile": "Practitioner-infermiere-bianchi.json",
+    "fshName": "infermiere-bianchi",
+    "fshType": "Instance",
+    "fshFile": "examples\\Examples.fsh",
+    "startLine": 29,
+    "endLine": 32
+  },
+  {
     "outputFile": "Practitioner-mmg-dr-bianchi.json",
     "fshName": "mmg-dr-bianchi",
     "fshType": "Instance",
@@ -156,48 +172,48 @@
     "fshName": "esempio-agenda-cardiologia",
     "fshType": "Instance",
     "fshFile": "examples\\Examples.fsh",
-    "startLine": 36,
-    "endLine": 56
+    "startLine": 41,
+    "endLine": 61
   },
   {
     "outputFile": "Schedule-esempio-agenda-teleconsulto.json",
     "fshName": "esempio-agenda-teleconsulto",
     "fshType": "Instance",
     "fshFile": "examples\\Examples.fsh",
-    "startLine": 155,
-    "endLine": 174
+    "startLine": 164,
+    "endLine": 183
   },
   {
     "outputFile": "ServiceRequest-esempio-impegnativa-ssn.json",
     "fshName": "esempio-impegnativa-ssn",
     "fshType": "Instance",
     "fshFile": "examples\\Examples.fsh",
-    "startLine": 70,
-    "endLine": 86
+    "startLine": 75,
+    "endLine": 91
   },
   {
     "outputFile": "ServiceRequest-esempio-impegnativa-teleconsulto.json",
     "fshName": "esempio-impegnativa-teleconsulto",
     "fshType": "Instance",
     "fshFile": "examples\\Examples.fsh",
-    "startLine": 186,
-    "endLine": 198
+    "startLine": 195,
+    "endLine": 207
   },
   {
     "outputFile": "Slot-esempio-slot-libero.json",
     "fshName": "esempio-slot-libero",
     "fshType": "Instance",
     "fshFile": "examples\\Examples.fsh",
-    "startLine": 58,
-    "endLine": 68
+    "startLine": 63,
+    "endLine": 73
   },
   {
     "outputFile": "Slot-esempio-slot-teleconsulto.json",
     "fshName": "esempio-slot-teleconsulto",
     "fshType": "Instance",
     "fshFile": "examples\\Examples.fsh",
-    "startLine": 176,
-    "endLine": 184
+    "startLine": 185,
+    "endLine": 193
   },
   {
     "outputFile": "StructureDefinition-allows-enrollment.json",
@@ -285,7 +301,7 @@
     "fshType": "Profile",
     "fshFile": "profiles\\LcCupCareTeam.fsh",
     "startLine": 1,
-    "endLine": 21
+    "endLine": 24
   },
   {
     "outputFile": "StructureDefinition-lccup-healthcare-service.json",
@@ -430,6 +446,14 @@
     "fshFile": "valuesets\\ValueSets.fsh",
     "startLine": 42,
     "endLine": 47
+  },
+  {
+    "outputFile": "ValueSet-vs-ruolo-equipe.json",
+    "fshName": "VsRuoloEquipe",
+    "fshType": "ValueSet",
+    "fshFile": "valuesets\\ValueSets.fsh",
+    "startLine": 144,
+    "endLine": 150
   },
   {
     "outputFile": "ValueSet-vs-stato-slot.json",

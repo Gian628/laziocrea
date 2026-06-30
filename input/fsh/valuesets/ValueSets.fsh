@@ -140,3 +140,20 @@ Title: "Codici Stato Evento"
 * #PENDING   "In attesa"    "Evento in attesa di conferma o erogazione"
 * #CONFIRMED "Confermato"   "Evento confermato"
 * #COMPLETED "Completato"   "Evento completato"
+
+ValueSet: VsRuoloEquipe
+Id: vs-ruolo-equipe
+Title: "Ruolo in equipe"
+Description: "Ruolo del membro in un CareTeam teleconsulto CUP/IRT"
+* ^status = #draft
+* ^experimental = true
+* include codes from system CsRuoloEquipe
+
+CodeSystem: CsRuoloEquipe
+Id: cs-ruolo-equipe
+Title: "Codici ruolo equipe"
+* ^status = #draft
+* ^experimental = true
+* #MEDICO         "Medico"         "Medico clinico"
+* #INFERMIERE     "Infermiere"     "Infermiere"
+* #AMMINISTRATIVO "Amministrativo" "Personale amministrativo"
