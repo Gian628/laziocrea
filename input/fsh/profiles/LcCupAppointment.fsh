@@ -1,101 +1,96 @@
-// ============================================================
-// PROFILO: LcCup-Appointment (Prenotazione CUP Lazio)
-// ============================================================
-
 Profile: LcCupAppointment
 Id: lccup-appointment
 Title: "LcCup Appointment - Prenotazione CUP Lazio"
 Description: """
-  Profilo Lazio Crea per la prenotazione ambulatoriale nel CUP regionale.
-  Pensato per l'integrazione con la Telemedicina nazionale IRT: quando la
-  modalità è TELECONSULTO, la prenotazione viene inviata a IRT con il link
-  alla sessione video.
-
-  Relazioni:
-  - basedOn → LcCupServiceRequest (impegnativa SSN)
-  - slot    → LcCupSlot (fascia oraria prenotata)
-  - participant → Patient, Practitioner, Location
+  Prenotazione ambulatoriale o teleconsulto nel CUP regionale.
+  Teleconsulto: equipe (CareTeam), virtualService per sessione video, prestazione in supportingInformation.
 """
 Parent: Appointment
 * ^status = #draft
 * ^experimental = true
 
 * identifier MS
-* identifier ^short = "Identificatore interno CUP Lazio"
 
 * status 1..1 MS
-* status ^short = "Stato: proposed | booked | cancelled | fulfilled | noshow"
 
-* serviceType 1..* MS
-* serviceType ^short = "Tipo di prestazione prenotata"
+* serviceCategory 0..* MS
 
-* specialty MS
-* specialty ^short = "Specialità medica"
+* serviceType 0..* MS
+* serviceType ^short = "Piattaforma o tipo prestazione (CodeableReference)"
+
+* specialty 0..* MS
 
 * appointmentType MS
-* appointmentType ^short = "Tipo di accesso"
 
-* basedOn MS
+* supportingInformation 0..* MS
+* supportingInformation only Reference(LcCupHealthcareService)
+* supportingInformation ^short = "Prestazione clinica specifica (teleconsulto IRT)"
+
+* basedOn 0..* MS
 * basedOn only Reference(LcCupServiceRequest)
-* basedOn ^short = "Impegnativa SSN (obbligatoria in regime SSN)"
+* basedOn ^short = "Impegnativa SSN"
 
 * slot 1..* MS
 * slot only Reference(LcCupSlot)
-* slot ^short = "Slot prenotato nell'agenda CUP Lazio"
+
+* subject 1..1 MS
+* subject only Reference(Patient)
+* subject ^short = "Assistito"
 
 * start 1..1 MS
-* start ^short = "Data e ora inizio appuntamento"
 * end MS
-* end ^short = "Data e ora fine prevista"
-
 * minutesDuration MS
-* minutesDuration ^short = "Durata prevista in minuti"
-
 * created MS
-* created ^short = "Data e ora della prenotazione"
-
-* comment MS
-* comment ^short = "Note aggiuntive"
-
+* note MS
 * patientInstruction MS
-* patientInstruction ^short = "Istruzioni per il paziente"
+
+* virtualService 0..* MS
+* virtualService.channelType from VsCanaleVirtuale (extensible)
+* virtualService ^short = "Sessione videocall (addressString o URL)"
 
 * participant ^slicing.discriminator.type = #type
 * participant ^slicing.discriminator.path = "actor"
 * participant ^slicing.rules = #open
-* participant ^short = "Partecipanti all'appuntamento"
 
 * participant contains
-    paziente    1..1 MS and
+    paziente 1..1 MS and
+    equipe 0..1 MS and
     professionista 0..1 MS and
-    sede        1..1 MS
+    sede 0..1 MS
 
 * participant[paziente].actor only Reference(Patient)
 * participant[paziente].actor 1..1 MS
 * participant[paziente].status MS
-* participant[paziente] ^short = "Assistito"
+* participant[paziente] ^short = "Assistito (ridondante con subject, ammesso per compatibilità IRT)"
+
+* participant[equipe].actor only Reference(LcCupCareTeam)
+* participant[equipe].actor 1..1 MS
+* participant[equipe].status MS
+* participant[equipe] ^short = "Equipe teleconsulto"
 
 * participant[professionista].actor only Reference(Practitioner or PractitionerRole)
 * participant[professionista].actor 1..1 MS
 * participant[professionista].status MS
-* participant[professionista] ^short = "Professionista erogante"
+* participant[professionista] ^short = "Professionista (opzionale; può essere popolato post-prenotazione)"
 
 * participant[sede].actor only Reference(Location)
 * participant[sede].actor 1..1 MS
 * participant[sede].status MS
-* participant[sede] ^short = "Sede fisica o virtuale (IRT)"
+* participant[sede] ^short = "Sede fisica (presenza)"
 
 * extension contains ExtCodicePrenotazione named codicePrenotazione 1..1 MS
-* extension[codicePrenotazione] ^short = "Codice prenotazione CUP consegnato all'utente"
-
 * extension contains ExtCanalePrenotazione named canalePrenotazione 1..1 MS
-* extension[canalePrenotazione] ^short = "Canale di prenotazione"
-
-* extension contains ExtClassePrioritaCup named classePrioritaCup 0..1 MS
-* extension[classePrioritaCup] ^short = "Classe priorità U/B/D/P"
-
+* extension contains ExtClassePriorita named classePriorita 0..1 MS
 * extension contains ExtModalitaErogazione named modalitaErogazione 1..1 MS
-* extension[modalitaErogazione] ^short = "In presenza, teleconsulto o telemonitoraggio"
 
-* extension contains ExtLinkTeleconsulto named linkTeleconsulto 0..1 MS
-* extension[linkTeleconsulto] ^short = "URL sessione IRT (se teleconsulto)"
+* extension contains ExtAppointmentOrganization named appointmentOrganization 0..1 MS
+* extension[appointmentOrganization] ^short = "Struttura associata all'appuntamento"
+
+* extension contains ExtDocumentsDeleted named documentsDeleted 0..1 MS
+* extension[documentsDeleted] ^short = "Documenti eliminati"
+
+* extension contains ExtPathology named pathology 0..1 MS
+* extension[pathology] ^short = "Patologia o quesito clinico"
+
+* extension contains ExtEventStatus named eventStatus 0..1 MS
+* extension[eventStatus] ^short = "Stato workflow evento"

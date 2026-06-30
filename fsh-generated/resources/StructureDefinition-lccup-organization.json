@@ -1,0 +1,87 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "lccup-organization",
+  "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-organization",
+  "name": "LcCupOrganization",
+  "title": "LcCup Organization - Struttura sanitaria",
+  "status": "draft",
+  "experimental": true,
+  "description": "Profilo per le strutture sanitarie nel contesto CUP Lazio e integrazione IRT.\nIdentificatore STS regionale e flag operativi piattaforma.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Organization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Organization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Organization.extension",
+        "path": "Organization.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Organization.extension:selectable",
+        "path": "Organization.extension",
+        "sliceName": "selectable",
+        "short": "Struttura selezionabile in interfaccia",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/selectable"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.extension:allowsEnrollment",
+        "path": "Organization.extension",
+        "sliceName": "allowsEnrollment",
+        "short": "Struttura che consente iscrizione pazienti",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/allows-enrollment"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.identifier",
+        "path": "Organization.identifier",
+        "short": "Codice STS struttura (urn:oid:2.16.840.1.113883.2.9.4.1.1)",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.active",
+        "path": "Organization.active",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.name",
+        "path": "Organization.name",
+        "min": 1,
+        "mustSupport": true
+      }
+    ]
+  }
+}

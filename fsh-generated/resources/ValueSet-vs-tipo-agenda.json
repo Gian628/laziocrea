@@ -1,0 +1,16 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "VsTipoAgenda",
+  "id": "vs-tipo-agenda",
+  "title": "Tipo Agenda",
+  "url": "https://www.fhir.laziocrea.it/ValueSet/vs-tipo-agenda",
+  "experimental": true,
+  "compose": {
+    "include": [
+      {
+        "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-tipo-agenda"
+      }
+    ]
+  }
+}

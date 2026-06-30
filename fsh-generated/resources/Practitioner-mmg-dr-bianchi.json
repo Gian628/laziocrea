@@ -1,0 +1,15 @@
+{
+  "resourceType": "Practitioner",
+  "id": "mmg-dr-bianchi",
+  "name": [
+    {
+      "family": "Bianchi",
+      "given": [
+        "Giuseppe"
+      ],
+      "prefix": [
+        "Dr."
+      ]
+    }
+  ]
+}

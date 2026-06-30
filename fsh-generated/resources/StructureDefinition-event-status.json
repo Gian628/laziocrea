@@ -1,22 +1,24 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "lccup-classe-priorita",
-  "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-classe-priorita",
-  "name": "ExtClassePrioritaCup",
-  "title": "LcCup - Classe di Priorità",
+  "id": "event-status",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "can-bind"
+    }
+  ],
+  "url": "https://www.fhir.laziocrea.it/StructureDefinition/event-status",
+  "name": "ExtEventStatus",
+  "title": "Stato evento",
   "status": "draft",
-  "description": "Classe di priorità U/B/D/P secondo normativa liste d'attesa italiana.",
-  "fhirVersion": "4.0.1",
+  "description": "Stato workflow dell'evento lato piattaforma (es. PENDING). Corrisponde a eventColor IRT.",
+  "fhirVersion": "5.0.0",
   "kind": "complex-type",
   "abstract": false,
   "context": [
     {
       "type": "element",
       "expression": "Appointment"
-    },
-    {
-      "type": "element",
-      "expression": "ServiceRequest"
     }
   ],
   "type": "Extension",
@@ -27,8 +29,8 @@
       {
         "id": "Extension",
         "path": "Extension",
-        "short": "LcCup - Classe di Priorità",
-        "definition": "Classe di priorità U/B/D/P secondo normativa liste d'attesa italiana."
+        "short": "Stato evento",
+        "definition": "Stato workflow dell'evento lato piattaforma (es. PENDING). Corrisponde a eventColor IRT."
       },
       {
         "id": "Extension.extension",
@@ -38,7 +40,7 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-classe-priorita"
+        "fixedUri": "https://www.fhir.laziocrea.it/StructureDefinition/event-status"
       },
       {
         "id": "Extension.value[x]",
@@ -50,7 +52,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "https://www.fhir.laziocrea.it/ValueSet/lccup-vs-classe-priorita"
+          "valueSet": "https://www.fhir.laziocrea.it/ValueSet/vs-event-status"
         }
       }
     ]

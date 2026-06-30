@@ -8,25 +8,23 @@
   },
   "extension": [
     {
-      "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-tipo-agenda",
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/tipo-agenda",
       "valueCodeableConcept": {
         "coding": [
           {
-            "system": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-tipo-agenda",
-            "code": "SSN",
-            "display": "SSN Istituzionale"
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-tipo-agenda",
+            "code": "SSN"
           }
         ]
       }
     },
     {
-      "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-modalita-erogazione",
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/modalita-erogazione",
       "valueCodeableConcept": {
         "coding": [
           {
-            "system": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-modalita-erogazione",
-            "code": "IN_PRESENZA",
-            "display": "In presenza"
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-modalita-erogazione",
+            "code": "IN_PRESENZA"
           }
         ]
       }
@@ -39,15 +37,18 @@
     }
   ],
   "active": true,
+  "name": "Agenda Cardiologia SSN",
   "serviceType": [
     {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "408471009",
-          "display": "Visita cardiologica"
-        }
-      ]
+      "concept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "408471009",
+            "display": "Visita cardiologica"
+          }
+        ]
+      }
     }
   ],
   "specialty": [

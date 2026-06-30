@@ -1,0 +1,16 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "VsTipoServizio",
+  "id": "vs-tipo-servizio",
+  "title": "Tipo HealthcareService",
+  "url": "https://www.fhir.laziocrea.it/ValueSet/vs-tipo-servizio",
+  "experimental": true,
+  "compose": {
+    "include": [
+      {
+        "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-tipo-servizio"
+      }
+    ]
+  }
+}

@@ -6,8 +6,8 @@
   "title": "LcCup Appointment - Prenotazione CUP Lazio",
   "status": "draft",
   "experimental": true,
-  "description": "Profilo Lazio Crea per la prenotazione ambulatoriale nel CUP regionale.\nPensato per l'integrazione con la Telemedicina nazionale IRT: quando la\nmodalità è TELECONSULTO, la prenotazione viene inviata a IRT con il link\nalla sessione video.\n\nRelazioni:\n- basedOn → LcCupServiceRequest (impegnativa SSN)\n- slot    → LcCupSlot (fascia oraria prenotata)\n- participant → Patient, Practitioner, Location",
-  "fhirVersion": "4.0.1",
+  "description": "Prenotazione ambulatoriale o teleconsulto nel CUP regionale.\nTeleconsulto: equipe (CareTeam), virtualService per sessione video, prestazione in supportingInformation.",
+  "fhirVersion": "5.0.0",
   "kind": "resource",
   "abstract": false,
   "type": "Appointment",
@@ -34,14 +34,13 @@
         "id": "Appointment.extension:codicePrenotazione",
         "path": "Appointment.extension",
         "sliceName": "codicePrenotazione",
-        "short": "Codice prenotazione CUP consegnato all'utente",
         "min": 1,
         "max": "1",
         "type": [
           {
             "code": "Extension",
             "profile": [
-              "https://www.fhir.laziocrea.it/StructureDefinition/lccup-codice-prenotazione"
+              "https://www.fhir.laziocrea.it/StructureDefinition/codice-prenotazione"
             ]
           }
         ],
@@ -51,31 +50,29 @@
         "id": "Appointment.extension:canalePrenotazione",
         "path": "Appointment.extension",
         "sliceName": "canalePrenotazione",
-        "short": "Canale di prenotazione",
         "min": 1,
         "max": "1",
         "type": [
           {
             "code": "Extension",
             "profile": [
-              "https://www.fhir.laziocrea.it/StructureDefinition/lccup-canale-prenotazione"
+              "https://www.fhir.laziocrea.it/StructureDefinition/canale-prenotazione"
             ]
           }
         ],
         "mustSupport": true
       },
       {
-        "id": "Appointment.extension:classePrioritaCup",
+        "id": "Appointment.extension:classePriorita",
         "path": "Appointment.extension",
-        "sliceName": "classePrioritaCup",
-        "short": "Classe priorità U/B/D/P",
+        "sliceName": "classePriorita",
         "min": 0,
         "max": "1",
         "type": [
           {
             "code": "Extension",
             "profile": [
-              "https://www.fhir.laziocrea.it/StructureDefinition/lccup-classe-priorita"
+              "https://www.fhir.laziocrea.it/StructureDefinition/classe-priorita"
             ]
           }
         ],
@@ -85,31 +82,81 @@
         "id": "Appointment.extension:modalitaErogazione",
         "path": "Appointment.extension",
         "sliceName": "modalitaErogazione",
-        "short": "In presenza, teleconsulto o telemonitoraggio",
         "min": 1,
         "max": "1",
         "type": [
           {
             "code": "Extension",
             "profile": [
-              "https://www.fhir.laziocrea.it/StructureDefinition/lccup-modalita-erogazione"
+              "https://www.fhir.laziocrea.it/StructureDefinition/modalita-erogazione"
             ]
           }
         ],
         "mustSupport": true
       },
       {
-        "id": "Appointment.extension:linkTeleconsulto",
+        "id": "Appointment.extension:appointmentOrganization",
         "path": "Appointment.extension",
-        "sliceName": "linkTeleconsulto",
-        "short": "URL sessione IRT (se teleconsulto)",
+        "sliceName": "appointmentOrganization",
+        "short": "Struttura associata all'appuntamento",
         "min": 0,
         "max": "1",
         "type": [
           {
             "code": "Extension",
             "profile": [
-              "https://www.fhir.laziocrea.it/StructureDefinition/lccup-link-teleconsulto"
+              "https://www.fhir.laziocrea.it/StructureDefinition/appointment-organization"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.extension:documentsDeleted",
+        "path": "Appointment.extension",
+        "sliceName": "documentsDeleted",
+        "short": "Documenti eliminati",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/documents-deleted"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.extension:pathology",
+        "path": "Appointment.extension",
+        "sliceName": "pathology",
+        "short": "Patologia o quesito clinico",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/pathology"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.extension:eventStatus",
+        "path": "Appointment.extension",
+        "sliceName": "eventStatus",
+        "short": "Stato workflow evento",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/event-status"
             ]
           }
         ],
@@ -118,57 +165,81 @@
       {
         "id": "Appointment.identifier",
         "path": "Appointment.identifier",
-        "short": "Identificatore interno CUP Lazio",
         "mustSupport": true
       },
       {
         "id": "Appointment.status",
         "path": "Appointment.status",
-        "short": "Stato: proposed | booked | cancelled | fulfilled | noshow",
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.serviceCategory",
+        "path": "Appointment.serviceCategory",
         "mustSupport": true
       },
       {
         "id": "Appointment.serviceType",
         "path": "Appointment.serviceType",
-        "short": "Tipo di prestazione prenotata",
-        "min": 1,
+        "short": "Piattaforma o tipo prestazione (CodeableReference)",
         "mustSupport": true
       },
       {
         "id": "Appointment.specialty",
         "path": "Appointment.specialty",
-        "short": "Specialità medica",
         "mustSupport": true
       },
       {
         "id": "Appointment.appointmentType",
         "path": "Appointment.appointmentType",
-        "short": "Tipo di accesso",
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.virtualService",
+        "path": "Appointment.virtualService",
+        "short": "Sessione videocall (addressString o URL)",
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.virtualService.channelType",
+        "path": "Appointment.virtualService.channelType",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://www.fhir.laziocrea.it/ValueSet/vs-canale-virtuale"
+        }
+      },
+      {
+        "id": "Appointment.supportingInformation",
+        "path": "Appointment.supportingInformation",
+        "short": "Prestazione clinica specifica (teleconsulto IRT)",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/lccup-healthcare-service"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {
         "id": "Appointment.start",
         "path": "Appointment.start",
-        "short": "Data e ora inizio appuntamento",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "Appointment.end",
         "path": "Appointment.end",
-        "short": "Data e ora fine prevista",
         "mustSupport": true
       },
       {
         "id": "Appointment.minutesDuration",
         "path": "Appointment.minutesDuration",
-        "short": "Durata prevista in minuti",
         "mustSupport": true
       },
       {
         "id": "Appointment.slot",
         "path": "Appointment.slot",
-        "short": "Slot prenotato nell'agenda CUP Lazio",
         "min": 1,
         "type": [
           {
@@ -183,30 +254,42 @@
       {
         "id": "Appointment.created",
         "path": "Appointment.created",
-        "short": "Data e ora della prenotazione",
         "mustSupport": true
       },
       {
-        "id": "Appointment.comment",
-        "path": "Appointment.comment",
-        "short": "Note aggiuntive",
+        "id": "Appointment.note",
+        "path": "Appointment.note",
         "mustSupport": true
       },
       {
         "id": "Appointment.patientInstruction",
         "path": "Appointment.patientInstruction",
-        "short": "Istruzioni per il paziente",
         "mustSupport": true
       },
       {
         "id": "Appointment.basedOn",
         "path": "Appointment.basedOn",
-        "short": "Impegnativa SSN (obbligatoria in regime SSN)",
+        "short": "Impegnativa SSN",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
               "https://www.fhir.laziocrea.it/StructureDefinition/lccup-service-request"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.subject",
+        "path": "Appointment.subject",
+        "short": "Assistito",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Patient"
             ]
           }
         ],
@@ -223,15 +306,13 @@
             }
           ],
           "rules": "open"
-        },
-        "short": "Partecipanti all'appuntamento",
-        "min": 2
+        }
       },
       {
         "id": "Appointment.participant:paziente",
         "path": "Appointment.participant",
         "sliceName": "paziente",
-        "short": "Assistito",
+        "short": "Assistito (ridondante con subject, ammesso per compatibilità IRT)",
         "min": 1,
         "max": "1",
         "mustSupport": true
@@ -256,10 +337,38 @@
         "mustSupport": true
       },
       {
+        "id": "Appointment.participant:equipe",
+        "path": "Appointment.participant",
+        "sliceName": "equipe",
+        "short": "Equipe teleconsulto",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.participant:equipe.actor",
+        "path": "Appointment.participant.actor",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/lccup-care-team"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.participant:equipe.status",
+        "path": "Appointment.participant.status",
+        "mustSupport": true
+      },
+      {
         "id": "Appointment.participant:professionista",
         "path": "Appointment.participant",
         "sliceName": "professionista",
-        "short": "Professionista erogante",
+        "short": "Professionista (opzionale; può essere popolato post-prenotazione)",
         "min": 0,
         "max": "1",
         "mustSupport": true
@@ -288,8 +397,8 @@
         "id": "Appointment.participant:sede",
         "path": "Appointment.participant",
         "sliceName": "sede",
-        "short": "Sede fisica o virtuale (IRT)",
-        "min": 1,
+        "short": "Sede fisica (presenza)",
+        "min": 0,
         "max": "1",
         "mustSupport": true
       },

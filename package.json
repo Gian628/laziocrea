@@ -1,10 +1,10 @@
 {
   "name": "lazio.crea.cup.irt",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "type": "ig",
-  "description": "Profili FHIR R4 LcCup per il CUP Regionale Lazio e integrazione IRT",
+  "description": "Profili FHIR R5 LcCup per il CUP Regionale Lazio e integrazione IRT",
   "license": "CC0-1.0",
   "dependencies": {
-    "hl7.fhir.r4.core": "4.0.1"
+    "hl7.fhir.r5.core": "5.0.0"
   }
 }

@@ -1,0 +1,16 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "VsCanaleVirtuale",
+  "id": "vs-canale-virtuale",
+  "title": "Canale Servizio Virtuale",
+  "url": "https://www.fhir.laziocrea.it/ValueSet/vs-canale-virtuale",
+  "experimental": true,
+  "compose": {
+    "include": [
+      {
+        "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-canale-virtuale"
+      }
+    ]
+  }
+}

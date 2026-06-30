@@ -3,13 +3,12 @@ canonical: https://www.fhir.laziocrea.it
 name: LcCupImplementationGuide
 title: "LcCup — Agende CUP Regione Lazio → IRT"
 description: >-
-  Implementation Guide FHIR R4 dei profili LcCup per il CUP Regionale Lazio,
-  curata da Lazio Crea (ASR). I profili modellano agende, slot, impegnative
-  e prenotazioni, con estensioni per l'integrazione verso IRT (telemedicina
-  regionale). Modella Schedule, Slot, Appointment e ServiceRequest.
+  Implementation Guide FHIR R5 dei profili LcCup per il CUP Regionale Lazio,
+  curata da Lazio Crea (ASR). Modella agende, slot, impegnative e prenotazioni
+  con integrazione verso IRT (telemedicina regionale).
 status: draft
-version: 0.0.2
-fhirVersion: 4.0.1
+version: 0.1.0
+fhirVersion: 5.0.0
 copyrightYear: 2025+
 releaseLabel: ci-build
 license: CC0-1.0
@@ -18,7 +17,6 @@ publisher:
   name: Lazio Crea
   url: https://www.laziocrea.it
 
-# Gruppi di risorse per la navigazione nell'IG
 groups:
   Profili:
     name: Profili LcCup
@@ -28,41 +26,62 @@ groups:
       - StructureDefinition/lccup-slot
       - StructureDefinition/lccup-appointment
       - StructureDefinition/lccup-service-request
+      - StructureDefinition/lccup-care-team
+      - StructureDefinition/lccup-healthcare-service
+      - StructureDefinition/lccup-organization
 
   Estensioni:
-    name: Estensioni LcCup
-    description: Estensioni per il CUP Lazio e l'invio verso IRT
+    name: Estensioni
+    description: Estensioni CUP Lazio e metadati integrazione IRT
     resources:
-      - StructureDefinition/lccup-tipo-agenda
-      - StructureDefinition/lccup-codice-prenotazione
-      - StructureDefinition/lccup-canale-prenotazione
-      - StructureDefinition/lccup-classe-priorita
-      - StructureDefinition/lccup-modalita-erogazione
-      - StructureDefinition/lccup-link-teleconsulto
+      - StructureDefinition/tipo-agenda
+      - StructureDefinition/codice-prenotazione
+      - StructureDefinition/canale-prenotazione
+      - StructureDefinition/classe-priorita
+      - StructureDefinition/modalita-erogazione
+      - StructureDefinition/created-by
+      - StructureDefinition/managing-organization
+      - StructureDefinition/time-quantum
+      - StructureDefinition/visible
+      - StructureDefinition/draft
+      - StructureDefinition/slot-initialized
+      - StructureDefinition/selectable
+      - StructureDefinition/allows-enrollment
+      - StructureDefinition/appointment-organization
+      - StructureDefinition/documents-deleted
+      - StructureDefinition/pathology
+      - StructureDefinition/event-status
 
   ValueSets:
-    name: Terminologia LcCup
-    description: Value set e code system per il CUP Lazio
+    name: Terminologia
+    description: Value set e code system
     resources:
-      - ValueSet/lccup-vs-tipo-agenda
-      - ValueSet/lccup-vs-canale-prenotazione
-      - ValueSet/lccup-vs-classe-priorita
-      - ValueSet/lccup-vs-stato-slot
-      - ValueSet/lccup-vs-modalita-erogazione
+      - ValueSet/vs-tipo-agenda
+      - ValueSet/vs-canale-prenotazione
+      - ValueSet/vs-classe-priorita
+      - ValueSet/vs-stato-slot
+      - ValueSet/vs-modalita-erogazione
+      - ValueSet/vs-tipo-identificatore
+      - ValueSet/vs-tipo-servizio
+      - ValueSet/vs-canale-virtuale
+      - ValueSet/vs-event-status
 
   Esempi:
     name: Esempi
-    description: Esempi CUP Lazio — prenotazione in presenza e teleconsulto IRT
+    description: Esempi prenotazione in presenza e teleconsulto IRT
     resources:
       - Schedule/esempio-agenda-cardiologia
       - Slot/esempio-slot-libero
       - Appointment/esempio-prenotazione-visita
       - ServiceRequest/esempio-impegnativa-ssn
-      - Location/sede-virtuale-teleconsulto
+      - Organization/esempio-irt-organization
+      - CareTeam/esempio-irt-careteam
+      - HealthcareService/esempio-irt-hs-televisit
+      - HealthcareService/esempio-irt-hs-prestazione
       - Schedule/esempio-agenda-teleconsulto
       - Slot/esempio-slot-teleconsulto
+      - ServiceRequest/esempio-impegnativa-teleconsulto
       - Appointment/esempio-prenotazione-teleconsulto
 
-# Menu minimo per SUSHI / ImplementationGuide.json (non è la guida Simplifier in guides/)
 menu:
   Artifacts: artifacts.html

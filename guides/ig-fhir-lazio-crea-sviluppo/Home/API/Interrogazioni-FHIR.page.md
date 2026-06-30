@@ -1,6 +1,6 @@
 # {{page-title}}
 
-Esempi di **ricerca FHIR R4** sul server del CUP Regionale Lazio. Sostituire `{fhir-base}` con l’URL base dell’ambiente (sviluppo/produzione).
+Esempi di **ricerca FHIR R5** sul server del CUP Regionale Lazio. Sostituire `{fhir-base}` con l’URL base dell’ambiente (sviluppo/produzione).
 
 Le risposte devono rispettare i profili **LcCup** (`Schedule`, `Slot`, `Appointment`).
 

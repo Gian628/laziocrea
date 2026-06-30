@@ -2,10 +2,10 @@
   "resourceType": "CodeSystem",
   "status": "draft",
   "content": "complete",
-  "name": "CsLcCupClassePriorita",
-  "id": "lccup-cs-classe-priorita",
-  "title": "LcCup - Codici Classe Priorità",
-  "url": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-classe-priorita",
+  "name": "CsClassePriorita",
+  "id": "cs-classe-priorita",
+  "title": "Codici Classe Priorità",
+  "url": "https://www.fhir.laziocrea.it/CodeSystem/cs-classe-priorita",
   "concept": [
     {
       "code": "U",

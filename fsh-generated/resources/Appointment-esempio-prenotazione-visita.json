@@ -8,41 +8,27 @@
   },
   "extension": [
     {
-      "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-codice-prenotazione",
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/codice-prenotazione",
       "valueString": "CUP-2025-00123456"
     },
     {
-      "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-canale-prenotazione",
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/canale-prenotazione",
       "valueCodeableConcept": {
         "coding": [
           {
-            "system": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-canale-prenotazione",
-            "code": "TELEFONO",
-            "display": "Telefono"
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-canale-prenotazione",
+            "code": "TELEFONO"
           }
         ]
       }
     },
     {
-      "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-modalita-erogazione",
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/modalita-erogazione",
       "valueCodeableConcept": {
         "coding": [
           {
-            "system": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-modalita-erogazione",
-            "code": "IN_PRESENZA",
-            "display": "In presenza"
-          }
-        ]
-      }
-    },
-    {
-      "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-classe-priorita",
-      "valueCodeableConcept": {
-        "coding": [
-          {
-            "system": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-classe-priorita",
-            "code": "B",
-            "display": "Breve"
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-modalita-erogazione",
+            "code": "IN_PRESENZA"
           }
         ]
       }
@@ -57,13 +43,15 @@
   "status": "booked",
   "serviceType": [
     {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "408471009",
-          "display": "Visita cardiologica"
-        }
-      ]
+      "concept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "408471009",
+            "display": "Visita cardiologica"
+          }
+        ]
+      }
     }
   ],
   "specialty": [
@@ -71,8 +59,7 @@
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "code": "394579002",
-          "display": "Cardiologia"
+          "code": "394579002"
         }
       ]
     }
@@ -87,12 +74,13 @@
       "reference": "Slot/esempio-slot-libero"
     }
   ],
+  "subject": {
+    "reference": "Patient/paziente-mario-rossi"
+  },
   "start": "2025-04-15T09:00:00+01:00",
   "end": "2025-04-15T09:20:00+01:00",
   "minutesDuration": 20,
   "created": "2025-04-09T11:32:00+01:00",
-  "comment": "Prima visita cardiologica",
-  "patientInstruction": "Portare esami del sangue recenti ed ECG. Presentarsi 10 minuti prima.",
   "participant": [
     {
       "actor": {

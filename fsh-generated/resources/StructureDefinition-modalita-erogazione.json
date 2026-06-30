@@ -1,15 +1,25 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "lccup-canale-prenotazione",
-  "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-canale-prenotazione",
-  "name": "ExtCanalePrenotazione",
-  "title": "LcCup - Canale di Prenotazione",
+  "id": "modalita-erogazione",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "can-bind"
+    }
+  ],
+  "url": "https://www.fhir.laziocrea.it/StructureDefinition/modalita-erogazione",
+  "name": "ExtModalitaErogazione",
+  "title": "Modalità di Erogazione",
   "status": "draft",
-  "description": "Canale usato per la prenotazione nel CUP Lazio (sportello, web, telemedicina IRT...).",
-  "fhirVersion": "4.0.1",
+  "description": "In presenza, teleconsulto o telemonitoraggio.",
+  "fhirVersion": "5.0.0",
   "kind": "complex-type",
   "abstract": false,
   "context": [
+    {
+      "type": "element",
+      "expression": "Schedule"
+    },
     {
       "type": "element",
       "expression": "Appointment"
@@ -23,8 +33,8 @@
       {
         "id": "Extension",
         "path": "Extension",
-        "short": "LcCup - Canale di Prenotazione",
-        "definition": "Canale usato per la prenotazione nel CUP Lazio (sportello, web, telemedicina IRT...)."
+        "short": "Modalità di Erogazione",
+        "definition": "In presenza, teleconsulto o telemonitoraggio."
       },
       {
         "id": "Extension.extension",
@@ -34,7 +44,7 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-canale-prenotazione"
+        "fixedUri": "https://www.fhir.laziocrea.it/StructureDefinition/modalita-erogazione"
       },
       {
         "id": "Extension.value[x]",
@@ -46,7 +56,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "https://www.fhir.laziocrea.it/ValueSet/lccup-vs-canale-prenotazione"
+          "valueSet": "https://www.fhir.laziocrea.it/ValueSet/vs-modalita-erogazione"
         }
       }
     ]

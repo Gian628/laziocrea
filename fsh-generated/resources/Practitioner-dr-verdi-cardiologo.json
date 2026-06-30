@@ -1,0 +1,15 @@
+{
+  "resourceType": "Practitioner",
+  "id": "dr-verdi-cardiologo",
+  "name": [
+    {
+      "family": "Verdi",
+      "given": [
+        "Anna"
+      ],
+      "prefix": [
+        "Dr."
+      ]
+    }
+  ]
+}

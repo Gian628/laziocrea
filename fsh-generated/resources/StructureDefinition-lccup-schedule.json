@@ -6,8 +6,8 @@
   "title": "LcCup Schedule - Agenda CUP Lazio",
   "status": "draft",
   "experimental": true,
-  "description": "Profilo Lazio Crea per la risorsa Schedule nel contesto del CUP regionale.\nRappresenta un'agenda ambulatoriale prenotabile, pensata per l'integrazione\ncon la Telemedicina nazionale IRT (invio agende e prenotazioni a distanza).\n\nRelazioni:\n- contiene molti Slot (fasce orarie libere/occupate)\n- è associata a HealthcareService, Practitioner e/o Location",
-  "fhirVersion": "4.0.1",
+  "description": "Agenda ambulatoriale o teleconsulto gestita dal CUP Regionale Lazio.\nIn teleconsulto l'actor principale è un CareTeam; in presenza Practitioner, Location o HealthcareService.",
+  "fhirVersion": "5.0.0",
   "kind": "resource",
   "abstract": false,
   "type": "Schedule",
@@ -27,21 +27,20 @@
           ],
           "ordered": false,
           "rules": "open"
-        },
-        "min": 1
+        }
       },
       {
         "id": "Schedule.extension:tipoAgenda",
         "path": "Schedule.extension",
         "sliceName": "tipoAgenda",
         "short": "Tipo agenda: SSN, ALPI, Privata o Convenzionata",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "type": [
           {
             "code": "Extension",
             "profile": [
-              "https://www.fhir.laziocrea.it/StructureDefinition/lccup-tipo-agenda"
+              "https://www.fhir.laziocrea.it/StructureDefinition/tipo-agenda"
             ]
           }
         ],
@@ -51,14 +50,116 @@
         "id": "Schedule.extension:modalitaErogazione",
         "path": "Schedule.extension",
         "sliceName": "modalitaErogazione",
-        "short": "In presenza, teleconsulto o telemonitoraggio (integrazione IRT)",
+        "short": "In presenza, teleconsulto o telemonitoraggio",
         "min": 0,
         "max": "1",
         "type": [
           {
             "code": "Extension",
             "profile": [
-              "https://www.fhir.laziocrea.it/StructureDefinition/lccup-modalita-erogazione"
+              "https://www.fhir.laziocrea.it/StructureDefinition/modalita-erogazione"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Schedule.extension:createdBy",
+        "path": "Schedule.extension",
+        "sliceName": "createdBy",
+        "short": "Professionista creatore agenda",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/created-by"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Schedule.extension:managingOrganization",
+        "path": "Schedule.extension",
+        "sliceName": "managingOrganization",
+        "short": "Struttura gestore agenda",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/managing-organization"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Schedule.extension:timeQuantum",
+        "path": "Schedule.extension",
+        "sliceName": "timeQuantum",
+        "short": "Durata slot predefinita in minuti",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/time-quantum"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Schedule.extension:visible",
+        "path": "Schedule.extension",
+        "sliceName": "visible",
+        "short": "Agenda visibile",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/visible"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Schedule.extension:draft",
+        "path": "Schedule.extension",
+        "sliceName": "draft",
+        "short": "Agenda in bozza",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/draft"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Schedule.extension:slotInitialized",
+        "path": "Schedule.extension",
+        "sliceName": "slotInitialized",
+        "short": "Slot generati",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/slot-initialized"
             ]
           }
         ],
@@ -67,40 +168,52 @@
       {
         "id": "Schedule.identifier",
         "path": "Schedule.identifier",
-        "short": "Codice agenda nel CUP Lazio",
-        "definition": "Identificatore univoco dell'agenda nel sistema CUP gestito da Lazio Crea.",
+        "short": "Identificatore agenda (mnemonico CUP 99INV o URI CUP)",
         "min": 1,
         "mustSupport": true
       },
       {
+        "id": "Schedule.identifier.type",
+        "path": "Schedule.identifier.type",
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://www.fhir.laziocrea.it/ValueSet/vs-tipo-identificatore"
+        }
+      },
+      {
         "id": "Schedule.active",
         "path": "Schedule.active",
-        "short": "L'agenda è attiva e prenotabile",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "Schedule.serviceType",
         "path": "Schedule.serviceType",
-        "short": "Tipo di prestazione erogata (es. Cardiologia, Ecografia...)",
-        "min": 1,
+        "short": "Prestazioni ammesse (opzionale in teleconsulto; può stare sullo Slot)",
         "mustSupport": true
       },
       {
         "id": "Schedule.specialty",
         "path": "Schedule.specialty",
-        "short": "Specialità medica dell'agenda",
+        "short": "Specialità medica (tipica in presenza)",
+        "mustSupport": true
+      },
+      {
+        "id": "Schedule.name",
+        "path": "Schedule.name",
+        "min": 1,
         "mustSupport": true
       },
       {
         "id": "Schedule.actor",
         "path": "Schedule.actor",
-        "short": "Erogatore: professionista, servizio e/o sede",
-        "definition": "Risorsa a cui l'agenda appartiene nel contesto del CUP Lazio:\nHealthcareService (ambulatorio), Location (sede) e/o Practitioner.",
+        "short": "Equipe (teleconsulto) o erogatore in presenza",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/lccup-care-team",
               "http://hl7.org/fhir/StructureDefinition/Practitioner",
               "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
               "http://hl7.org/fhir/StructureDefinition/HealthcareService",
@@ -113,13 +226,17 @@
       {
         "id": "Schedule.planningHorizon",
         "path": "Schedule.planningHorizon",
-        "short": "Periodo di validità dell'agenda (da - a)",
+        "short": "Periodo di validità dell'agenda",
+        "mustSupport": true
+      },
+      {
+        "id": "Schedule.planningHorizon.start",
+        "path": "Schedule.planningHorizon.start",
         "mustSupport": true
       },
       {
         "id": "Schedule.comment",
         "path": "Schedule.comment",
-        "short": "Note sull'agenda",
         "mustSupport": true
       }
     ]

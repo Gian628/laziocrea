@@ -1,0 +1,12 @@
+{
+  "resourceType": "Patient",
+  "id": "paziente-mario-rossi",
+  "name": [
+    {
+      "family": "Rossi",
+      "given": [
+        "Mario"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "VsEventStatus",
+  "id": "vs-event-status",
+  "title": "Stato Evento",
+  "url": "https://www.fhir.laziocrea.it/ValueSet/vs-event-status",
+  "experimental": true,
+  "compose": {
+    "include": [
+      {
+        "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-event-status"
+      }
+    ]
+  }
+}

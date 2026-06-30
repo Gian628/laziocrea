@@ -1,11 +1,10 @@
 {
   "resourceType": "ValueSet",
   "status": "draft",
-  "name": "VsLcCupStatoSlot",
-  "id": "lccup-vs-stato-slot",
-  "title": "LcCup - Stato Slot",
-  "description": "Stati ammessi per uno slot CUP Lazio",
-  "url": "https://www.fhir.laziocrea.it/ValueSet/lccup-vs-stato-slot",
+  "name": "VsStatoSlot",
+  "id": "vs-stato-slot",
+  "title": "Stato Slot",
+  "url": "https://www.fhir.laziocrea.it/ValueSet/vs-stato-slot",
   "experimental": true,
   "compose": {
     "include": [

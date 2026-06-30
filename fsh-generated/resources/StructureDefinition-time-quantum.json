@@ -1,18 +1,24 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "lccup-codice-prenotazione",
-  "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-codice-prenotazione",
-  "name": "ExtCodicePrenotazione",
-  "title": "LcCup - Codice Prenotazione",
+  "id": "time-quantum",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "can-bind"
+    }
+  ],
+  "url": "https://www.fhir.laziocrea.it/StructureDefinition/time-quantum",
+  "name": "ExtTimeQuantum",
+  "title": "Durata slot (minuti)",
   "status": "draft",
-  "description": "Codice univoco CUP Lazio consegnato al paziente per disdetta o modifica.",
-  "fhirVersion": "4.0.1",
+  "description": "Durata predefinita delle fasce orarie in minuti (timeQuantum IRT).",
+  "fhirVersion": "5.0.0",
   "kind": "complex-type",
   "abstract": false,
   "context": [
     {
       "type": "element",
-      "expression": "Appointment"
+      "expression": "Schedule"
     }
   ],
   "type": "Extension",
@@ -23,8 +29,8 @@
       {
         "id": "Extension",
         "path": "Extension",
-        "short": "LcCup - Codice Prenotazione",
-        "definition": "Codice univoco CUP Lazio consegnato al paziente per disdetta o modifica."
+        "short": "Durata slot (minuti)",
+        "definition": "Durata predefinita delle fasce orarie in minuti (timeQuantum IRT)."
       },
       {
         "id": "Extension.extension",
@@ -34,14 +40,14 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-codice-prenotazione"
+        "fixedUri": "https://www.fhir.laziocrea.it/StructureDefinition/time-quantum"
       },
       {
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
         "type": [
           {
-            "code": "string"
+            "code": "integer"
           }
         ]
       }

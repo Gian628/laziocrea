@@ -1,0 +1,33 @@
+{
+  "resourceType": "Organization",
+  "id": "esempio-irt-organization",
+  "meta": {
+    "profile": [
+      "https://www.fhir.laziocrea.it/StructureDefinition/lccup-organization"
+    ]
+  },
+  "extension": [
+    {
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/selectable",
+      "valueBoolean": true
+    },
+    {
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/allows-enrollment",
+      "valueBoolean": true
+    }
+  ],
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.2.9.4.1.1"
+          }
+        ]
+      },
+      "value": "120101"
+    }
+  ],
+  "active": true,
+  "name": "Azienda Ospedaliera Esempio"
+}

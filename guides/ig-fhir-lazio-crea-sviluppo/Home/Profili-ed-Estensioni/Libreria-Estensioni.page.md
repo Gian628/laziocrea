@@ -1,6 +1,8 @@
-# Libreria Estensioni LcCup
+# Libreria Estensioni
 
-Estensioni definite per il **CUP Regionale Lazio** e l'integrazione con **IRT** (telemedicina regionale).
+Estensioni per il **CUP Regionale Lazio** e l'integrazione con **IRT**.
+
+Gli id non usano il prefisso `lccup-` (namespace: `https://www.fhir.laziocrea.it/StructureDefinition/...`).
 
 ## Tutte le estensioni
 
@@ -11,13 +13,30 @@ select name, title, description, url
 order by name
 </fql>
 
-## Estensioni principali
+## CUP
 
 | Id | Descrizione |
 |---|---|
-| lccup-tipo-agenda | SSN / ALPI / Privata / Convenzionata |
-| lccup-modalita-erogazione | In presenza / Teleconsulto / Telemonitoraggio |
-| lccup-codice-prenotazione | Codice CUP al paziente |
-| lccup-canale-prenotazione | Sportello / Web / Telemedicina... |
-| lccup-classe-priorita | U / B / D / P |
-| lccup-link-teleconsulto | URL sessione IRT |
+| tipo-agenda | SSN / ALPI / Privata / Convenzionata |
+| modalita-erogazione | In presenza / Teleconsulto / Telemonitoraggio |
+| codice-prenotazione | Codice CUP al paziente |
+| canale-prenotazione | Sportello / Web / Telemedicina... |
+| classe-priorita | U / B / D / P |
+
+## IRT (da metadati fornitore)
+
+| Id | Descrizione |
+|---|---|
+| time-quantum | Durata slot in minuti |
+| created-by | Creatore agenda |
+| managing-organization | Struttura gestore agenda |
+| visible / draft / slot-initialized | Stato agenda |
+| selectable / allows-enrollment | Flag struttura |
+| appointment-organization | Struttura su appuntamento |
+| pathology | Riferimento patologia/quesito |
+| event-status | Stato workflow evento (ex eventColor) |
+| documents-deleted | Documenti eliminati |
+
+## Sessione video
+
+In R5 si usa l'elemento standard **`Appointment.virtualService`** (non un'estensione).

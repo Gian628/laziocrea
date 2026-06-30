@@ -2,10 +2,10 @@
   "resourceType": "CodeSystem",
   "status": "draft",
   "content": "complete",
-  "name": "CsLcCupCanalePrenotazione",
-  "id": "lccup-cs-canale-prenotazione",
-  "title": "LcCup - Codici Canale Prenotazione",
-  "url": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-canale-prenotazione",
+  "name": "CsCanalePrenotazione",
+  "id": "cs-canale-prenotazione",
+  "title": "Codici Canale Prenotazione",
+  "url": "https://www.fhir.laziocrea.it/CodeSystem/cs-canale-prenotazione",
   "concept": [
     {
       "code": "SPORTELLO",
@@ -40,7 +40,7 @@
     {
       "code": "TELEMEDICINA",
       "display": "Telemedicina",
-      "definition": "Piattaforma Telemedicina nazionale IRT"
+      "definition": "Piattaforma telemedicina IRT"
     }
   ],
   "experimental": true,

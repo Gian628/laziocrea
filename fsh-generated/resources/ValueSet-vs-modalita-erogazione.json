@@ -1,0 +1,16 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "VsModalitaErogazione",
+  "id": "vs-modalita-erogazione",
+  "title": "Modalità di Erogazione",
+  "url": "https://www.fhir.laziocrea.it/ValueSet/vs-modalita-erogazione",
+  "experimental": true,
+  "compose": {
+    "include": [
+      {
+        "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-modalita-erogazione"
+      }
+    ]
+  }
+}

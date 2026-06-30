@@ -2,10 +2,10 @@
   "resourceType": "CodeSystem",
   "status": "draft",
   "content": "complete",
-  "name": "CsLcCupTipoAgenda",
-  "id": "lccup-cs-tipo-agenda",
-  "title": "LcCup - Codici Tipo Agenda",
-  "url": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-tipo-agenda",
+  "name": "CsTipoAgenda",
+  "id": "cs-tipo-agenda",
+  "title": "Codici Tipo Agenda",
+  "url": "https://www.fhir.laziocrea.it/CodeSystem/cs-tipo-agenda",
   "concept": [
     {
       "code": "SSN",

@@ -6,8 +6,8 @@
   "title": "LcCup Slot - Fascia Oraria CUP Lazio",
   "status": "draft",
   "experimental": true,
-  "description": "Profilo Lazio Crea per la risorsa Slot nel CUP regionale.\nRappresenta una singola fascia oraria all'interno di un'agenda Lazio.\n\nStati: free | busy | busy-unavailable | busy-tentative\n\nRelazioni:\n- appartiene a LcCupSchedule (agenda)\n- referenziato da LcCupAppointment (prenotazione)",
-  "fhirVersion": "4.0.1",
+  "description": "Fascia oraria in un'agenda CUP.\nIn teleconsulto serviceType referenzia LcCupHealthcareService; in presenza può usare concept SNOMED.",
+  "fhirVersion": "5.0.0",
   "kind": "resource",
   "abstract": false,
   "type": "Slot",
@@ -18,13 +18,13 @@
       {
         "id": "Slot.serviceType",
         "path": "Slot.serviceType",
-        "short": "Tipo prestazione (sovrascrive quello dell'agenda se diverso)",
+        "short": "Prestazione o piattaforma (CodeableReference)",
+        "max": "1",
         "mustSupport": true
       },
       {
         "id": "Slot.schedule",
         "path": "Slot.schedule",
-        "short": "Agenda CUP Lazio a cui appartiene questo slot",
         "type": [
           {
             "code": "Reference",
@@ -38,31 +38,26 @@
       {
         "id": "Slot.status",
         "path": "Slot.status",
-        "short": "Stato dello slot",
         "mustSupport": true
       },
       {
         "id": "Slot.start",
         "path": "Slot.start",
-        "short": "Inizio fascia oraria",
         "mustSupport": true
       },
       {
         "id": "Slot.end",
         "path": "Slot.end",
-        "short": "Fine fascia oraria",
         "mustSupport": true
       },
       {
         "id": "Slot.overbooked",
         "path": "Slot.overbooked",
-        "short": "true se lo slot è sovraprenotato",
         "mustSupport": true
       },
       {
         "id": "Slot.comment",
         "path": "Slot.comment",
-        "short": "Note sullo slot",
         "mustSupport": true
       }
     ]

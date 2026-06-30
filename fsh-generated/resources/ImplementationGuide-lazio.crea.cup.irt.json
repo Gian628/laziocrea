@@ -2,7 +2,7 @@
   "resourceType": "ImplementationGuide",
   "id": "lazio.crea.cup.irt",
   "url": "https://www.fhir.laziocrea.it/ImplementationGuide/lazio.crea.cup.irt",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "name": "LcCupImplementationGuide",
   "title": "LcCup — Agende CUP Regione Lazio → IRT",
   "status": "draft",
@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "description": "Implementation Guide FHIR R4 dei profili LcCup per il CUP Regionale Lazio, curata da Lazio Crea (ASR). I profili modellano agende, slot, impegnative e prenotazioni, con estensioni per l'integrazione verso IRT (telemedicina regionale). Modella Schedule, Slot, Appointment e ServiceRequest.",
+  "description": "Implementation Guide FHIR R5 dei profili LcCup per il CUP Regionale Lazio, curata da Lazio Crea (ASR). Modella agende, slot, impegnative e prenotazioni con integrazione verso IRT (telemedicina regionale).",
   "jurisdiction": [
     {
       "coding": [
@@ -33,7 +33,7 @@
   "packageId": "lazio.crea.cup.irt",
   "license": "CC0-1.0",
   "fhirVersion": [
-    "4.0.1"
+    "5.0.0"
   ],
   "definition": {
     "grouping": [
@@ -44,270 +44,553 @@
       },
       {
         "id": "Estensioni",
-        "name": "Estensioni LcCup",
-        "description": "Estensioni per il CUP Lazio e l'invio verso IRT"
+        "name": "Estensioni",
+        "description": "Estensioni CUP Lazio e metadati integrazione IRT"
       },
       {
         "id": "ValueSets",
-        "name": "Terminologia LcCup",
-        "description": "Value set e code system per il CUP Lazio"
+        "name": "Terminologia",
+        "description": "Value set e code system"
       },
       {
         "id": "Esempi",
         "name": "Esempi",
-        "description": "Esempi CUP Lazio — prenotazione in presenza e teleconsulto IRT"
+        "description": "Esempi prenotazione in presenza e teleconsulto IRT"
       }
     ],
     "resource": [
       {
         "reference": {
+          "reference": "Location/ambulatorio-cardio-sandrini"
+        },
+        "name": "ambulatorio-cardio-sandrini",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/draft"
+        },
+        "name": "Bozza",
+        "description": "Indica se l'agenda è in stato bozza.",
+        "groupingId": "Estensioni",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/canale-prenotazione"
+        },
+        "name": "Canale di Prenotazione",
+        "description": "Canale usato per la prenotazione nel CUP Lazio.",
+        "groupingId": "Estensioni",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/vs-canale-prenotazione"
+        },
+        "name": "Canale Prenotazione",
+        "groupingId": "ValueSets",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/vs-canale-virtuale"
+        },
+        "name": "Canale Servizio Virtuale",
+        "groupingId": "ValueSets",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/classe-priorita"
+        },
+        "name": "Classe di Priorità",
+        "description": "Classe di priorità U/B/D/P secondo normativa liste d'attesa italiana.",
+        "groupingId": "Estensioni",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/vs-classe-priorita"
+        },
+        "name": "Classe di Priorità",
+        "groupingId": "ValueSets",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/codice-prenotazione"
+        },
+        "name": "Codice Prenotazione",
+        "description": "Codice univoco CUP Lazio consegnato al paziente per disdetta o modifica.",
+        "groupingId": "Estensioni",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/cs-canale-prenotazione"
+        },
+        "name": "Codici Canale Prenotazione",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/cs-canale-virtuale"
+        },
+        "name": "Codici Canale Virtuale",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/cs-classe-priorita"
+        },
+        "name": "Codici Classe Priorità",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/cs-modalita-erogazione"
+        },
+        "name": "Codici Modalità Erogazione",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/cs-event-status"
+        },
+        "name": "Codici Stato Evento",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/cs-tipo-agenda"
+        },
+        "name": "Codici Tipo Agenda",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/cs-tipo-identificatore"
+        },
+        "name": "Codici Tipo Identificatore",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/cs-tipo-servizio"
+        },
+        "name": "Codici Tipo Servizio",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/allows-enrollment"
+        },
+        "name": "Consente iscrizione",
+        "description": "Indica se la struttura consente l'iscrizione dei pazienti.",
+        "groupingId": "Estensioni",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/created-by"
+        },
+        "name": "Creato da",
+        "description": "Professionista che ha creato l'agenda.",
+        "groupingId": "Estensioni",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/documents-deleted"
+        },
+        "name": "Documenti eliminati",
+        "description": "Indica se i documenti associati all'appuntamento sono stati eliminati.",
+        "groupingId": "Estensioni",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/dr-rossi-equipe"
+        },
+        "name": "dr-rossi-equipe",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/dr-verdi-cardiologo"
+        },
+        "name": "dr-verdi-cardiologo",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/time-quantum"
+        },
+        "name": "Durata slot (minuti)",
+        "description": "Durata predefinita delle fasce orarie in minuti (timeQuantum IRT).",
+        "groupingId": "Estensioni",
+        "isExample": false
+      },
+      {
+        "reference": {
           "reference": "Schedule/esempio-agenda-cardiologia"
         },
         "name": "Esempio Agenda Cardiologia SSN - CUP Lazio",
-        "description": "Agenda ambulatorio Cardiologia gestita da Lazio Crea",
-        "exampleCanonical": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-schedule",
-        "groupingId": "Esempi"
+        "groupingId": "Esempi",
+        "isExample": true,
+        "profile": [
+          "https://www.fhir.laziocrea.it/StructureDefinition/lccup-schedule"
+        ]
       },
       {
         "reference": {
           "reference": "Schedule/esempio-agenda-teleconsulto"
         },
         "name": "Esempio Agenda Teleconsulto - CUP Lazio",
-        "description": "Agenda CUP Lazio per teleconsulti inviati a IRT",
-        "exampleCanonical": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-schedule",
-        "groupingId": "Esempi"
+        "groupingId": "Esempi",
+        "isExample": true,
+        "profile": [
+          "https://www.fhir.laziocrea.it/StructureDefinition/lccup-schedule"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "CareTeam/esempio-irt-careteam"
+        },
+        "name": "Esempio Equipe Teleconsulto",
+        "groupingId": "Esempi",
+        "isExample": true,
+        "profile": [
+          "https://www.fhir.laziocrea.it/StructureDefinition/lccup-care-team"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/esempio-impegnativa-teleconsulto"
+        },
+        "name": "Esempio Impegnativa SSN - Teleconsulto",
+        "groupingId": "Esempi",
+        "isExample": true,
+        "profile": [
+          "https://www.fhir.laziocrea.it/StructureDefinition/lccup-service-request"
+        ]
       },
       {
         "reference": {
           "reference": "ServiceRequest/esempio-impegnativa-ssn"
         },
         "name": "Esempio Impegnativa SSN - Visita Cardiologica",
-        "description": "Impegnativa dematerializzata MMG per visita cardiologica",
-        "exampleCanonical": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-service-request",
-        "groupingId": "Esempi"
+        "groupingId": "Esempi",
+        "isExample": true,
+        "profile": [
+          "https://www.fhir.laziocrea.it/StructureDefinition/lccup-service-request"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "HealthcareService/esempio-irt-hs-televisit"
+        },
+        "name": "Esempio Piattaforma TELEVISIT",
+        "groupingId": "Esempi",
+        "isExample": true,
+        "profile": [
+          "https://www.fhir.laziocrea.it/StructureDefinition/lccup-healthcare-service"
+        ]
       },
       {
         "reference": {
           "reference": "Appointment/esempio-prenotazione-visita"
         },
         "name": "Esempio Prenotazione in Presenza - CUP Lazio",
-        "description": "Prenotazione CUP Lazio per visita cardiologica in presenza",
-        "exampleCanonical": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-appointment",
-        "groupingId": "Esempi"
+        "groupingId": "Esempi",
+        "isExample": true,
+        "profile": [
+          "https://www.fhir.laziocrea.it/StructureDefinition/lccup-appointment"
+        ]
       },
       {
         "reference": {
           "reference": "Appointment/esempio-prenotazione-teleconsulto"
         },
-        "name": "Esempio Prenotazione Teleconsulto → IRT",
-        "description": "Prenotazione CUP Lazio inviata a IRT con link video",
-        "exampleCanonical": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-appointment",
-        "groupingId": "Esempi"
+        "name": "Esempio Prenotazione Teleconsulto - IRT",
+        "groupingId": "Esempi",
+        "isExample": true,
+        "profile": [
+          "https://www.fhir.laziocrea.it/StructureDefinition/lccup-appointment"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "HealthcareService/esempio-irt-hs-prestazione"
+        },
+        "name": "Esempio Prestazione Televisita Cardiologica",
+        "groupingId": "Esempi",
+        "isExample": true,
+        "profile": [
+          "https://www.fhir.laziocrea.it/StructureDefinition/lccup-healthcare-service"
+        ]
       },
       {
         "reference": {
           "reference": "Slot/esempio-slot-libero"
         },
         "name": "Esempio Slot Libero - Visita Cardiologica",
-        "description": "Fascia oraria disponibile nell'agenda Cardiologia CUP Lazio",
-        "exampleCanonical": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-slot",
-        "groupingId": "Esempi"
+        "groupingId": "Esempi",
+        "isExample": true,
+        "profile": [
+          "https://www.fhir.laziocrea.it/StructureDefinition/lccup-slot"
+        ]
       },
       {
         "reference": {
           "reference": "Slot/esempio-slot-teleconsulto"
         },
         "name": "Esempio Slot Teleconsulto",
-        "description": "Fascia oraria per teleconsulto cardiologico CUP Lazio",
-        "exampleCanonical": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-slot",
-        "groupingId": "Esempi"
+        "groupingId": "Esempi",
+        "isExample": true,
+        "profile": [
+          "https://www.fhir.laziocrea.it/StructureDefinition/lccup-slot"
+        ]
       },
       {
         "reference": {
-          "reference": "StructureDefinition/lccup-canale-prenotazione"
+          "reference": "Organization/esempio-irt-organization"
         },
-        "name": "LcCup - Canale di Prenotazione",
-        "description": "Canale usato per la prenotazione nel CUP Lazio (sportello, web, telemedicina IRT...).",
-        "exampleBoolean": false,
-        "groupingId": "Estensioni"
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/lccup-vs-canale-prenotazione"
-        },
-        "name": "LcCup - Canale Prenotazione",
-        "description": "Canali di prenotazione CUP Lazio",
-        "exampleBoolean": false,
-        "groupingId": "ValueSets"
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/lccup-classe-priorita"
-        },
-        "name": "LcCup - Classe di Priorità",
-        "description": "Classe di priorità U/B/D/P secondo normativa liste d'attesa italiana.",
-        "exampleBoolean": false,
-        "groupingId": "Estensioni"
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/lccup-vs-classe-priorita"
-        },
-        "name": "LcCup - Classe di Priorità",
-        "description": "Classi U/B/D/P per liste d'attesa (PNLA)",
-        "exampleBoolean": false,
-        "groupingId": "ValueSets"
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/lccup-codice-prenotazione"
-        },
-        "name": "LcCup - Codice Prenotazione",
-        "description": "Codice univoco CUP Lazio consegnato al paziente per disdetta o modifica.",
-        "exampleBoolean": false,
-        "groupingId": "Estensioni"
-      },
-      {
-        "reference": {
-          "reference": "CodeSystem/lccup-cs-canale-prenotazione"
-        },
-        "name": "LcCup - Codici Canale Prenotazione",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "CodeSystem/lccup-cs-classe-priorita"
-        },
-        "name": "LcCup - Codici Classe Priorità",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "CodeSystem/lccup-cs-modalita-erogazione"
-        },
-        "name": "LcCup - Codici Modalità Erogazione",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "CodeSystem/lccup-cs-tipo-agenda"
-        },
-        "name": "LcCup - Codici Tipo Agenda",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/lccup-link-teleconsulto"
-        },
-        "name": "LcCup - Link Teleconsulto IRT",
-        "description": "URL sessione video restituito da IRT dopo invio prenotazione CUP Lazio.",
-        "exampleBoolean": false,
-        "groupingId": "Estensioni"
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/lccup-modalita-erogazione"
-        },
-        "name": "LcCup - Modalità di Erogazione",
-        "description": "In presenza, teleconsulto o telemonitoraggio.\nUsata da Lazio Crea per instradare le prenotazioni verso IRT.",
-        "exampleBoolean": false,
-        "groupingId": "Estensioni"
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/lccup-vs-modalita-erogazione"
-        },
-        "name": "LcCup - Modalità di Erogazione",
-        "description": "Erogazione in presenza o a distanza (integrazione IRT)",
-        "exampleBoolean": false,
-        "groupingId": "ValueSets"
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/lccup-vs-stato-slot"
-        },
-        "name": "LcCup - Stato Slot",
-        "description": "Stati ammessi per uno slot CUP Lazio",
-        "exampleBoolean": false,
-        "groupingId": "ValueSets"
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/lccup-tipo-agenda"
-        },
-        "name": "LcCup - Tipo Agenda",
-        "description": "Regime di erogazione dell'agenda CUP Lazio: SSN, ALPI, privato o convenzionato.",
-        "exampleBoolean": false,
-        "groupingId": "Estensioni"
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/lccup-vs-tipo-agenda"
-        },
-        "name": "LcCup - Tipo Agenda",
-        "description": "Classificazione tipo agenda CUP Lazio",
-        "exampleBoolean": false,
-        "groupingId": "ValueSets"
+        "name": "Esempio Struttura STS - IRT",
+        "groupingId": "Esempi",
+        "isExample": true,
+        "profile": [
+          "https://www.fhir.laziocrea.it/StructureDefinition/lccup-organization"
+        ]
       },
       {
         "reference": {
           "reference": "StructureDefinition/lccup-appointment"
         },
         "name": "LcCup Appointment - Prenotazione CUP Lazio",
-        "description": "Profilo Lazio Crea per la prenotazione ambulatoriale nel CUP regionale.\nPensato per l'integrazione con la Telemedicina nazionale IRT: quando la\nmodalità è TELECONSULTO, la prenotazione viene inviata a IRT con il link\nalla sessione video.\n\nRelazioni:\n- basedOn → LcCupServiceRequest (impegnativa SSN)\n- slot    → LcCupSlot (fascia oraria prenotata)\n- participant → Patient, Practitioner, Location",
-        "exampleBoolean": false,
-        "groupingId": "Profili"
+        "description": "Prenotazione ambulatoriale o teleconsulto nel CUP regionale.\nTeleconsulto: equipe (CareTeam), virtualService per sessione video, prestazione in supportingInformation.",
+        "groupingId": "Profili",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/lccup-care-team"
+        },
+        "name": "LcCup CareTeam - Equipe teleconsulto",
+        "description": "Equipe di professionisti associata ad agende e appuntamenti teleconsulto IRT.",
+        "groupingId": "Profili",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/lccup-healthcare-service"
+        },
+        "name": "LcCup HealthcareService - Prestazione o piattaforma",
+        "description": "Servizio sanitario nel contesto CUP/IRT.\nPuò rappresentare la piattaforma telemedicina (es. TELEVISIT) o una prestazione clinica specifica.",
+        "groupingId": "Profili",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/lccup-organization"
+        },
+        "name": "LcCup Organization - Struttura sanitaria",
+        "description": "Profilo per le strutture sanitarie nel contesto CUP Lazio e integrazione IRT.\nIdentificatore STS regionale e flag operativi piattaforma.",
+        "groupingId": "Profili",
+        "isExample": false
       },
       {
         "reference": {
           "reference": "StructureDefinition/lccup-schedule"
         },
         "name": "LcCup Schedule - Agenda CUP Lazio",
-        "description": "Profilo Lazio Crea per la risorsa Schedule nel contesto del CUP regionale.\nRappresenta un'agenda ambulatoriale prenotabile, pensata per l'integrazione\ncon la Telemedicina nazionale IRT (invio agende e prenotazioni a distanza).\n\nRelazioni:\n- contiene molti Slot (fasce orarie libere/occupate)\n- è associata a HealthcareService, Practitioner e/o Location",
-        "exampleBoolean": false,
-        "groupingId": "Profili"
+        "description": "Agenda ambulatoriale o teleconsulto gestita dal CUP Regionale Lazio.\nIn teleconsulto l'actor principale è un CareTeam; in presenza Practitioner, Location o HealthcareService.",
+        "groupingId": "Profili",
+        "isExample": false
       },
       {
         "reference": {
           "reference": "StructureDefinition/lccup-service-request"
         },
         "name": "LcCup ServiceRequest - Impegnativa SSN",
-        "description": "Profilo Lazio Crea per l'impegnativa dematerializzata nel CUP regionale.\nPrecede la prenotazione (LcCupAppointment) nel flusso CUP Lazio.",
-        "exampleBoolean": false,
-        "groupingId": "Profili"
+        "description": "Impegnativa dematerializzata nel CUP regionale, precede la prenotazione.",
+        "groupingId": "Profili",
+        "isExample": false
       },
       {
         "reference": {
           "reference": "StructureDefinition/lccup-slot"
         },
         "name": "LcCup Slot - Fascia Oraria CUP Lazio",
-        "description": "Profilo Lazio Crea per la risorsa Slot nel CUP regionale.\nRappresenta una singola fascia oraria all'interno di un'agenda Lazio.\n\nStati: free | busy | busy-unavailable | busy-tentative\n\nRelazioni:\n- appartiene a LcCupSchedule (agenda)\n- referenziato da LcCupAppointment (prenotazione)",
-        "exampleBoolean": false,
-        "groupingId": "Profili"
+        "description": "Fascia oraria in un'agenda CUP.\nIn teleconsulto serviceType referenzia LcCupHealthcareService; in presenza può usare concept SNOMED.",
+        "groupingId": "Profili",
+        "isExample": false
       },
       {
         "reference": {
-          "reference": "Location/sede-virtuale-teleconsulto"
+          "reference": "Practitioner/mmg-dr-bianchi"
         },
-        "name": "Sede Virtuale Teleconsulto IRT",
-        "description": "Location virtuale sulla Telemedicina nazionale IRT",
-        "exampleBoolean": true,
-        "groupingId": "Esempi"
+        "name": "mmg-dr-bianchi",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/modalita-erogazione"
+        },
+        "name": "Modalità di Erogazione",
+        "description": "In presenza, teleconsulto o telemonitoraggio.",
+        "groupingId": "Estensioni",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/vs-modalita-erogazione"
+        },
+        "name": "Modalità di Erogazione",
+        "groupingId": "ValueSets",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/appointment-organization"
+        },
+        "name": "Organizzazione appuntamento",
+        "description": "Struttura associata all'appuntamento.",
+        "groupingId": "Estensioni",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/managing-organization"
+        },
+        "name": "Organizzazione gestione agenda",
+        "description": "Struttura che gestisce l'agenda.",
+        "groupingId": "Estensioni",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/pathology"
+        },
+        "name": "Patologia / quesito",
+        "description": "Riferimento al quesito clinico o patologia associata all'appuntamento.",
+        "groupingId": "Estensioni",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Patient/paziente-mario-rossi"
+        },
+        "name": "paziente-mario-rossi",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/selectable"
+        },
+        "name": "Selezionabile",
+        "description": "Indica se la struttura è selezionabile in interfaccia.",
+        "groupingId": "Estensioni",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/slot-initialized"
+        },
+        "name": "Slot inizializzati",
+        "description": "Indica se gli slot dell'agenda sono stati generati.",
+        "groupingId": "Estensioni",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/event-status"
+        },
+        "name": "Stato evento",
+        "description": "Stato workflow dell'evento lato piattaforma (es. PENDING). Corrisponde a eventColor IRT.",
+        "groupingId": "Estensioni",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/vs-event-status"
+        },
+        "name": "Stato Evento",
+        "groupingId": "ValueSets",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/vs-stato-slot"
+        },
+        "name": "Stato Slot",
+        "groupingId": "ValueSets",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/tipo-agenda"
+        },
+        "name": "Tipo Agenda",
+        "description": "Regime di erogazione dell'agenda CUP Lazio: SSN, ALPI, privato o convenzionato.",
+        "groupingId": "Estensioni",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/vs-tipo-agenda"
+        },
+        "name": "Tipo Agenda",
+        "groupingId": "ValueSets",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/vs-tipo-servizio"
+        },
+        "name": "Tipo HealthcareService",
+        "groupingId": "ValueSets",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/vs-tipo-identificatore"
+        },
+        "name": "Tipo Identificatore Agenda",
+        "groupingId": "ValueSets",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/visible"
+        },
+        "name": "Visibile",
+        "description": "Indica se l'agenda è visibile agli utenti.",
+        "groupingId": "Estensioni",
+        "isExample": false
       }
     ],
     "page": {
-      "nameUrl": "toc.html",
       "title": "Table of Contents",
       "generation": "html",
-      "page": []
+      "page": [],
+      "name": "toc.html",
+      "sourceUrl": "toc.html"
     },
     "parameter": [
       {
-        "code": "copyrightyear",
+        "code": {
+          "code": "copyrightyear",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
         "value": "2025+"
       },
       {
-        "code": "releaselabel",
+        "code": {
+          "code": "releaselabel",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
         "value": "ci-build"
       }
     ]

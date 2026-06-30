@@ -1,0 +1,59 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "managing-organization",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "can-bind"
+    }
+  ],
+  "url": "https://www.fhir.laziocrea.it/StructureDefinition/managing-organization",
+  "name": "ExtManagingOrganization",
+  "title": "Organizzazione gestione agenda",
+  "status": "draft",
+  "description": "Struttura che gestisce l'agenda.",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Schedule"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Organizzazione gestione agenda",
+        "definition": "Struttura che gestisce l'agenda."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://www.fhir.laziocrea.it/StructureDefinition/managing-organization"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.fhir.laziocrea.it/StructureDefinition/lccup-organization"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

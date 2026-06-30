@@ -1,0 +1,16 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "VsClassePriorita",
+  "id": "vs-classe-priorita",
+  "title": "Classe di Priorità",
+  "url": "https://www.fhir.laziocrea.it/ValueSet/vs-classe-priorita",
+  "experimental": true,
+  "compose": {
+    "include": [
+      {
+        "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-classe-priorita"
+      }
+    ]
+  }
+}

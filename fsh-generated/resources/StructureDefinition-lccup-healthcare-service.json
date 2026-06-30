@@ -1,0 +1,43 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "lccup-healthcare-service",
+  "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-healthcare-service",
+  "name": "LcCupHealthcareService",
+  "title": "LcCup HealthcareService - Prestazione o piattaforma",
+  "status": "draft",
+  "experimental": true,
+  "description": "Servizio sanitario nel contesto CUP/IRT.\nPuò rappresentare la piattaforma telemedicina (es. TELEVISIT) o una prestazione clinica specifica.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "HealthcareService",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/HealthcareService",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "HealthcareService.active",
+        "path": "HealthcareService.active",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "HealthcareService.type",
+        "path": "HealthcareService.type",
+        "short": "Piattaforma o prestazione clinica",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://www.fhir.laziocrea.it/ValueSet/vs-tipo-servizio"
+        }
+      },
+      {
+        "id": "HealthcareService.name",
+        "path": "HealthcareService.name",
+        "min": 1,
+        "mustSupport": true
+      }
+    ]
+  }
+}

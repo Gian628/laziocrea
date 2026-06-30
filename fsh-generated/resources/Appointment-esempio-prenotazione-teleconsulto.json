@@ -8,48 +8,62 @@
   },
   "extension": [
     {
-      "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-codice-prenotazione",
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/codice-prenotazione",
       "valueString": "CUP-2025-00789012"
     },
     {
-      "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-canale-prenotazione",
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/canale-prenotazione",
       "valueCodeableConcept": {
         "coding": [
           {
-            "system": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-canale-prenotazione",
-            "code": "TELEMEDICINA",
-            "display": "Telemedicina"
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-canale-prenotazione",
+            "code": "TELEMEDICINA"
           }
         ]
       }
     },
     {
-      "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-modalita-erogazione",
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/modalita-erogazione",
       "valueCodeableConcept": {
         "coding": [
           {
-            "system": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-modalita-erogazione",
-            "code": "TELECONSULTO",
-            "display": "Teleconsulto"
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-modalita-erogazione",
+            "code": "TELECONSULTO"
           }
         ]
       }
     },
     {
-      "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-classe-priorita",
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/classe-priorita",
       "valueCodeableConcept": {
         "coding": [
           {
-            "system": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-classe-priorita",
-            "code": "B",
-            "display": "Breve"
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-classe-priorita",
+            "code": "B"
           }
         ]
       }
     },
     {
-      "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-link-teleconsulto",
-      "valueUrl": "https://telemedicina.laziocrea.it/sessione/abc123xyz"
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/appointment-organization",
+      "valueReference": {
+        "reference": "Organization/esempio-irt-organization"
+      }
+    },
+    {
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/documents-deleted",
+      "valueBoolean": false
+    },
+    {
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/event-status",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-event-status",
+            "code": "PENDING"
+          }
+        ]
+      }
     }
   ],
   "identifier": [
@@ -59,31 +73,26 @@
     }
   ],
   "status": "booked",
-  "serviceType": [
+  "serviceCategory": [
     {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "408471009",
-          "display": "Visita cardiologica"
-        }
-      ]
+      "text": "healthcare-service"
     }
   ],
-  "specialty": [
+  "serviceType": [
     {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "394579002",
-          "display": "Cardiologia"
-        }
-      ]
+      "reference": {
+        "reference": "HealthcareService/esempio-irt-hs-televisit"
+      }
+    }
+  ],
+  "supportingInformation": [
+    {
+      "reference": "HealthcareService/esempio-irt-hs-prestazione"
     }
   ],
   "basedOn": [
     {
-      "reference": "ServiceRequest/esempio-impegnativa-ssn"
+      "reference": "ServiceRequest/esempio-impegnativa-teleconsulto"
     }
   ],
   "slot": [
@@ -91,12 +100,12 @@
       "reference": "Slot/esempio-slot-teleconsulto"
     }
   ],
+  "subject": {
+    "reference": "Patient/paziente-mario-rossi"
+  },
   "start": "2025-04-17T10:00:00+01:00",
-  "end": "2025-04-17T10:20:00+01:00",
-  "minutesDuration": 20,
+  "end": "2025-04-17T10:30:00+01:00",
   "created": "2025-04-10T14:15:00+01:00",
-  "comment": "Teleconsulto cardiologico - collegarsi 5 minuti prima",
-  "patientInstruction": "Accedere al link video da PC o smartphone.",
   "participant": [
     {
       "actor": {
@@ -106,15 +115,18 @@
     },
     {
       "actor": {
-        "reference": "Practitioner/dr-verdi-cardiologo"
+        "reference": "CareTeam/esempio-irt-careteam"
       },
-      "status": "accepted"
-    },
+      "status": "needs-action"
+    }
+  ],
+  "virtualService": [
     {
-      "actor": {
-        "reference": "Location/sede-virtuale-teleconsulto"
+      "channelType": {
+        "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-canale-virtuale",
+        "code": "Videocall"
       },
-      "status": "accepted"
+      "addressUrl": "https://telemedicina.laziocrea.it/sessione/abc123xyz"
     }
   ]
 }

@@ -1,19 +1,21 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "lccup-modalita-erogazione",
-  "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-modalita-erogazione",
-  "name": "ExtModalitaErogazione",
-  "title": "LcCup - Modalità di Erogazione",
+  "id": "canale-prenotazione",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "can-bind"
+    }
+  ],
+  "url": "https://www.fhir.laziocrea.it/StructureDefinition/canale-prenotazione",
+  "name": "ExtCanalePrenotazione",
+  "title": "Canale di Prenotazione",
   "status": "draft",
-  "description": "In presenza, teleconsulto o telemonitoraggio.\nUsata da Lazio Crea per instradare le prenotazioni verso IRT.",
-  "fhirVersion": "4.0.1",
+  "description": "Canale usato per la prenotazione nel CUP Lazio.",
+  "fhirVersion": "5.0.0",
   "kind": "complex-type",
   "abstract": false,
   "context": [
-    {
-      "type": "element",
-      "expression": "Schedule"
-    },
     {
       "type": "element",
       "expression": "Appointment"
@@ -27,8 +29,8 @@
       {
         "id": "Extension",
         "path": "Extension",
-        "short": "LcCup - Modalità di Erogazione",
-        "definition": "In presenza, teleconsulto o telemonitoraggio.\nUsata da Lazio Crea per instradare le prenotazioni verso IRT."
+        "short": "Canale di Prenotazione",
+        "definition": "Canale usato per la prenotazione nel CUP Lazio."
       },
       {
         "id": "Extension.extension",
@@ -38,7 +40,7 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-modalita-erogazione"
+        "fixedUri": "https://www.fhir.laziocrea.it/StructureDefinition/canale-prenotazione"
       },
       {
         "id": "Extension.value[x]",
@@ -50,7 +52,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "https://www.fhir.laziocrea.it/ValueSet/lccup-vs-modalita-erogazione"
+          "valueSet": "https://www.fhir.laziocrea.it/ValueSet/vs-canale-prenotazione"
         }
       }
     ]

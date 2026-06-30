@@ -1,0 +1,28 @@
+{
+  "resourceType": "CareTeam",
+  "id": "esempio-irt-careteam",
+  "meta": {
+    "profile": [
+      "https://www.fhir.laziocrea.it/StructureDefinition/lccup-care-team"
+    ]
+  },
+  "name": "Equipe Teleconsulto Cardiologia",
+  "status": "active",
+  "participant": [
+    {
+      "member": {
+        "reference": "Practitioner/dr-verdi-cardiologo"
+      }
+    },
+    {
+      "member": {
+        "reference": "Practitioner/dr-rossi-equipe"
+      }
+    }
+  ],
+  "managingOrganization": [
+    {
+      "reference": "Organization/esempio-irt-organization"
+    }
+  ]
+}

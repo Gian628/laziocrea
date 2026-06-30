@@ -32,10 +32,10 @@ Assistito riceve codice prenotazione
 
 ## Scenario 2 — Teleconsulto con IRT
 
-1. Prenotazione su agenda con `lccup-modalita-erogazione = TELECONSULTO`.
-2. Il CUP Regionale Lazio scambia l'`LcCup-Appointment` con **IRT**.
-3. IRT restituisce l'URL della sessione → `lccup-link-teleconsulto`.
-4. Notifica all'assistito con il link video.
+1. Prenotazione su agenda con `modalita-erogazione = TELECONSULTO`.
+2. `LcCup-Appointment` con **CareTeam** in `participant[equipe]`.
+3. Sessione video in **`virtualService`** (R5).
+4. Metadati IRT come estensioni (`event-status`, `pathology`, …).
 
 {{json:LazioCrea/esempio-prenotazione-teleconsulto}}
 

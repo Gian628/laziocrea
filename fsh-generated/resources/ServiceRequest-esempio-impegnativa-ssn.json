@@ -9,13 +9,12 @@
   "intent": "order",
   "extension": [
     {
-      "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-classe-priorita",
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/classe-priorita",
       "valueCodeableConcept": {
         "coding": [
           {
-            "system": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-classe-priorita",
-            "code": "B",
-            "display": "Breve"
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-classe-priorita",
+            "code": "B"
           }
         ]
       }
@@ -29,13 +28,15 @@
   ],
   "status": "active",
   "code": {
-    "coding": [
-      {
-        "system": "https://www.salute.gov.it/NomenclatoreTariffario",
-        "code": "89.7",
-        "display": "Visita medica generale / cardiologica"
-      }
-    ]
+    "concept": {
+      "coding": [
+        {
+          "system": "https://www.salute.gov.it/NomenclatoreTariffario",
+          "code": "89.7",
+          "display": "Visita medica generale / cardiologica"
+        }
+      ]
+    }
   },
   "subject": {
     "reference": "Patient/paziente-mario-rossi"
@@ -45,9 +46,11 @@
   },
   "authoredOn": "2025-04-08",
   "priority": "urgent",
-  "reasonCode": [
+  "reason": [
     {
-      "text": "Ipertensione arteriosa in scompenso - dolore toracico recidivante"
+      "concept": {
+        "text": "Ipertensione arteriosa in scompenso"
+      }
     }
   ]
 }

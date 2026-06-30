@@ -1,25 +1,15 @@
 # LcCup — Agende CUP Lazio
 
-Profili FHIR R4 per agende, slot e prenotazioni del CUP Regionale Lazio, con estensioni per l’integrazione verso **IRT**.
+Profili FHIR **R5** per agende, slot e prenotazioni del CUP Regionale Lazio, con integrazione verso **IRT**.
 
 - **Canonical:** `https://www.fhir.laziocrea.it`
-- **Package:** `lazio.crea.cup.irt` — [0.0.1 su Simplifier](https://simplifier.net/packages/lazio.crea.cup.irt/0.0.1)
+- **Package:** `lazio.crea.cup.irt` — versione `0.1.0`
 - **Progetto:** [LazioCrea](https://simplifier.net/LazioCrea)
 - **Guida:** `guides/ig-fhir-lazio-crea-sviluppo/`
 
 ## Come lavoriamo
 
-Sorgenti in **FSH**, compilazione con **SUSHI** (`sushi .`), pubblicazione su **Simplifier** (package e guida web).
-
-## Struttura
-
-```
-input/fsh/          sorgenti FSH
-fsh-generated/      output SUSHI (committare)
-guides/             guida Simplifier
-sushi-config.yaml
-package.json
-```
+Sorgenti in **FSH**, compilazione con **SUSHI** (`sushi .`), pubblicazione su **Simplifier**.
 
 ## Compilazione
 
@@ -28,14 +18,14 @@ npm install -g fsh-sushi
 sushi .
 ```
 
-## Versioni
+Richiede il package `hl7.fhir.r5.core` nella cache FHIR locale (`~/.fhir/packages`).
 
-Prima di una release su Simplifier: aggiornare `version` in `sushi-config.yaml`, `package.json` e `guide.yaml`, poi `sushi .`, push e Reimport.
+## Profili (`lccup-*`)
 
-## Profili
+LcCup-Schedule, LcCup-Slot, LcCup-Appointment, LcCup-ServiceRequest, LcCup-CareTeam, LcCup-HealthcareService, LcCup-Organization
 
-LcCup-Schedule, LcCup-Slot, LcCup-Appointment, LcCup-ServiceRequest
+## Estensioni (senza prefisso `lccup-`)
 
-## Estensioni
+CUP: `tipo-agenda`, `modalita-erogazione`, `codice-prenotazione`, `canale-prenotazione`, `classe-priorita`
 
-`lccup-tipo-agenda`, `lccup-modalita-erogazione`, `lccup-codice-prenotazione`, `lccup-canale-prenotazione`, `lccup-classe-priorita`, `lccup-link-teleconsulto`
+IRT: `time-quantum`, `created-by`, `visible`, `draft`, `event-status`, `pathology`, …

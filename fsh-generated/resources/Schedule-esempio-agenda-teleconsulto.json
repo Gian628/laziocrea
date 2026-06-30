@@ -8,67 +8,77 @@
   },
   "extension": [
     {
-      "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-tipo-agenda",
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/tipo-agenda",
       "valueCodeableConcept": {
         "coding": [
           {
-            "system": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-tipo-agenda",
-            "code": "SSN",
-            "display": "SSN Istituzionale"
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-tipo-agenda",
+            "code": "SSN"
           }
         ]
       }
     },
     {
-      "url": "https://www.fhir.laziocrea.it/StructureDefinition/lccup-modalita-erogazione",
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/modalita-erogazione",
       "valueCodeableConcept": {
         "coding": [
           {
-            "system": "https://www.fhir.laziocrea.it/CodeSystem/lccup-cs-modalita-erogazione",
-            "code": "TELECONSULTO",
-            "display": "Teleconsulto"
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-modalita-erogazione",
+            "code": "TELECONSULTO"
           }
         ]
       }
+    },
+    {
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/created-by",
+      "valueReference": {
+        "reference": "Practitioner/dr-verdi-cardiologo"
+      }
+    },
+    {
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/managing-organization",
+      "valueReference": {
+        "reference": "Organization/esempio-irt-organization"
+      }
+    },
+    {
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/time-quantum",
+      "valueInteger": 30
+    },
+    {
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/visible",
+      "valueBoolean": true
+    },
+    {
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/draft",
+      "valueBoolean": false
+    },
+    {
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/slot-initialized",
+      "valueBoolean": true
     }
   ],
   "identifier": [
     {
-      "system": "https://cup.regione.lazio.it/agende",
-      "value": "AGN-LAZIO-TELE-CARDIO-001"
+      "type": {
+        "coding": [
+          {
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-tipo-identificatore",
+            "code": "99INV"
+          }
+        ]
+      },
+      "value": "AGN-TELE-CARDIO-001"
     }
   ],
   "active": true,
-  "serviceType": [
-    {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "408471009",
-          "display": "Visita cardiologica"
-        }
-      ]
-    }
-  ],
-  "specialty": [
-    {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "394579002",
-          "display": "Cardiologia"
-        }
-      ]
-    }
-  ],
+  "name": "Agenda ReCup CUP Teleconsulto",
   "actor": [
     {
-      "reference": "Location/sede-virtuale-teleconsulto"
+      "reference": "CareTeam/esempio-irt-careteam"
     }
   ],
   "planningHorizon": {
-    "start": "2025-01-01T00:00:00+01:00",
-    "end": "2025-12-31T23:59:59+01:00"
-  },
-  "comment": "Agenda teleconsulto cardiologia - integrazione IRT"
+    "start": "2025-01-01T00:00:00+01:00"
+  }
 }

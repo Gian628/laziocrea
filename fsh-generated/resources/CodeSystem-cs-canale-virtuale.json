@@ -1,0 +1,18 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CsCanaleVirtuale",
+  "id": "cs-canale-virtuale",
+  "title": "Codici Canale Virtuale",
+  "url": "https://www.fhir.laziocrea.it/CodeSystem/cs-canale-virtuale",
+  "concept": [
+    {
+      "code": "Videocall",
+      "display": "Videocall",
+      "definition": "Sessione video"
+    }
+  ],
+  "experimental": true,
+  "count": 1
+}

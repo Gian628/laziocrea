@@ -1,0 +1,21 @@
+{
+  "resourceType": "HealthcareService",
+  "id": "esempio-irt-hs-prestazione",
+  "meta": {
+    "profile": [
+      "https://www.fhir.laziocrea.it/StructureDefinition/lccup-healthcare-service"
+    ]
+  },
+  "active": true,
+  "name": "Televisita cardiologica di controllo",
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-tipo-servizio",
+          "code": "prestazione"
+        }
+      ]
+    }
+  ]
+}

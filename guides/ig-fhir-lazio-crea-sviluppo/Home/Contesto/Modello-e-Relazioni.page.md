@@ -2,63 +2,45 @@
 
 ## Il modello concettuale
 
-Quattro profili **LcCup** coprono il ciclo di prenotazione del CUP Regionale Lazio.
-Per le prestazioni a distanza, `LcCup-Appointment` e le relative estensioni consentono l’integrazione con **IRT**.
+Sette profili **LcCup** coprono prenotazione CUP e integrazione IRT.
 
-### 1. LcCup-Schedule → l'agenda
+### LcCup-Schedule
 
-Ogni ambulatorio o servizio espone una o più **agende** (`LcCup-Schedule`):
+- `actor`: **CareTeam** (teleconsulto) oppure Location / Practitioner (presenza)
+- Estensioni: `tipo-agenda`, `modalita-erogazione`, `time-quantum`, `created-by`, …
 
-- `actor`: HealthcareService, Location e/o Practitioner
-- `lccup-tipo-agenda`: SSN, ALPI, Privata, Convenzionata
-- `lccup-modalita-erogazione`: in presenza o teleconsulto (per l'integrazione con IRT)
+### LcCup-Slot
 
-### 2. LcCup-Slot → la fascia oraria
+- `serviceType` come **CodeableReference** (HealthcareService o concept SNOMED)
 
-Fasce orarie (`LcCup-Slot`) dentro un'agenda:
+### LcCup-Appointment
 
-- `free` → prenotabile
-- `busy` → occupato da un Appointment
-- `busy-unavailable` / `busy-tentative`
+- `subject` + `participant` (paziente, **equipe** CareTeam, professionista opzionale)
+- `supportingInformation` → prestazione clinica (teleconsulto)
+- **`virtualService`** — sessione videocall (R5)
+- Estensioni: `codice-prenotazione`, `event-status`, `pathology`, …
 
-La modalità tele/presenza è definita a livello di agenda (e confermata sulla prenotazione), non sul singolo slot.
+### LcCup-CareTeam / HealthcareService / Organization
 
-### 3. LcCup-ServiceRequest → l'impegnativa
+Modellano equipe, piattaforma TELEVISIT e struttura STS (da esempi IRT).
 
-Impegnativa SSN con NRE, codice prestazione, classe priorità U/B/D/P.
-
-### 4. LcCup-Appointment → la prenotazione
-
-Collega slot, impegnativa, partecipanti ed estensioni LcCup:
-
-- `lccup-codice-prenotazione` — codice consegnato all'assistito
-- `lccup-canale-prenotazione` — sportello, web, telefono...
-- `lccup-modalita-erogazione` — presenza o teleconsulto
-- `lccup-link-teleconsulto` — URL sessione IRT (se teleconsulto)
-
-## Diagramma risorse
+## Diagramma teleconsulto
 
 ```
-LcCup-ServiceRequest (impegnativa)
+LcCup-Organization
+        ▲
+        │ managingOrganization
+LcCup-CareTeam ◄──── actor ──── LcCup-Schedule ──── LcCup-Slot
+        │                                              │
+        │ participant[equipe]                          │
+        ▼                                              ▼
+LcCup-Appointment ── virtualService ──► sessione video
         │
-        │ basedOn
-        ▼
-LcCup-Appointment (prenotazione) ─── lccup-link-teleconsulto ──► IRT
-        │
-        │ slot
-        ▼
-LcCup-Slot (fascia oraria)
-        │
-        │ schedule
-        ▼
-LcCup-Schedule (agenda CUP Regionale Lazio)
-        │
-        │ actor
-        ▼
-HealthcareService + Location (+ Practitioner opzionale)
+        ├── supportingInformation → LcCup-HealthcareService (prestazione)
+        └── basedOn → LcCup-ServiceRequest
 ```
 
-## Ciclo di vita dell'Appointment
+## Ciclo di vita
 
 ```
 proposed → booked → fulfilled
@@ -66,29 +48,4 @@ proposed → booked → fulfilled
          cancelled / noshow
 ```
 
-## Flussi verso IRT
-
-### Pubblicazione agende (da definire: push o pull)
-
-Il CUP Regionale Lazio rende disponibili ad IRT le agende teleconsulto (`LcCup-Schedule` + `LcCup-Slot`).
-
-```
-CUP Regionale Lazio                    IRT
-        │                               │
-        │  Schedule + Slot (TELECONSULTO) │
-        ├──────────────────────────────►│   oppure
-        │◄──────────────────────────────┤   IRT richiede le agende
-        │                               │
-```
-
-### Prenotazione teleconsulto
-
-```
-Prenotazione LcCup-Appointment (booked, TELECONSULTO)
-        ↓
-Scambio con IRT (contenuto: Appointment)
-        ↓
-Aggiornamento con lccup-link-teleconsulto
-        ↓
-Notifica all'assistito
-```
+Post-prenotazione: popolamento di `virtualService`, `event-status`, eventuale `participant[professionista]`.

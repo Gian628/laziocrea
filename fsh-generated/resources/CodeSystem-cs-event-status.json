@@ -1,0 +1,28 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CsEventStatus",
+  "id": "cs-event-status",
+  "title": "Codici Stato Evento",
+  "url": "https://www.fhir.laziocrea.it/CodeSystem/cs-event-status",
+  "concept": [
+    {
+      "code": "PENDING",
+      "display": "In attesa",
+      "definition": "Evento in attesa di conferma o erogazione"
+    },
+    {
+      "code": "CONFIRMED",
+      "display": "Confermato",
+      "definition": "Evento confermato"
+    },
+    {
+      "code": "COMPLETED",
+      "display": "Completato",
+      "definition": "Evento completato"
+    }
+  ],
+  "experimental": true,
+  "count": 3
+}

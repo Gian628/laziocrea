@@ -1,0 +1,18 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CsTipoIdentificatore",
+  "id": "cs-tipo-identificatore",
+  "title": "Codici Tipo Identificatore",
+  "url": "https://www.fhir.laziocrea.it/CodeSystem/cs-tipo-identificatore",
+  "concept": [
+    {
+      "code": "99INV",
+      "display": "Mnemonico CUP",
+      "definition": "Codice mnemonico agenda nel sistema CUP"
+    }
+  ],
+  "experimental": true,
+  "count": 1
+}

@@ -15,9 +15,9 @@ Questa guida di implementazione fa riferimento all'ambiente di <b>sviluppo</b>, 
 
 ## Novità
 
-- Profili **LcCup** per Schedule, Slot, Appointment, ServiceRequest
-- Estensioni per teleconsulto con **IRT** (`lccup-modalita-erogazione`, `lccup-link-teleconsulto`)
-- Esempi prenotazione in presenza e teleconsulto
+- Profili **LcCup** (Schedule, Slot, Appointment, ServiceRequest, CareTeam, HealthcareService, Organization)
+- Estensioni CUP e metadati IRT (`modalita-erogazione`, `time-quantum`, …)
+- FHIR **R5** — teleconsulto con `virtualService` e equipe (`CareTeam`)
 
 ## Come leggere questa guida
 

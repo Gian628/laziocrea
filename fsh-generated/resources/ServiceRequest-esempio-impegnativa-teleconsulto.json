@@ -1,0 +1,42 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "esempio-impegnativa-teleconsulto",
+  "meta": {
+    "profile": [
+      "https://www.fhir.laziocrea.it/StructureDefinition/lccup-service-request"
+    ]
+  },
+  "intent": "order",
+  "extension": [
+    {
+      "url": "https://www.fhir.laziocrea.it/StructureDefinition/classe-priorita",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-classe-priorita",
+            "code": "B"
+          }
+        ]
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://sistemats.sanita.finanze.it/NRE",
+      "value": "1200A9876543210"
+    }
+  ],
+  "status": "active",
+  "code": {
+    "concept": {
+      "text": "Televisita cardiologica di controllo"
+    }
+  },
+  "subject": {
+    "reference": "Patient/paziente-mario-rossi"
+  },
+  "requester": {
+    "reference": "Practitioner/mmg-dr-bianchi"
+  },
+  "authoredOn": "2025-04-08"
+}

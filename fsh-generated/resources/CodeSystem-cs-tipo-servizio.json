@@ -1,0 +1,23 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CsTipoServizio",
+  "id": "cs-tipo-servizio",
+  "title": "Codici Tipo Servizio",
+  "url": "https://www.fhir.laziocrea.it/CodeSystem/cs-tipo-servizio",
+  "concept": [
+    {
+      "code": "platform",
+      "display": "Piattaforma",
+      "definition": "Servizio piattaforma telemedicina (es. TELEVISIT)"
+    },
+    {
+      "code": "prestazione",
+      "display": "Prestazione",
+      "definition": "Prestazione clinica specifica"
+    }
+  ],
+  "experimental": true,
+  "count": 2
+}

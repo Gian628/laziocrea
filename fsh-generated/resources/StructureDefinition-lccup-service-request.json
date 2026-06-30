@@ -6,8 +6,8 @@
   "title": "LcCup ServiceRequest - Impegnativa SSN",
   "status": "draft",
   "experimental": true,
-  "description": "Profilo Lazio Crea per l'impegnativa dematerializzata nel CUP regionale.\nPrecede la prenotazione (LcCupAppointment) nel flusso CUP Lazio.",
-  "fhirVersion": "4.0.1",
+  "description": "Impegnativa dematerializzata nel CUP regionale, precede la prenotazione.",
+  "fhirVersion": "5.0.0",
   "kind": "resource",
   "abstract": false,
   "type": "ServiceRequest",
@@ -30,9 +30,9 @@
         }
       },
       {
-        "id": "ServiceRequest.extension:classePrioritaCup",
+        "id": "ServiceRequest.extension:classePriorita",
         "path": "ServiceRequest.extension",
-        "sliceName": "classePrioritaCup",
+        "sliceName": "classePriorita",
         "short": "Classe priorità CUP U/B/D/P",
         "min": 0,
         "max": "1",
@@ -40,7 +40,7 @@
           {
             "code": "Extension",
             "profile": [
-              "https://www.fhir.laziocrea.it/StructureDefinition/lccup-classe-priorita"
+              "https://www.fhir.laziocrea.it/StructureDefinition/classe-priorita"
             ]
           }
         ],
@@ -49,13 +49,11 @@
       {
         "id": "ServiceRequest.identifier",
         "path": "ServiceRequest.identifier",
-        "short": "NRE o codice impegnativa",
         "mustSupport": true
       },
       {
         "id": "ServiceRequest.status",
         "path": "ServiceRequest.status",
-        "short": "Stato impegnativa",
         "mustSupport": true
       },
       {
@@ -67,48 +65,22 @@
       {
         "id": "ServiceRequest.priority",
         "path": "ServiceRequest.priority",
-        "short": "Priorità FHIR",
         "mustSupport": true
       },
       {
         "id": "ServiceRequest.code",
         "path": "ServiceRequest.code",
-        "short": "Codice prestazione (Nomenclatore Nazionale/Regionale)",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "ServiceRequest.quantity[x]",
         "path": "ServiceRequest.quantity[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        },
         "mustSupport": true
-      },
-      {
-        "id": "ServiceRequest.quantity[x]:quantityQuantity",
-        "path": "ServiceRequest.quantity[x]",
-        "sliceName": "quantityQuantity",
-        "short": "Numero prestazioni prescritte",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Quantity"
-          }
-        ]
       },
       {
         "id": "ServiceRequest.subject",
         "path": "ServiceRequest.subject",
-        "short": "Assistito",
         "type": [
           {
             "code": "Reference",
@@ -122,13 +94,11 @@
       {
         "id": "ServiceRequest.authoredOn",
         "path": "ServiceRequest.authoredOn",
-        "short": "Data emissione impegnativa",
         "mustSupport": true
       },
       {
         "id": "ServiceRequest.requester",
         "path": "ServiceRequest.requester",
-        "short": "Medico prescrittore",
         "min": 1,
         "type": [
           {
@@ -142,9 +112,9 @@
         "mustSupport": true
       },
       {
-        "id": "ServiceRequest.reasonCode",
-        "path": "ServiceRequest.reasonCode",
-        "short": "Quesito diagnostico",
+        "id": "ServiceRequest.reason",
+        "path": "ServiceRequest.reason",
+        "short": "Quesito diagnostico o motivo richiesta",
         "mustSupport": true
       }
     ]

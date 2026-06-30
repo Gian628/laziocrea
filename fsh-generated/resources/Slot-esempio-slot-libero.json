@@ -12,13 +12,15 @@
   "status": "free",
   "serviceType": [
     {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "408471009",
-          "display": "Visita cardiologica"
-        }
-      ]
+      "concept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "408471009",
+            "display": "Visita cardiologica"
+          }
+        ]
+      }
     }
   ],
   "start": "2025-04-15T09:00:00+01:00",
