@@ -3,7 +3,7 @@ Id: lccup-healthcare-service
 Title: "LcCup HealthcareService - Prestazione o piattaforma"
 Description: """
   Servizio sanitario nel contesto CUP/IRT.
-  Può rappresentare la piattaforma telemedicina (es. TELEVISIT) o una prestazione clinica specifica.
+  Può rappresentare la piattaforma telemedicina (es. Televisita) o una prestazione clinica specifica.
 """
 Parent: HealthcareService
 * ^status = #draft

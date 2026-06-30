@@ -28,7 +28,7 @@
         "coding": [
           {
             "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-modalita-erogazione",
-            "code": "TELECONSULTO"
+            "code": "TELE_CONSULTO"
           }
         ]
       }
@@ -60,7 +60,7 @@
         "coding": [
           {
             "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-event-status",
-            "code": "PENDING"
+            "code": "IN_ATTESA"
           }
         ]
       }
@@ -81,7 +81,7 @@
   "serviceType": [
     {
       "reference": {
-        "reference": "HealthcareService/esempio-irt-hs-televisit"
+        "reference": "HealthcareService/esempio-irt-hs-piattaforma-televisita"
       }
     }
   ],
@@ -124,7 +124,7 @@
     {
       "channelType": {
         "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-canale-virtuale",
-        "code": "Videocall"
+        "code": "VIDEO_CALL"
       },
       "addressUrl": "https://telemedicina.laziocrea.it/sessione/abc123xyz"
     }

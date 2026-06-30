@@ -18,7 +18,7 @@
       {
         "id": "Slot.serviceType",
         "path": "Slot.serviceType",
-        "short": "Prestazione o piattaforma (CodeableReference)",
+        "short": "Prestazione (concept) o piattaforma IRT (reference → LcCupHealthcareService)",
         "max": "1",
         "mustSupport": true
       },

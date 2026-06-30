@@ -17,17 +17,6 @@
           }
         ]
       }
-    },
-    {
-      "url": "https://www.fhir.laziocrea.it/StructureDefinition/modalita-erogazione",
-      "valueCodeableConcept": {
-        "coding": [
-          {
-            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-modalita-erogazione",
-            "code": "IN_PRESENZA"
-          }
-        ]
-      }
     }
   ],
   "identifier": [
@@ -71,5 +60,5 @@
     "start": "2025-01-01T00:00:00+01:00",
     "end": "2025-12-31T23:59:59+01:00"
   },
-  "comment": "Agenda primo accesso - Cardiologia Clinica"
+  "comment": "Agenda primo accesso cardiologia in presenza — specialty e serviceType definiscono la prestazione"
 }

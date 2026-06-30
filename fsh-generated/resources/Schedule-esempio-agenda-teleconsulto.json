@@ -19,17 +19,6 @@
       }
     },
     {
-      "url": "https://www.fhir.laziocrea.it/StructureDefinition/modalita-erogazione",
-      "valueCodeableConcept": {
-        "coding": [
-          {
-            "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-modalita-erogazione",
-            "code": "TELECONSULTO"
-          }
-        ]
-      }
-    },
-    {
       "url": "https://www.fhir.laziocrea.it/StructureDefinition/created-by",
       "valueReference": {
         "reference": "Practitioner/dr-verdi-cardiologo"
@@ -68,11 +57,11 @@
           }
         ]
       },
-      "value": "AGN-TELE-CARDIO-001"
+      "value": "AGN-TELE-EQUIPE-001"
     }
   ],
   "active": true,
-  "name": "Agenda ReCup CUP Teleconsulto",
+  "name": "Agenda ReCup CUP",
   "actor": [
     {
       "reference": "CareTeam/esempio-irt-careteam"
@@ -80,5 +69,6 @@
   ],
   "planningHorizon": {
     "start": "2025-01-01T00:00:00+01:00"
-  }
+  },
+  "comment": "Equipe teleconsulto — modalità da Slot (piattaforma Televisita) e da Appointment in prenotazione"
 }

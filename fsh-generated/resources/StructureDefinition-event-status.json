@@ -11,7 +11,7 @@
   "name": "ExtEventStatus",
   "title": "Stato evento",
   "status": "draft",
-  "description": "Stato workflow dell'evento lato piattaforma (es. PENDING). Corrisponde a eventColor IRT.",
+  "description": "Stato workflow dell'evento lato piattaforma (es. IN_ATTESA). Corrisponde a eventColor IRT.",
   "fhirVersion": "5.0.0",
   "kind": "complex-type",
   "abstract": false,
@@ -30,7 +30,7 @@
         "id": "Extension",
         "path": "Extension",
         "short": "Stato evento",
-        "definition": "Stato workflow dell'evento lato piattaforma (es. PENDING). Corrisponde a eventColor IRT."
+        "definition": "Stato workflow dell'evento lato piattaforma (es. IN_ATTESA). Corrisponde a eventColor IRT."
       },
       {
         "id": "Extension.extension",

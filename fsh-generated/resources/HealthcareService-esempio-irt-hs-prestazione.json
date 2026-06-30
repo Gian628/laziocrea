@@ -7,13 +7,13 @@
     ]
   },
   "active": true,
-  "name": "Televisita cardiologica di controllo",
+  "name": "Televisita genetica di controllo",
   "type": [
     {
       "coding": [
         {
           "system": "https://www.fhir.laziocrea.it/CodeSystem/cs-tipo-servizio",
-          "code": "prestazione"
+          "code": "PRESTAZIONE_CLINICA"
         }
       ]
     }

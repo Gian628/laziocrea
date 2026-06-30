@@ -54,11 +54,9 @@ Title: "Esempio Agenda Cardiologia SSN - CUP Lazio"
 * actor[0] = Reference(Location/ambulatorio-cardio-sandrini)
 * planningHorizon.start = "2025-01-01T00:00:00+01:00"
 * planningHorizon.end = "2025-12-31T23:59:59+01:00"
-* comment = "Agenda primo accesso - Cardiologia Clinica"
+* comment = "Agenda primo accesso cardiologia in presenza — specialty e serviceType definiscono la prestazione"
 * extension[tipoAgenda].valueCodeableConcept.coding[0].system = "https://www.fhir.laziocrea.it/CodeSystem/cs-tipo-agenda"
 * extension[tipoAgenda].valueCodeableConcept.coding[0].code = #SSN
-* extension[modalitaErogazione].valueCodeableConcept.coding[0].system = "https://www.fhir.laziocrea.it/CodeSystem/cs-modalita-erogazione"
-* extension[modalitaErogazione].valueCodeableConcept.coding[0].code = #IN_PRESENZA
 
 Instance: esempio-slot-libero
 InstanceOf: LcCupSlot
@@ -145,36 +143,36 @@ Title: "Esempio Equipe Teleconsulto"
 * participant[1].role.coding[0].code = #INFERMIERE
 * managingOrganization[0] = Reference(Organization/esempio-irt-organization)
 
-Instance: esempio-irt-hs-televisit
+Instance: esempio-irt-hs-piattaforma-televisita
 InstanceOf: LcCupHealthcareService
-Title: "Esempio Piattaforma TELEVISIT"
+Title: "Esempio Piattaforma Televisita"
 * active = true
-* name = "TELEVISIT"
+* name = "Televisita"
 * type[0].coding[0].system = "https://www.fhir.laziocrea.it/CodeSystem/cs-tipo-servizio"
-* type[0].coding[0].code = #platform
+* type[0].coding[0].code = #PIATTAFORMA_TELEVISITA
 
 Instance: esempio-irt-hs-prestazione
 InstanceOf: LcCupHealthcareService
-Title: "Esempio Prestazione Televisita Cardiologica"
+Title: "Esempio Prestazione Televisita Genetica"
 * active = true
-* name = "Televisita cardiologica di controllo"
+* name = "Televisita genetica di controllo"
 * type[0].coding[0].system = "https://www.fhir.laziocrea.it/CodeSystem/cs-tipo-servizio"
-* type[0].coding[0].code = #prestazione
+* type[0].coding[0].code = #PRESTAZIONE_CLINICA
 
 Instance: esempio-agenda-teleconsulto
 InstanceOf: LcCupSchedule
-Title: "Esempio Agenda Teleconsulto - CUP Lazio"
+Title: "Esempio Agenda Equipe Teleconsulto (modello IRT)"
+Description: "Agenda generica equipe: nessuna prestazione clinica sulla Schedule; piattaforma sugli Slot"
 * identifier[0].type.coding[0].system = "https://www.fhir.laziocrea.it/CodeSystem/cs-tipo-identificatore"
 * identifier[0].type.coding[0].code = #99INV
-* identifier[0].value = "AGN-TELE-CARDIO-001"
+* identifier[0].value = "AGN-TELE-EQUIPE-001"
 * active = true
-* name = "Agenda ReCup CUP Teleconsulto"
+* name = "Agenda ReCup CUP"
 * actor[0] = Reference(CareTeam/esempio-irt-careteam)
 * planningHorizon.start = "2025-01-01T00:00:00+01:00"
+* comment = "Equipe teleconsulto — modalità da Slot (piattaforma Televisita) e da Appointment in prenotazione"
 * extension[tipoAgenda].valueCodeableConcept.coding[0].system = "https://www.fhir.laziocrea.it/CodeSystem/cs-tipo-agenda"
 * extension[tipoAgenda].valueCodeableConcept.coding[0].code = #SSN
-* extension[modalitaErogazione].valueCodeableConcept.coding[0].system = "https://www.fhir.laziocrea.it/CodeSystem/cs-modalita-erogazione"
-* extension[modalitaErogazione].valueCodeableConcept.coding[0].code = #TELECONSULTO
 * extension[createdBy].valueReference = Reference(Practitioner/dr-verdi-cardiologo)
 * extension[managingOrganization].valueReference = Reference(Organization/esempio-irt-organization)
 * extension[timeQuantum].valueInteger = 30
@@ -187,7 +185,7 @@ InstanceOf: LcCupSlot
 Title: "Esempio Slot Teleconsulto"
 * schedule = Reference(Schedule/esempio-agenda-teleconsulto)
 * status = #free
-* serviceType.reference = Reference(HealthcareService/esempio-irt-hs-televisit)
+* serviceType.reference = Reference(HealthcareService/esempio-irt-hs-piattaforma-televisita)
 * start = "2025-04-17T10:00:00+01:00"
 * end   = "2025-04-17T10:30:00+01:00"
 * overbooked = false
@@ -199,7 +197,7 @@ Title: "Esempio Impegnativa SSN - Teleconsulto"
 * identifier[0].value = "1200A9876543210"
 * status = #active
 * intent = #order
-* code.concept.text = "Televisita cardiologica di controllo"
+* code.concept.text = "Televisita genetica di controllo"
 * subject = Reference(Patient/paziente-mario-rossi)
 * requester = Reference(Practitioner/mmg-dr-bianchi)
 * authoredOn = "2025-04-08"
@@ -213,7 +211,7 @@ Title: "Esempio Prenotazione Teleconsulto - IRT"
 * identifier[0].value = "PRN-2025-00789012"
 * status = #booked
 * serviceCategory[0].text = "healthcare-service"
-* serviceType[0].reference = Reference(HealthcareService/esempio-irt-hs-televisit)
+* serviceType[0].reference = Reference(HealthcareService/esempio-irt-hs-piattaforma-televisita)
 * supportingInformation[0] = Reference(HealthcareService/esempio-irt-hs-prestazione)
 * basedOn[0] = Reference(ServiceRequest/esempio-impegnativa-teleconsulto)
 * slot[0] = Reference(Slot/esempio-slot-teleconsulto)
@@ -226,7 +224,7 @@ Title: "Esempio Prenotazione Teleconsulto - IRT"
 * participant[equipe].actor = Reference(CareTeam/esempio-irt-careteam)
 * participant[equipe].status = #needs-action
 * virtualService[0].channelType.system = "https://www.fhir.laziocrea.it/CodeSystem/cs-canale-virtuale"
-* virtualService[0].channelType.code = #Videocall
+* virtualService[0].channelType.code = #VIDEO_CALL
 * virtualService[0].addressUrl = "https://telemedicina.laziocrea.it/sessione/abc123xyz"
 * extension[codicePrenotazione].valueString = "CUP-2025-00789012"
 * extension[canalePrenotazione].valueCodeableConcept.coding[0].system = "https://www.fhir.laziocrea.it/CodeSystem/cs-canale-prenotazione"
@@ -234,8 +232,8 @@ Title: "Esempio Prenotazione Teleconsulto - IRT"
 * extension[classePriorita].valueCodeableConcept.coding[0].system = "https://www.fhir.laziocrea.it/CodeSystem/cs-classe-priorita"
 * extension[classePriorita].valueCodeableConcept.coding[0].code = #B
 * extension[modalitaErogazione].valueCodeableConcept.coding[0].system = "https://www.fhir.laziocrea.it/CodeSystem/cs-modalita-erogazione"
-* extension[modalitaErogazione].valueCodeableConcept.coding[0].code = #TELECONSULTO
+* extension[modalitaErogazione].valueCodeableConcept.coding[0].code = #TELE_CONSULTO
 * extension[appointmentOrganization].valueReference = Reference(Organization/esempio-irt-organization)
 * extension[documentsDeleted].valueBoolean = false
 * extension[eventStatus].valueCodeableConcept.coding[0].system = "https://www.fhir.laziocrea.it/CodeSystem/cs-event-status"
-* extension[eventStatus].valueCodeableConcept.coding[0].code = #PENDING
+* extension[eventStatus].valueCodeableConcept.coding[0].code = #IN_ATTESA

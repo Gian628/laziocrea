@@ -4,24 +4,24 @@
     "fshName": "esempio-prenotazione-teleconsulto",
     "fshType": "Instance",
     "fshFile": "examples\\Examples.fsh",
-    "startLine": 209,
-    "endLine": 241
+    "startLine": 207,
+    "endLine": 239
   },
   {
     "outputFile": "Appointment-esempio-prenotazione-visita.json",
     "fshName": "esempio-prenotazione-visita",
     "fshType": "Instance",
     "fshFile": "examples\\Examples.fsh",
-    "startLine": 93,
-    "endLine": 121
+    "startLine": 91,
+    "endLine": 119
   },
   {
     "outputFile": "CareTeam-esempio-irt-careteam.json",
     "fshName": "esempio-irt-careteam",
     "fshType": "Instance",
     "fshFile": "examples\\Examples.fsh",
-    "startLine": 135,
-    "endLine": 146
+    "startLine": 133,
+    "endLine": 144
   },
   {
     "outputFile": "CodeSystem-cs-canale-prenotazione.json",
@@ -96,20 +96,20 @@
     "endLine": 112
   },
   {
+    "outputFile": "HealthcareService-esempio-irt-hs-piattaforma-televisita.json",
+    "fshName": "esempio-irt-hs-piattaforma-televisita",
+    "fshType": "Instance",
+    "fshFile": "examples\\Examples.fsh",
+    "startLine": 146,
+    "endLine": 152
+  },
+  {
     "outputFile": "HealthcareService-esempio-irt-hs-prestazione.json",
     "fshName": "esempio-irt-hs-prestazione",
     "fshType": "Instance",
     "fshFile": "examples\\Examples.fsh",
-    "startLine": 156,
-    "endLine": 162
-  },
-  {
-    "outputFile": "HealthcareService-esempio-irt-hs-televisit.json",
-    "fshName": "esempio-irt-hs-televisit",
-    "fshType": "Instance",
-    "fshFile": "examples\\Examples.fsh",
-    "startLine": 148,
-    "endLine": 154
+    "startLine": 154,
+    "endLine": 160
   },
   {
     "outputFile": "Location-ambulatorio-cardio-sandrini.json",
@@ -124,8 +124,8 @@
     "fshName": "esempio-irt-organization",
     "fshType": "Instance",
     "fshFile": "examples\\Examples.fsh",
-    "startLine": 125,
-    "endLine": 133
+    "startLine": 123,
+    "endLine": 131
   },
   {
     "outputFile": "Patient-paziente-mario-rossi.json",
@@ -173,63 +173,63 @@
     "fshType": "Instance",
     "fshFile": "examples\\Examples.fsh",
     "startLine": 41,
-    "endLine": 61
+    "endLine": 59
   },
   {
     "outputFile": "Schedule-esempio-agenda-teleconsulto.json",
     "fshName": "esempio-agenda-teleconsulto",
     "fshType": "Instance",
     "fshFile": "examples\\Examples.fsh",
-    "startLine": 164,
-    "endLine": 183
+    "startLine": 162,
+    "endLine": 181
   },
   {
     "outputFile": "ServiceRequest-esempio-impegnativa-ssn.json",
     "fshName": "esempio-impegnativa-ssn",
     "fshType": "Instance",
     "fshFile": "examples\\Examples.fsh",
-    "startLine": 75,
-    "endLine": 91
+    "startLine": 73,
+    "endLine": 89
   },
   {
     "outputFile": "ServiceRequest-esempio-impegnativa-teleconsulto.json",
     "fshName": "esempio-impegnativa-teleconsulto",
     "fshType": "Instance",
     "fshFile": "examples\\Examples.fsh",
-    "startLine": 195,
-    "endLine": 207
+    "startLine": 193,
+    "endLine": 205
   },
   {
     "outputFile": "Slot-esempio-slot-libero.json",
     "fshName": "esempio-slot-libero",
     "fshType": "Instance",
     "fshFile": "examples\\Examples.fsh",
-    "startLine": 63,
-    "endLine": 73
+    "startLine": 61,
+    "endLine": 71
   },
   {
     "outputFile": "Slot-esempio-slot-teleconsulto.json",
     "fshName": "esempio-slot-teleconsulto",
     "fshType": "Instance",
     "fshFile": "examples\\Examples.fsh",
-    "startLine": 185,
-    "endLine": 193
+    "startLine": 183,
+    "endLine": 191
   },
   {
     "outputFile": "StructureDefinition-allows-enrollment.json",
     "fshName": "ExtAllowsEnrollment",
     "fshType": "Extension",
     "fshFile": "extensions\\Extensions.fsh",
-    "startLine": 128,
-    "endLine": 135
+    "startLine": 130,
+    "endLine": 137
   },
   {
     "outputFile": "StructureDefinition-appointment-organization.json",
     "fshName": "ExtAppointmentOrganization",
     "fshType": "Extension",
     "fshFile": "extensions\\Extensions.fsh",
-    "startLine": 139,
-    "endLine": 146
+    "startLine": 141,
+    "endLine": 148
   },
   {
     "outputFile": "StructureDefinition-canale-prenotazione.json",
@@ -260,32 +260,32 @@
     "fshName": "ExtCreatedBy",
     "fshType": "Extension",
     "fshFile": "extensions\\Extensions.fsh",
-    "startLine": 63,
-    "endLine": 70
+    "startLine": 65,
+    "endLine": 72
   },
   {
     "outputFile": "StructureDefinition-documents-deleted.json",
     "fshName": "ExtDocumentsDeleted",
     "fshType": "Extension",
     "fshFile": "extensions\\Extensions.fsh",
-    "startLine": 148,
-    "endLine": 155
+    "startLine": 150,
+    "endLine": 157
   },
   {
     "outputFile": "StructureDefinition-draft.json",
     "fshName": "ExtDraft",
     "fshType": "Extension",
     "fshFile": "extensions\\Extensions.fsh",
-    "startLine": 99,
-    "endLine": 106
+    "startLine": 101,
+    "endLine": 108
   },
   {
     "outputFile": "StructureDefinition-event-status.json",
     "fshName": "ExtEventStatus",
     "fshType": "Extension",
     "fshFile": "extensions\\Extensions.fsh",
-    "startLine": 166,
-    "endLine": 174
+    "startLine": 168,
+    "endLine": 176
   },
   {
     "outputFile": "StructureDefinition-lccup-appointment.json",
@@ -325,7 +325,7 @@
     "fshType": "Profile",
     "fshFile": "profiles\\LcCupSchedule.fsh",
     "startLine": 1,
-    "endLine": 58
+    "endLine": 59
   },
   {
     "outputFile": "StructureDefinition-lccup-service-request.json",
@@ -348,8 +348,8 @@
     "fshName": "ExtManagingOrganization",
     "fshType": "Extension",
     "fshFile": "extensions\\Extensions.fsh",
-    "startLine": 72,
-    "endLine": 79
+    "startLine": 74,
+    "endLine": 81
   },
   {
     "outputFile": "StructureDefinition-modalita-erogazione.json",
@@ -357,39 +357,39 @@
     "fshType": "Extension",
     "fshFile": "extensions\\Extensions.fsh",
     "startLine": 49,
-    "endLine": 59
+    "endLine": 61
   },
   {
     "outputFile": "StructureDefinition-pathology.json",
     "fshName": "ExtPathology",
     "fshType": "Extension",
     "fshFile": "extensions\\Extensions.fsh",
-    "startLine": 157,
-    "endLine": 164
+    "startLine": 159,
+    "endLine": 166
   },
   {
     "outputFile": "StructureDefinition-selectable.json",
     "fshName": "ExtSelectable",
     "fshType": "Extension",
     "fshFile": "extensions\\Extensions.fsh",
-    "startLine": 119,
-    "endLine": 126
+    "startLine": 121,
+    "endLine": 128
   },
   {
     "outputFile": "StructureDefinition-slot-initialized.json",
     "fshName": "ExtSlotInitialized",
     "fshType": "Extension",
     "fshFile": "extensions\\Extensions.fsh",
-    "startLine": 108,
-    "endLine": 115
+    "startLine": 110,
+    "endLine": 117
   },
   {
     "outputFile": "StructureDefinition-time-quantum.json",
     "fshName": "ExtTimeQuantum",
     "fshType": "Extension",
     "fshFile": "extensions\\Extensions.fsh",
-    "startLine": 81,
-    "endLine": 88
+    "startLine": 83,
+    "endLine": 90
   },
   {
     "outputFile": "StructureDefinition-tipo-agenda.json",
@@ -404,8 +404,8 @@
     "fshName": "ExtVisible",
     "fshType": "Extension",
     "fshFile": "extensions\\Extensions.fsh",
-    "startLine": 90,
-    "endLine": 97
+    "startLine": 92,
+    "endLine": 99
   },
   {
     "outputFile": "ValueSet-vs-canale-prenotazione.json",

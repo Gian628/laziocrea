@@ -26,7 +26,7 @@
 [esempio-irt-careteam]: CareTeam-esempio-irt-careteam.html
 [esempio-impegnativa-teleconsulto]: ServiceRequest-esempio-impegnativa-teleconsulto.html
 [esempio-impegnativa-ssn]: ServiceRequest-esempio-impegnativa-ssn.html
-[esempio-irt-hs-televisit]: HealthcareService-esempio-irt-hs-televisit.html
+[esempio-irt-hs-piattaforma-televisita]: HealthcareService-esempio-irt-hs-piattaforma-televisita.html
 [esempio-prenotazione-visita]: Appointment-esempio-prenotazione-visita.html
 [esempio-prenotazione-teleconsulto]: Appointment-esempio-prenotazione-teleconsulto.html
 [esempio-irt-hs-prestazione]: HealthcareService-esempio-irt-hs-prestazione.html

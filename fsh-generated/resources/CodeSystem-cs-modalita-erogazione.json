@@ -13,12 +13,12 @@
       "definition": "Presso la struttura sanitaria"
     },
     {
-      "code": "TELECONSULTO",
+      "code": "TELE_CONSULTO",
       "display": "Teleconsulto",
       "definition": "Videochiamata via IRT"
     },
     {
-      "code": "TELEMONITORAGGIO",
+      "code": "TELE_MONITORAGGIO",
       "display": "Telemonitoraggio",
       "definition": "Monitoraggio clinico a distanza"
     }

@@ -11,15 +11,11 @@
   "name": "ExtModalitaErogazione",
   "title": "Modalità di Erogazione",
   "status": "draft",
-  "description": "In presenza, teleconsulto o telemonitoraggio.",
+  "description": "In presenza, teleconsulto o telemonitoraggio.\nValorizzata sulla prenotazione (Appointment). Per le agende teleconsulto la modalità\nsi deduce da actor CareTeam e da Slot.serviceType → HealthcareService piattaforma.",
   "fhirVersion": "5.0.0",
   "kind": "complex-type",
   "abstract": false,
   "context": [
-    {
-      "type": "element",
-      "expression": "Schedule"
-    },
     {
       "type": "element",
       "expression": "Appointment"
@@ -34,7 +30,7 @@
         "id": "Extension",
         "path": "Extension",
         "short": "Modalità di Erogazione",
-        "definition": "In presenza, teleconsulto o telemonitoraggio."
+        "definition": "In presenza, teleconsulto o telemonitoraggio.\nValorizzata sulla prenotazione (Appointment). Per le agende teleconsulto la modalità\nsi deduce da actor CareTeam e da Slot.serviceType → HealthcareService piattaforma."
       },
       {
         "id": "Extension.extension",

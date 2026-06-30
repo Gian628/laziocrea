@@ -77,7 +77,7 @@ groups:
       - ServiceRequest/esempio-impegnativa-ssn
       - Organization/esempio-irt-organization
       - CareTeam/esempio-irt-careteam
-      - HealthcareService/esempio-irt-hs-televisit
+      - HealthcareService/esempio-irt-hs-piattaforma-televisita
       - HealthcareService/esempio-irt-hs-prestazione
       - Schedule/esempio-agenda-teleconsulto
       - Slot/esempio-slot-teleconsulto

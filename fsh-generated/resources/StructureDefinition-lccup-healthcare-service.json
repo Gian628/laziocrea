@@ -6,7 +6,7 @@
   "title": "LcCup HealthcareService - Prestazione o piattaforma",
   "status": "draft",
   "experimental": true,
-  "description": "Servizio sanitario nel contesto CUP/IRT.\nPuò rappresentare la piattaforma telemedicina (es. TELEVISIT) o una prestazione clinica specifica.",
+  "description": "Servizio sanitario nel contesto CUP/IRT.\nPuò rappresentare la piattaforma telemedicina (es. Televisita) o una prestazione clinica specifica.",
   "fhirVersion": "5.0.0",
   "kind": "resource",
   "abstract": false,

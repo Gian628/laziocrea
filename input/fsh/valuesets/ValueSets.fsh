@@ -51,9 +51,9 @@ Id: cs-modalita-erogazione
 Title: "Codici Modalità Erogazione"
 * ^status = #draft
 * ^experimental = true
-* #IN_PRESENZA      "In presenza"       "Presso la struttura sanitaria"
-* #TELECONSULTO     "Teleconsulto"      "Videochiamata via IRT"
-* #TELEMONITORAGGIO "Telemonitoraggio"  "Monitoraggio clinico a distanza"
+* #IN_PRESENZA       "In presenza"       "Presso la struttura sanitaria"
+* #TELE_CONSULTO     "Teleconsulto"      "Videochiamata via IRT"
+* #TELE_MONITORAGGIO "Telemonitoraggio"  "Monitoraggio clinico a distanza"
 
 ValueSet: VsClassePriorita
 Id: vs-classe-priorita
@@ -108,8 +108,8 @@ Id: cs-tipo-servizio
 Title: "Codici Tipo Servizio"
 * ^status = #draft
 * ^experimental = true
-* #platform   "Piattaforma"  "Servizio piattaforma telemedicina (es. TELEVISIT)"
-* #prestazione "Prestazione" "Prestazione clinica specifica"
+* #PIATTAFORMA_TELEVISITA "Piattaforma televisita" "Servizio piattaforma telemedicina (es. Televisita)"
+* #PRESTAZIONE_CLINICA    "Prestazione clinica"   "Prestazione clinica specifica"
 
 ValueSet: VsCanaleVirtuale
 Id: vs-canale-virtuale
@@ -123,7 +123,7 @@ Id: cs-canale-virtuale
 Title: "Codici Canale Virtuale"
 * ^status = #draft
 * ^experimental = true
-* #Videocall "Videocall" "Sessione video"
+* #VIDEO_CALL "Videochiamata" "Sessione video"
 
 ValueSet: VsEventStatus
 Id: vs-event-status
@@ -137,9 +137,9 @@ Id: cs-event-status
 Title: "Codici Stato Evento"
 * ^status = #draft
 * ^experimental = true
-* #PENDING   "In attesa"    "Evento in attesa di conferma o erogazione"
-* #CONFIRMED "Confermato"   "Evento confermato"
-* #COMPLETED "Completato"   "Evento completato"
+* #IN_ATTESA  "In attesa"  "Evento in attesa di conferma o erogazione"
+* #CONFERMATO "Confermato" "Evento confermato"
+* #COMPLETATO "Completato" "Evento completato"
 
 ValueSet: VsRuoloEquipe
 Id: vs-ruolo-equipe

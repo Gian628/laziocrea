@@ -49,9 +49,11 @@ Description: "Classe di priorità U/B/D/P secondo normativa liste d'attesa itali
 Extension: ExtModalitaErogazione
 Id: modalita-erogazione
 Title: "Modalità di Erogazione"
-Description: "In presenza, teleconsulto o telemonitoraggio."
-* ^context[+].type = #element
-* ^context[=].expression = "Schedule"
+Description: """
+  In presenza, teleconsulto o telemonitoraggio.
+  Valorizzata sulla prenotazione (Appointment). Per le agende teleconsulto la modalità
+  si deduce da actor CareTeam e da Slot.serviceType → HealthcareService piattaforma.
+"""
 * ^context[+].type = #element
 * ^context[=].expression = "Appointment"
 * ^status = #draft
@@ -166,7 +168,7 @@ Description: "Riferimento al quesito clinico o patologia associata all'appuntame
 Extension: ExtEventStatus
 Id: event-status
 Title: "Stato evento"
-Description: "Stato workflow dell'evento lato piattaforma (es. PENDING). Corrisponde a eventColor IRT."
+Description: "Stato workflow dell'evento lato piattaforma (es. IN_ATTESA). Corrisponde a eventColor IRT."
 * ^context[+].type = #element
 * ^context[=].expression = "Appointment"
 * ^status = #draft

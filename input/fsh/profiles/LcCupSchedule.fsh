@@ -3,7 +3,11 @@ Id: lccup-schedule
 Title: "LcCup Schedule - Agenda CUP Lazio"
 Description: """
   Agenda ambulatoriale o teleconsulto gestita dal CUP Regionale Lazio.
-  In teleconsulto l'actor principale è un CareTeam; in presenza Practitioner, Location o HealthcareService.
+
+  Presenza: actor Location/Practitioner, specialty e serviceType sulla Schedule.
+  Teleconsulto (IRT): actor CareTeam, serviceType vuoto sulla Schedule; piattaforma
+  Televisita sugli Slot (serviceType.reference → HealthcareService type=PIATTAFORMA_TELEVISITA).
+  La prestazione clinica specifica è sulla prenotazione (Appointment.supportingInformation).
 """
 Parent: Schedule
 * ^status = #draft
@@ -35,9 +39,6 @@ Parent: Schedule
 
 * extension contains ExtTipoAgenda named tipoAgenda 0..1 MS
 * extension[tipoAgenda] ^short = "Tipo agenda: SSN, ALPI, Privata o Convenzionata"
-
-* extension contains ExtModalitaErogazione named modalitaErogazione 0..1 MS
-* extension[modalitaErogazione] ^short = "In presenza, teleconsulto o telemonitoraggio"
 
 * extension contains ExtCreatedBy named createdBy 0..1 MS
 * extension[createdBy] ^short = "Professionista creatore agenda"

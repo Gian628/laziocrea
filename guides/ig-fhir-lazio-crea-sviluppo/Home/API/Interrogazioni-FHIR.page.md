@@ -122,7 +122,7 @@ GET {fhir-base}/Appointment?date=ge2025-04-15T00:00:00+02:00&date=le2025-04-15T2
 
 ## Teleconsulto (IRT)
 
-La modalità (`lccup-modalita-erogazione`) è un’estensione su `Schedule` e `Appointment`. Se il server non espone un search parameter dedicato, filtrare lato client sul codice `TELECONSULTO` oppure usare agende già marcate teleconsulto negli esempi.
+La modalità (`modalita-erogazione`) è sull'**Appointment** (obbligatoria in prenotazione). Per le agende teleconsulto si deduce da `actor` CareTeam e da `Slot.serviceType` → HealthcareService con `type=PIATTAFORMA_TELEVISITA`.
 
 Esempio agenda teleconsulto in guida: {{link:LazioCrea/esempio-agenda-teleconsulto}}
 

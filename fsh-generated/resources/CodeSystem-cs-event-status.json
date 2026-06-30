@@ -8,17 +8,17 @@
   "url": "https://www.fhir.laziocrea.it/CodeSystem/cs-event-status",
   "concept": [
     {
-      "code": "PENDING",
+      "code": "IN_ATTESA",
       "display": "In attesa",
       "definition": "Evento in attesa di conferma o erogazione"
     },
     {
-      "code": "CONFIRMED",
+      "code": "CONFERMATO",
       "display": "Confermato",
       "definition": "Evento confermato"
     },
     {
-      "code": "COMPLETED",
+      "code": "COMPLETATO",
       "display": "Completato",
       "definition": "Evento completato"
     }

@@ -32,8 +32,8 @@ Assistito riceve codice prenotazione
 
 ## Scenario 2 — Teleconsulto con IRT
 
-1. Prenotazione su agenda con `modalita-erogazione = TELECONSULTO`.
-2. `LcCup-Appointment` con **CareTeam** in `participant[equipe]`.
+1. Slot liberi sull'agenda equipe (`actor` = CareTeam); `Slot.serviceType` → HealthcareService piattaforma (`PIATTAFORMA_TELEVISITA`).
+2. Prenotazione con `modalita-erogazione = TELE_CONSULTO` sull'**Appointment**.
 3. Sessione video in **`virtualService`** (R5).
 4. Metadati IRT come estensioni (`event-status`, `pathology`, …).
 

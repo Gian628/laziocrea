@@ -254,7 +254,8 @@
         "reference": {
           "reference": "Schedule/esempio-agenda-teleconsulto"
         },
-        "name": "Esempio Agenda Teleconsulto - CUP Lazio",
+        "name": "Esempio Agenda Equipe Teleconsulto (modello IRT)",
+        "description": "Agenda generica equipe: nessuna prestazione clinica sulla Schedule; piattaforma sugli Slot",
         "groupingId": "Esempi",
         "isExample": true,
         "profile": [
@@ -296,9 +297,9 @@
       },
       {
         "reference": {
-          "reference": "HealthcareService/esempio-irt-hs-televisit"
+          "reference": "HealthcareService/esempio-irt-hs-piattaforma-televisita"
         },
-        "name": "Esempio Piattaforma TELEVISIT",
+        "name": "Esempio Piattaforma Televisita",
         "groupingId": "Esempi",
         "isExample": true,
         "profile": [
@@ -331,7 +332,7 @@
         "reference": {
           "reference": "HealthcareService/esempio-irt-hs-prestazione"
         },
-        "name": "Esempio Prestazione Televisita Cardiologica",
+        "name": "Esempio Prestazione Televisita Genetica",
         "groupingId": "Esempi",
         "isExample": true,
         "profile": [
@@ -401,7 +402,7 @@
           "reference": "StructureDefinition/lccup-healthcare-service"
         },
         "name": "LcCup HealthcareService - Prestazione o piattaforma",
-        "description": "Servizio sanitario nel contesto CUP/IRT.\nPuò rappresentare la piattaforma telemedicina (es. TELEVISIT) o una prestazione clinica specifica.",
+        "description": "Servizio sanitario nel contesto CUP/IRT.\nPuò rappresentare la piattaforma telemedicina (es. Televisita) o una prestazione clinica specifica.",
         "groupingId": "Profili",
         "isExample": false
       },
@@ -419,7 +420,7 @@
           "reference": "StructureDefinition/lccup-schedule"
         },
         "name": "LcCup Schedule - Agenda CUP Lazio",
-        "description": "Agenda ambulatoriale o teleconsulto gestita dal CUP Regionale Lazio.\nIn teleconsulto l'actor principale è un CareTeam; in presenza Practitioner, Location o HealthcareService.",
+        "description": "Agenda ambulatoriale o teleconsulto gestita dal CUP Regionale Lazio.\n\nPresenza: actor Location/Practitioner, specialty e serviceType sulla Schedule.\nTeleconsulto (IRT): actor CareTeam, serviceType vuoto sulla Schedule; piattaforma\nTelevisita sugli Slot (serviceType.reference → HealthcareService type=PIATTAFORMA_TELEVISITA).\nLa prestazione clinica specifica è sulla prenotazione (Appointment.supportingInformation).",
         "groupingId": "Profili",
         "isExample": false
       },
@@ -453,7 +454,7 @@
           "reference": "StructureDefinition/modalita-erogazione"
         },
         "name": "Modalità di Erogazione",
-        "description": "In presenza, teleconsulto o telemonitoraggio.",
+        "description": "In presenza, teleconsulto o telemonitoraggio.\nValorizzata sulla prenotazione (Appointment). Per le agende teleconsulto la modalità\nsi deduce da actor CareTeam e da Slot.serviceType → HealthcareService piattaforma.",
         "groupingId": "Estensioni",
         "isExample": false
       },
@@ -531,7 +532,7 @@
           "reference": "StructureDefinition/event-status"
         },
         "name": "Stato evento",
-        "description": "Stato workflow dell'evento lato piattaforma (es. PENDING). Corrisponde a eventColor IRT.",
+        "description": "Stato workflow dell'evento lato piattaforma (es. IN_ATTESA). Corrisponde a eventColor IRT.",
         "groupingId": "Estensioni",
         "isExample": false
       },

@@ -7,7 +7,7 @@ Sette profili **LcCup** coprono prenotazione CUP e integrazione IRT.
 ### LcCup-Schedule
 
 - `actor`: **CareTeam** (teleconsulto) oppure Location / Practitioner (presenza)
-- Estensioni: `tipo-agenda`, `modalita-erogazione`, `time-quantum`, `created-by`, …
+- Estensioni: `tipo-agenda`, `time-quantum`, `created-by`, … (teleconsulto: senza `modalita-erogazione` sull'agenda)
 
 ### LcCup-Slot
 
@@ -22,7 +22,7 @@ Sette profili **LcCup** coprono prenotazione CUP e integrazione IRT.
 
 ### LcCup-CareTeam / HealthcareService / Organization
 
-Modellano equipe, piattaforma TELEVISIT e struttura STS (da esempi IRT).
+Modellano equipe, piattaforma Televisita e struttura STS (da esempi IRT).
 
 ## Diagramma teleconsulto
 

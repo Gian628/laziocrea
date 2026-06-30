@@ -6,7 +6,7 @@
   "title": "LcCup Schedule - Agenda CUP Lazio",
   "status": "draft",
   "experimental": true,
-  "description": "Agenda ambulatoriale o teleconsulto gestita dal CUP Regionale Lazio.\nIn teleconsulto l'actor principale è un CareTeam; in presenza Practitioner, Location o HealthcareService.",
+  "description": "Agenda ambulatoriale o teleconsulto gestita dal CUP Regionale Lazio.\n\nPresenza: actor Location/Practitioner, specialty e serviceType sulla Schedule.\nTeleconsulto (IRT): actor CareTeam, serviceType vuoto sulla Schedule; piattaforma\nTelevisita sugli Slot (serviceType.reference → HealthcareService type=PIATTAFORMA_TELEVISITA).\nLa prestazione clinica specifica è sulla prenotazione (Appointment.supportingInformation).",
   "fhirVersion": "5.0.0",
   "kind": "resource",
   "abstract": false,
@@ -41,23 +41,6 @@
             "code": "Extension",
             "profile": [
               "https://www.fhir.laziocrea.it/StructureDefinition/tipo-agenda"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "Schedule.extension:modalitaErogazione",
-        "path": "Schedule.extension",
-        "sliceName": "modalitaErogazione",
-        "short": "In presenza, teleconsulto o telemonitoraggio",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://www.fhir.laziocrea.it/StructureDefinition/modalita-erogazione"
             ]
           }
         ],

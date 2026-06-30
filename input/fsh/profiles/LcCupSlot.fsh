@@ -15,7 +15,7 @@ Parent: Slot
 * status 1..1 MS
 
 * serviceType 0..1 MS
-* serviceType ^short = "Prestazione o piattaforma (CodeableReference)"
+* serviceType ^short = "Prestazione (concept) o piattaforma IRT (reference → LcCupHealthcareService)"
 
 * start 1..1 MS
 * end 1..1 MS

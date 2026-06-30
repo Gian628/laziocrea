@@ -8,8 +8,8 @@
   "url": "https://www.fhir.laziocrea.it/CodeSystem/cs-canale-virtuale",
   "concept": [
     {
-      "code": "Videocall",
-      "display": "Videocall",
+      "code": "VIDEO_CALL",
+      "display": "Videochiamata",
       "definition": "Sessione video"
     }
   ],

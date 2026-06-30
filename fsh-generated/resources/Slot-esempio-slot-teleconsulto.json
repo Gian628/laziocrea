@@ -13,7 +13,7 @@
   "serviceType": [
     {
       "reference": {
-        "reference": "HealthcareService/esempio-irt-hs-televisit"
+        "reference": "HealthcareService/esempio-irt-hs-piattaforma-televisita"
       }
     }
   ],
