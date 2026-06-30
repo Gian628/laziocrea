@@ -77,9 +77,33 @@
         </tr>
         <tr>
           <td>LCCUP</td>
-          <td>Location</td>
-          <td>Sede virtuale teleconsulto</td>
-          <td>{{link:LazioCrea/sede-virtuale-teleconsulto}}</td>
+          <td>ServiceRequest</td>
+          <td>Impegnativa teleconsulto</td>
+          <td>{{link:LazioCrea/esempio-impegnativa-teleconsulto}}</td>
+        </tr>
+        <tr>
+          <td>LCCUP</td>
+          <td>Organization</td>
+          <td>Struttura STS IRT</td>
+          <td>{{link:LazioCrea/esempio-irt-organization}}</td>
+        </tr>
+        <tr>
+          <td>LCCUP</td>
+          <td>CareTeam</td>
+          <td>Equipe teleconsulto</td>
+          <td>{{link:LazioCrea/esempio-irt-careteam}}</td>
+        </tr>
+        <tr>
+          <td>LCCUP</td>
+          <td>HealthcareService</td>
+          <td>Piattaforma Televisita</td>
+          <td>{{link:LazioCrea/esempio-irt-hs-piattaforma-televisita}}</td>
+        </tr>
+        <tr>
+          <td>LCCUP</td>
+          <td>HealthcareService</td>
+          <td>Prestazione clinica teleconsulto</td>
+          <td>{{link:LazioCrea/esempio-irt-hs-prestazione}}</td>
         </tr>
       </tbody>
     </table>

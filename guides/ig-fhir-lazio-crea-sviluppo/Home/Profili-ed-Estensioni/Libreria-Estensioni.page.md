@@ -2,7 +2,9 @@
 
 Estensioni per il **CUP Regionale Lazio** e l'integrazione con **IRT**.
 
-Gli id non usano il prefisso `lccup-` (namespace: `https://www.fhir.laziocrea.it/StructureDefinition/...`).
+Gli id non usano il prefisso `lccup-` (namespace canonico: `https://www.fhir.laziocrea.it/StructureDefinition/...`).
+
+Per consultare le estensioni in Simplifier: [progetto LazioCrea](https://simplifier.net/LazioCrea).
 
 ## Tutte le estensioni
 

@@ -33,4 +33,10 @@ La guida è curata da **Lazio Crea**, ASR.
 
 Guida in **draft**, versione `0.1.0`.
 
-**URL canonica:** `https://www.fhir.laziocrea.it`
+**Progetto Simplifier:** [LazioCrea](https://simplifier.net/LazioCrea)
+
+**Package:** `lazio.crea.cup.irt` v0.1.0
+
+**URL canonica** (identificatore FHIR nelle risorse; non ancora risolvibile via browser): `https://www.fhir.laziocrea.it`
+
+Nella guida i link cliccabili puntano al progetto Simplifier.

@@ -44,7 +44,7 @@
           </td>
           <td>Agenda CUP Lazio (in presenza o teleconsulto)</td>
           <td>
-            {{link:https://www.fhir.laziocrea.it/StructureDefinition/lccup-schedule}}
+            {{link:LazioCrea/lccup-schedule}}
           </td>
         </tr>
         <tr>
@@ -57,7 +57,7 @@
           </td>
           <td>Fascia oraria prenotabile nell'agenda</td>
           <td>
-            {{link:https://www.fhir.laziocrea.it/StructureDefinition/lccup-slot}}
+            {{link:LazioCrea/lccup-slot}}
           </td>
         </tr>
         <tr>
@@ -70,7 +70,7 @@
           </td>
           <td>Prenotazione CUP con estensioni e integrazione IRT</td>
           <td>
-            {{link:https://www.fhir.laziocrea.it/StructureDefinition/lccup-appointment}}
+            {{link:LazioCrea/lccup-appointment}}
           </td>
         </tr>
         <tr>
@@ -83,7 +83,7 @@
           </td>
           <td>Impegnativa SSN con NRE e classe priorità</td>
           <td>
-            {{link:https://www.fhir.laziocrea.it/StructureDefinition/lccup-service-request}}
+            {{link:LazioCrea/lccup-service-request}}
           </td>
         </tr>
         <tr>
@@ -91,21 +91,21 @@
           <td>LcCup-CareTeam</td>
           <td><a href="http://hl7.org/fhir/R5/careteam.html">CareTeam</a></td>
           <td>Equipe teleconsulto IRT</td>
-          <td>{{link:https://www.fhir.laziocrea.it/StructureDefinition/lccup-care-team}}</td>
+          <td>{{link:LazioCrea/lccup-care-team}}</td>
         </tr>
         <tr>
           <td>LCCUP</td>
           <td>LcCup-HealthcareService</td>
           <td><a href="http://hl7.org/fhir/R5/healthcareservice.html">HealthcareService</a></td>
           <td>Piattaforma o prestazione clinica</td>
-          <td>{{link:https://www.fhir.laziocrea.it/StructureDefinition/lccup-healthcare-service}}</td>
+          <td>{{link:LazioCrea/lccup-healthcare-service}}</td>
         </tr>
         <tr>
           <td>LCCUP</td>
           <td>LcCup-Organization</td>
           <td><a href="http://hl7.org/fhir/R5/organization.html">Organization</a></td>
           <td>Struttura STS con flag IRT</td>
-          <td>{{link:https://www.fhir.laziocrea.it/StructureDefinition/lccup-organization}}</td>
+          <td>{{link:LazioCrea/lccup-organization}}</td>
         </tr>
       </tbody>
     </table>

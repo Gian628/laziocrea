@@ -7,6 +7,8 @@ Profili FHIR **R5** per agende, slot e prenotazioni del CUP Regionale Lazio, con
 - **Progetto:** [LazioCrea](https://simplifier.net/LazioCrea)
 - **Guida:** `guides/ig-fhir-lazio-crea-sviluppo/`
 
+I link nella guida Simplifier puntano al progetto; la canonical (`https://www.fhir.laziocrea.it`) resta l'identificatore nelle risorse FHIR.
+
 ## Come lavoriamo
 
 Sorgenti in **FSH**, compilazione con **SUSHI** (`sushi .`), pubblicazione su **Simplifier**.

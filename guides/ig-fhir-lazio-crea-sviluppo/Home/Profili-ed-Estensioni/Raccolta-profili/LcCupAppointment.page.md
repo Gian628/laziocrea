@@ -9,7 +9,7 @@
 
 Il profilo **LcCup-Appointment** rappresenta una prenotazione del **CUP Regionale Lazio**, con estensioni per canale, codice prenotazione e teleconsulto con **IRT**.
 
-Definizione: {{link:https://www.fhir.laziocrea.it/StructureDefinition/lccup-appointment}}.
+Definizione: {{link:LazioCrea/lccup-appointment}}.
 
 <br>
 <div class="tab">
@@ -24,32 +24,32 @@ Definizione: {{link:https://www.fhir.laziocrea.it/StructureDefinition/lccup-appo
 
 <div id="Snapshot View" class="tabcontent">
   <h3>Snapshot View</h3>
-{{tree:https://www.fhir.laziocrea.it/StructureDefinition/lccup-appointment, snapshot}}
+{{tree:LazioCrea/lccup-appointment, snapshot}}
 </div>
 
 <div id="Differential View" class="tabcontent">
   <h3>Differential View</h3>
-{{tree:https://www.fhir.laziocrea.it/StructureDefinition/lccup-appointment, diff}}
+{{tree:LazioCrea/lccup-appointment, diff}}
 </div>
 
 <div id="Hybrid View" class="tabcontent" style="display:block">
   <h3>Hybrid View</h3>
-{{tree:https://www.fhir.laziocrea.it/StructureDefinition/lccup-appointment, hybrid}}
+{{tree:LazioCrea/lccup-appointment, hybrid}}
 </div>
 
 <div id="Table View" class="tabcontent">
   <h3>Table View</h3>
-{{table:https://www.fhir.laziocrea.it/StructureDefinition/lccup-appointment, snapshot}}
+{{table:LazioCrea/lccup-appointment, snapshot}}
 </div>
 
 <div id="XML View" class="tabcontent">
   <h3>XML View</h3>
-{{xml:https://www.fhir.laziocrea.it/StructureDefinition/lccup-appointment, snapshot}}
+{{xml:LazioCrea/lccup-appointment, snapshot}}
 </div>
 
 <div id="JSON View" class="tabcontent">
   <h3>JSON View</h3>
-{{json:https://www.fhir.laziocrea.it/StructureDefinition/lccup-appointment, snapshot}}
+{{json:LazioCrea/lccup-appointment, snapshot}}
 </div>
 
 <div id="Esempi" class="tabcontent">

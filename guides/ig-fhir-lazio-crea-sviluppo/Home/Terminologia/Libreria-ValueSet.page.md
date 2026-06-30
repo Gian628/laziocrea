@@ -17,6 +17,8 @@
     <div>
       <p>
         Nella tabella sottostante sono raccolti i ValueSet sviluppati per i profili LcCup.
+        I link aprono la risorsa su <a href="https://simplifier.net/LazioCrea">Simplifier</a>.
+        La colonna URL canonica è l'identificatore FHIR (per API e validazione).
         <br />
         Usare la casella di ricerca sottostante per filtrare le informazioni desiderate.
       </p>
@@ -26,36 +28,61 @@
     <table style="width: fit-content">
       <thead>
         <tr>
-          <th>Nome e Link Simplifier</th>
+          <th>Nome e link Simplifier</th>
           <th>Descrizione</th>
-          <th>URL</th>
+          <th>URL canonica</th>
         </tr>
       </thead>
       <tbody id="myTable">
         <tr>
-          <td>{{link:https://www.fhir.laziocrea.it/ValueSet/lccup-vs-tipo-agenda}}</td>
+          <td>{{link:LazioCrea/vs-tipo-agenda}}</td>
           <td>Tipo agenda CUP (SSN, ALPI, Privata, Convenzionata)</td>
-          <td>https://www.fhir.laziocrea.it/ValueSet/lccup-vs-tipo-agenda</td>
+          <td><code>https://www.fhir.laziocrea.it/ValueSet/vs-tipo-agenda</code></td>
         </tr>
         <tr>
-          <td>{{link:https://www.fhir.laziocrea.it/ValueSet/lccup-vs-canale-prenotazione}}</td>
+          <td>{{link:LazioCrea/vs-canale-prenotazione}}</td>
           <td>Canale di prenotazione CUP</td>
-          <td>https://www.fhir.laziocrea.it/ValueSet/lccup-vs-canale-prenotazione</td>
+          <td><code>https://www.fhir.laziocrea.it/ValueSet/vs-canale-prenotazione</code></td>
         </tr>
         <tr>
-          <td>{{link:https://www.fhir.laziocrea.it/ValueSet/lccup-vs-classe-priorita}}</td>
+          <td>{{link:LazioCrea/vs-classe-priorita}}</td>
           <td>Classe di priorità U/B/D/P</td>
-          <td>https://www.fhir.laziocrea.it/ValueSet/lccup-vs-classe-priorita</td>
+          <td><code>https://www.fhir.laziocrea.it/ValueSet/vs-classe-priorita</code></td>
         </tr>
         <tr>
-          <td>{{link:https://www.fhir.laziocrea.it/ValueSet/lccup-vs-stato-slot}}</td>
+          <td>{{link:LazioCrea/vs-stato-slot}}</td>
           <td>Stati dello slot CUP</td>
-          <td>https://www.fhir.laziocrea.it/ValueSet/lccup-vs-stato-slot</td>
+          <td><code>https://www.fhir.laziocrea.it/ValueSet/vs-stato-slot</code></td>
         </tr>
         <tr>
-          <td>{{link:https://www.fhir.laziocrea.it/ValueSet/lccup-vs-modalita-erogazione}}</td>
+          <td>{{link:LazioCrea/vs-modalita-erogazione}}</td>
           <td>Modalità di erogazione (presenza, teleconsulto, telemonitoraggio)</td>
-          <td>https://www.fhir.laziocrea.it/ValueSet/lccup-vs-modalita-erogazione</td>
+          <td><code>https://www.fhir.laziocrea.it/ValueSet/vs-modalita-erogazione</code></td>
+        </tr>
+        <tr>
+          <td>{{link:LazioCrea/vs-tipo-identificatore}}</td>
+          <td>Tipo identificatore agenda</td>
+          <td><code>https://www.fhir.laziocrea.it/ValueSet/vs-tipo-identificatore</code></td>
+        </tr>
+        <tr>
+          <td>{{link:LazioCrea/vs-tipo-servizio}}</td>
+          <td>Tipo HealthcareService (piattaforma / prestazione)</td>
+          <td><code>https://www.fhir.laziocrea.it/ValueSet/vs-tipo-servizio</code></td>
+        </tr>
+        <tr>
+          <td>{{link:LazioCrea/vs-canale-virtuale}}</td>
+          <td>Canale servizio virtuale (videochiamata)</td>
+          <td><code>https://www.fhir.laziocrea.it/ValueSet/vs-canale-virtuale</code></td>
+        </tr>
+        <tr>
+          <td>{{link:LazioCrea/vs-event-status}}</td>
+          <td>Stato workflow evento IRT</td>
+          <td><code>https://www.fhir.laziocrea.it/ValueSet/vs-event-status</code></td>
+        </tr>
+        <tr>
+          <td>{{link:LazioCrea/vs-ruolo-equipe}}</td>
+          <td>Ruolo membro CareTeam</td>
+          <td><code>https://www.fhir.laziocrea.it/ValueSet/vs-ruolo-equipe</code></td>
         </tr>
       </tbody>
     </table>
@@ -81,8 +108,8 @@ order by name
 
 ## Tipo Agenda
 
-{{render:LazioCrea/lccup-vs-tipo-agenda}}
+{{render:LazioCrea/vs-tipo-agenda}}
 
 ## Canale di Prenotazione
 
-{{render:LazioCrea/lccup-vs-canale-prenotazione}}
+{{render:LazioCrea/vs-canale-prenotazione}}

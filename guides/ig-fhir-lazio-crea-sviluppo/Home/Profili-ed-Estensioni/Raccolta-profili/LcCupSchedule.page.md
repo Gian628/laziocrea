@@ -9,7 +9,7 @@
 
 Il profilo **LcCup-Schedule** rappresenta un'agenda del **CUP Regionale Lazio**. Ogni agenda appartiene a un servizio/ambulatorio ed è il contenitore delle fasce orarie (Slot).
 
-Di seguito il contenuto del profilo in diversi formati. Definizione: {{link:https://www.fhir.laziocrea.it/StructureDefinition/lccup-schedule}}.
+Di seguito il contenuto del profilo in diversi formati. Definizione: {{link:LazioCrea/lccup-schedule}}.
 
 <br>
 <div class="tab">
@@ -24,32 +24,32 @@ Di seguito il contenuto del profilo in diversi formati. Definizione: {{link:http
 
 <div id="Snapshot View" class="tabcontent">
   <h3>Snapshot View</h3>
-{{tree:https://www.fhir.laziocrea.it/StructureDefinition/lccup-schedule, snapshot}}
+{{tree:LazioCrea/lccup-schedule, snapshot}}
 </div>
 
 <div id="Differential View" class="tabcontent">
   <h3>Differential View</h3>
-{{tree:https://www.fhir.laziocrea.it/StructureDefinition/lccup-schedule, diff}}
+{{tree:LazioCrea/lccup-schedule, diff}}
 </div>
 
 <div id="Hybrid View" class="tabcontent" style="display:block">
   <h3>Hybrid View</h3>
-{{tree:https://www.fhir.laziocrea.it/StructureDefinition/lccup-schedule, hybrid}}
+{{tree:LazioCrea/lccup-schedule, hybrid}}
 </div>
 
 <div id="Table View" class="tabcontent">
   <h3>Table View</h3>
-{{table:https://www.fhir.laziocrea.it/StructureDefinition/lccup-schedule, snapshot}}
+{{table:LazioCrea/lccup-schedule, snapshot}}
 </div>
 
 <div id="XML View" class="tabcontent">
   <h3>XML View</h3>
-{{xml:https://www.fhir.laziocrea.it/StructureDefinition/lccup-schedule, snapshot}}
+{{xml:LazioCrea/lccup-schedule, snapshot}}
 </div>
 
 <div id="JSON View" class="tabcontent">
   <h3>JSON View</h3>
-{{json:https://www.fhir.laziocrea.it/StructureDefinition/lccup-schedule, snapshot}}
+{{json:LazioCrea/lccup-schedule, snapshot}}
 </div>
 
 <div id="Esempi" class="tabcontent">
