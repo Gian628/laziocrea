@@ -9,7 +9,7 @@ I profili forniscono un modello informativo interoperabile per descrivere le pri
 ## Cosa modellano i profili LcCup
 
 1. **Organizzazioni** (`LcCup-Organization`)
-2. **Servizi, équipe e professionitsit** (`LcCup-HealthcareService`, `LcCup-CareTeam`, `LcCup-Practitioner`)
+2. **Servizi, équipe e professionisti** (`LcCup-HealthcareService`, `LcCup-CareTeam`, `LcCup-Practitioner`)
 3. **Agende e disponibilità** (`LcCup-Schedule`, `LcCup-Slot`)
 4. **Pazienti, prescrizioni e prenotazioni** (`LcCup-Patient`, `LcCup-ServiceRequest`, `LcCup-Appointment`)
 5. **Prestazioni virtuali** (`virtualService` ed eventuali estensioni dedicate)
