@@ -2,28 +2,26 @@
 
 ## Contesto
 
-Questa Implementation Guide si configura nel **contesto sanitario regionale del Lazio**.
+Questa Implementation Guide si inserisce nel contesto del sistema sanitario della Regione Lazio e definisce un insieme di profili **LcCup**, basati sullo standard **HL7® FHIR® R5**, per la rappresentazione e lo scambio delle informazioni relative alla gestione delle agende sanitarie e delle prenotazioni.
 
-I profili **LcCup** descrivono agende, disponibilità e prenotazioni del **CUP Regionale Lazio**, con estensioni per l'integrazione verso **IRT** (telemedicina regionale).
-
-La guida è curata da **Lazio Crea**, ASR.
+I profili forniscono un modello informativo interoperabile per descrivere le principali risorse coinvolte nella configurazione delle agende, nella pubblicazione delle disponibilità e nella gestione delle prenotazioni, supportando la condivisione delle informazioni tra sistemi informativi operanti in un contesto multi-applicativo.
 
 ## Cosa modellano i profili LcCup
 
-1. **Agende e fasce orarie** (`LcCup-Schedule`, `LcCup-Slot`)
-2. **Impegnative e prenotazioni** (`LcCup-ServiceRequest`, `LcCup-Appointment`)
-3. **Equipe e servizi** (`LcCup-CareTeam`, `LcCup-HealthcareService`, `LcCup-Organization`)
-4. **Teleconsulto** — `modalita-erogazione`, `virtualService`, estensioni metadati IRT
+1. **Organizzazioni** (`LcCup-Organization`)
+2. **Servizi, équipe e professionitsit** (`LcCup-HealthcareService`, `LcCup-CareTeam`, `LcCup-Practitioner`)
+3. **Agende e disponibilità** (`LcCup-Schedule`, `LcCup-Slot`)
+4. **Pazienti, prescrizioni e prenotazioni** (`LcCup-Patient`, `LcCup-ServiceRequest`, `LcCup-Appointment`)
+5. **Prestazioni virtuali** (`virtualService` ed eventuali estensioni dedicate)
 
 ## Ambito tecnico
 
-| Fase | Risorsa LcCup | Descrizione |
+| Fase | Risorse LcCup | Descrizione |
 |---|---|---|
-| Prescrizione | LcCup-ServiceRequest | Impegnativa SSN |
-| Offerta | LcCup-Schedule + LcCup-Slot | Agenda e fasce orarie |
-| Prenotazione | LcCup-Appointment | Prenotazione con codice CUP |
-| Teleconsulto | virtualService + CareTeam | Sessione video ed equipe |
-
+| Pianificazione | `Schedule` | Configurazione delle agende |
+| Disponibilità | `Slot` | Gestione delle fasce orarie prenotabili |
+| Prescrizione | `ServiceRequest` | Prescrizione della prestazione, ove prevista |
+| Prenotazione | `Appointment` | Associazione del paziente a una disponibilità |
 ## Standard di riferimento
 
 - HL7 FHIR **R5** (5.0.0)
